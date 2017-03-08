@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*
 Theme Name: Homemania
 */
@@ -6679,16 +6678,6 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 .bg-blue {
   background-color: blue; }
 
-.╨Т╨╛╨╣╤В╨╕___╨а╨╡╨│╨╕╤Б╤В╤А╨░╤Ж╨╕╤П {
-  font-size: 18px;
-  font-family: "Fira Sans";
-  color: white;
-  line-height: 1.2;
-  position: absolute;
-  left: 1239.937px;
-  top: 53.117px;
-  z-index: 175; }
-
 header {
   background-color: #1fb9b9;
   padding-top: 60px;
@@ -6698,34 +6687,31 @@ header {
     font-size: 4rem;
     text-align: center;
     color: #fff; }
-  header .social {
-    margin: 0;
-    padding: 5px; }
-    header .social li {
-      margin: 5px;
-      list-style: none outside none;
-      display: inline-block; }
-      header .social li i {
-        width: 35px;
-        height: 35px;
-        color: #FFF;
-        background-color: transparent;
-        font-size: 21px;
-        text-align: center;
-        padding-top: 5.25px;
-        border-radius: 50%;
-        -moz-border-radius: 50%;
-        -webkit-border-radius: 50%;
-        -o-border-radius: 50%; }
-      header .social li i:hover {
-        color: #FFF;
-        text-decoration: none; }
-  header .login-signup {
-    margin-top: 0.5rem;
-    font-family: "Fira Sans";
-    font-size: 1rem;
-    color: white; }
-    header .login-signup a {
-      color: white; }
+
+.social {
+  padding: 0; }
+  .social li {
+    margin: 0.1rem;
+    list-style: none outside none;
+    display: inline-block; }
+    .social li i {
+      width: 35px;
+      height: 35px;
+      color: #fff;
+      font-size: 21px;
+      text-align: center;
+      padding-top: 5.25px;
+      border-radius: 50%;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -o-border-radius: 50%; }
+
+.login-signup {
+  margin-top: 0.5rem;
+  font-family: "Fira Sans";
+  font-size: 1rem;
+  color: #fff; }
+  .login-signup a {
+    color: #fff; }
 
 /*# sourceMappingURL=style.css.map */

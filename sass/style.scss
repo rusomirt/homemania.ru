@@ -7,7 +7,7 @@ Theme Name: Homemania
 @import "base/typography";
 
 // compass
-@import "compass";
+//@import "compass";
 
 // import files
 @import "base/import";
@@ -18,7 +18,7 @@ Theme Name: Homemania
 // variables
 @import "helpers/variables";
 
-
+// For debugging
 .border-black {border: 1px solid black}
 .border-red {border: 1px solid red}
 .border-green {border: 1px solid green}
@@ -29,74 +29,71 @@ Theme Name: Homemania
 .bg-green {background-color: green}
 .bg-blue {background-color: blue}
 
+// Variables
 
+// Page header
+$header-padding-top: 60px;
+$header-padding-bottom: 40px;
+$header-title-font-size: 4rem;
+$header-title-txt-color: $white;
+$header-title-font: "Playfair Display";
+
+// Social icons block
+$social-padding: 0;
+$social-icon-margin: $spacer * 0.1;
 $social-icon-size: 35px;
+$social-icon-color: $white;
 
-.Войти___Регистрация {
-  font-size: 18px;
-  font-family: "Fira Sans";
-  color: rgb(255, 255, 255);
-  line-height: 1.2;
-  position: absolute;
-  left: 1239.937px;
-  top: 53.117px;
-  z-index: 175;
-}
-
+// login/signup block
+$logsign-margin-top: $spacer * 0.5;
+$logsign-font-size: 1rem;
+$logsign-txt-color: $white;
+$logsign-font: "Fira Sans";
 
 header {
   background-color: $brand-primary;
-  padding-top: 60px;
-  padding-bottom: 40px;
+  padding-top: $header-padding-top;
+  padding-bottom: $header-padding-bottom;
 
   .header-title {
-    font-family: "Playfair Display";
-    font-size: 4rem;
+    font-family: $header-title-font;
+    font-size: $header-title-font-size;
     text-align: center;
-    color: $white;
+    color: $header-title-txt-color;
   }
+}
+.social {
+  padding: $social-padding;
 
-  .social {
-    margin: 0;
-    padding: 5px;
+  li {
+    margin: $social-icon-margin;
+    list-style: none outside none;
+    display: inline-block;
 
-    li {
-      margin: 5px;
-      list-style: none outside none;
-      display: inline-block;
-
-      i {
-        width: $social-icon-size;
-        height: $social-icon-size;
-        color: #FFF;
-        background-color: transparent;
-        font-size: $social-icon-size*0.6;
-        text-align:center;
-        padding-top: $social-icon-size*0.15;
-        border-radius: 50%;
-        -moz-border-radius: 50%;
-        -webkit-border-radius: 50%;
-        -o-border-radius: 50%;
-      }
-
-      i:hover {
-        color: #FFF;
-        text-decoration: none;
-      }
-    }
-  }
-
-
-  .login-signup {
-    margin-top: 0.5rem;
-    font-family: "Fira Sans";
-    font-size: 1rem;
-    color: white;
-
-    a {
-      color: white;
+    i {
+      width: $social-icon-size;
+      height: $social-icon-size;
+      color: $social-icon-color;
+      font-size: $social-icon-size*0.6;
+      text-align: center;
+      padding-top: $social-icon-size*0.15;
+      border-radius: 50%;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -o-border-radius: 50%;
     }
   }
 }
+.login-signup {
+  margin-top: $logsign-margin-top;
+  font-family: $logsign-font;
+  font-size: $logsign-font-size;
+  color: $logsign-txt-color;
+
+  a {
+    color: $logsign-txt-color;
+  }
+}
+
 
 
