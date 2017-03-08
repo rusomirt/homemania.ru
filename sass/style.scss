@@ -1,0 +1,466 @@
+/*
+Theme Name: Bootstrap 4 Sass
+Description: Bootstrap 4 with Sass
+*/
+//bootstrap
+@import "scss/bootstrap";
+// typography
+@import "base/typography";
+
+// compass
+@import "compass";
+
+// import files
+@import "base/import";
+
+// mixins
+@import "helpers/mixins";
+
+// variables
+@import "helpers/variables";
+
+
+/* GENERAL STYLES
+-------------------------------------------------*/
+
+body {
+  background: $bg-white;
+  font-family: $font-lato;
+  font-weight: 400;
+  font-size: 100%;
+  line-height: 1.5em;
+  position: absolute;
+  height: 100%;
+  color: $color-white;
+  -webkit-font-smoothing: antialiased;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  width: 100%;
+}
+
+body, input, select, textarea {
+  @include transition(all, 0.2s,cubic-bezier(0.42, 0, 0.58, 1) );
+}
+
+
+.scroll-touch {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+a {
+  font-family: $font-lato;
+  color: $color-white;
+  cursor: pointer;
+  text-decoration: none;
+  @include transition(all, 0.2s,cubic-bezier(0.42, 0, 0.58, 1));
+  &:hover {
+    color: $color-turquoise;
+    text-decoration: none !important;
+    outline: none !important;
+  }
+  &:active, &:focus {
+    outline: none !important;
+    text-decoration: none !important;
+    color: $color-white;
+  }
+}
+
+.btn{
+  margin-top: 27px;
+}
+
+strong, b {
+  font-weight: 700;
+}
+
+em, i {
+  font-style: italic;
+}
+
+p {
+  font-family: $font-lato;
+  margin: 0;
+  font-size: 1em;
+  line-height: 1.6em;
+  color: $color-white;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $color-white;
+  font-weight: 400;
+  line-height: 1.3em;
+}
+
+h1 {
+  font-size: 44px;
+  font-family: $font-raleway;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 22px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+
+h4 {
+  font-size: 25px;
+  margin-bottom: 25px;
+}
+
+h5 {
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+h6 {
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+
+
+.clear {
+  clear: both;
+}
+
+
+/* ALIGNMENT
+-------------------------------------------------*/
+
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
+.opacity-0 {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+
+.opacity-1 {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.index-999 {
+  z-index: -999 !important;
+}
+
+
+/* CONTENT
+-------------------------------------------------*/
+
+.header-overlay {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: -100vw;
+  height: 100%;
+  overflow: visible;
+  opacity: 0;
+}
+
+.overlay {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: -50%;
+  background: rgba(7, 7, 7, 0.8);
+  width: 100%;
+  height: 100%;
+  @include transition(all, 0.5s,cubic-bezier(0.7, 0, 0.3, 1));
+  border-right: 1px solid #15171e;
+  &.morp {
+    -webkit-transform: skew(-25deg, 0deg);
+    -moz-transform: skew(-25deg, 0deg);
+    -ms-transform: skew(-25deg, 0deg);
+    -o-transform: skew(-25deg, 0deg);
+    transform: skew(-25deg, 0deg);
+  }
+}
+
+#header-content {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  opacity: 0;
+  @include transition(all,0.3s,cubic-bezier(0, 0, 0.58, 1));
+  .content {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    padding: 0;
+    top: 50vh;
+    width: 100%;
+    padding: 0 10%;
+    @include transition(all, 0.3s, cubic-bezier(0, 0, 0.58, 1));
+    @include translateY(-50%);
+    text-align: left;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+
+#main-content {
+  background:$bg-white;
+  position: relative;
+  overflow: auto;
+  @include translate3d(100%, 0, 0);
+  top: 0;
+  width: 50%;
+  @include transition(all, 0.5s, cubic-bezier(0.7, 0, 0.3, 1));
+  &.main-hide {
+    @include translate3d(200%, 0, 0);
+  }
+  .content {
+    width: 100%;
+    padding: 8% 10% 0;
+    text-align: left;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    opacity: 1;
+    visibility: visible;
+    h1, h2, h3, h4, h5, h6 {
+      color: #757A86;
+    }
+    h3 {
+      font-family: $font-raleway;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    p {
+      color: #747c83;
+      font-family: $font-lato;
+    }
+
+    img {
+      overflow: hidden;
+      @include transition(all, 0.3s, cubic-bezier(0.42, 0, 0.58, 1));
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      @include scale(1);
+      @include transition(all, 0.6s, cubic-bezier(0.215, 0.61, 0.355, 1));
+    }
+
+  }
+}
+
+
+#close-content {
+  position: fixed;
+  background: transparent;
+  border: none;
+  top: 15px;
+  right: 15px;
+  color: #757A86;
+  font-size: 2em;
+  &:hover {
+    @include scale(1.2);;
+  }
+  &.hide-close {
+    right: -40px;
+  }
+}
+
+.mCSB_scrollTools {
+  position: absolute;
+  width: 5px;
+  height: auto;
+  left: auto;
+  top: 0;
+  right: -5px;
+  bottom: 0;
+  z-index: 1;
+  @include transition(all, 0.5s, cubic-bezier(0.7, 0, 0.3, 1));
+  .mCSB_draggerRail {
+    width: 5px;
+    height: 100%;
+    margin: 0;
+    @include border-radius(0);
+    background-color: #757a86;
+    filter: "alpha(opacity=40)";
+    -ms-filter: "alpha(opacity=40)";
+  }
+  .mCSB_dragger .mCSB_dragger_bar {
+    /* the dragger element */
+    position: relative;
+    width: 5px;
+    height: 100%;
+    margin: 0 auto;
+    @include border-radius(0);
+    text-align: center;
+    background-color: #025aa5;
+  }
+}
+
+.mCSB_scrollTools-left {
+  right: 50% !important;
+}
+
+#contact-form {
+  margin-top: 40px;
+  .form-control {
+    background: $color-white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    @include border-radius(0);
+    box-shadow: none;
+    font-weight: 400;
+    outline: medium none;
+    height: 40px;
+    width: 100%;
+    color: $bg-black;
+    @include transition(all, 0.3s, cubic-bezier(0, 0, 0.58, 1));
+    text-align: left;
+    &:hover, &:focus {
+      box-shadow: none;
+    }
+    &::-webkit-input-placeholder, &::-moz-placeholder, &:-moz-placeholder, &:-ms-input-placeholder {
+      color: #747c83 !important;
+    }
+  }
+  textarea.form-control {
+    min-height: 150px;
+  }
+  button#valid-form {
+    font-weight: 400;
+    padding: 1em 2em;
+    font-size: 1em;
+    display: block;
+    margin: 0 auto 0;
+    background: $bg-turquoise;
+    color: $color-white;
+    @include border-radius(0);
+    font-weight: 700;
+    width: 100%;
+    line-height: 10px;
+    &:hover {
+      background: $color-turquoise;
+      color: $color-white;
+    }
+  }
+}
+
+/* FOOTER
+-------------------------------------------------*/
+
+footer {
+  padding: 10px 0;
+  background: transparent;
+  text-align: center;
+  p {
+    font-size: 11px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #757A86;
+  }
+}
+
+
+/* MEDIA QUERIES
+-------------------------------------------------*/
+
+@media only screen and (max-width: 1024px) {
+  .overlay {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    &.morp {
+      @include skew(0deg, 0deg); ;
+    }
+  }
+  #header-content {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 100px 0 150px;
+    .content {
+      position: relative;
+      left: 50%;
+      @include translateX(-50%); ;
+      top: auto;
+      text-align: center;
+    }
+  }
+  #main-content {
+    position: relative;
+    @include translate3d(0, 0, 0);;
+    top: 0;
+    width: 100%;
+    &.main-hide {
+      @include translate3d(0, 0, 0); ;
+    }
+  }
+  #close-content {
+    display: none;
+  }
+  .mCSB_scrollTools {
+    right: 0;
+  }
+  .mCSB_scrollTools-left {
+    right: 0 !important;
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  #header-content {
+    padding: 50px 0 100px;
+    .content {
+      padding: 0 3%;
+    }
+    &.minimal-phone {
+      height: 100vh;
+    }
+  }
+  h1.text-intro {
+    font-size: 30px;
+  }
+  h2.text-intro {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-device-width: 667px) and (orientation: landscape) {
+  #header-content {
+    padding: 50px 0 100px;
+  }
+  h1.text-intro {
+    font-size: 30px;
+  }
+  h2.text-intro {
+    font-size: 18px;
+  }
+}
