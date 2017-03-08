@@ -6721,8 +6721,6 @@ header {
         color: #FFF;
         text-decoration: none; }
   header .login-signup {
-    display: inline-block;
-    float: right;
     margin-top: 0.5rem;
     font-family: "Fira Sans";
     font-size: 1rem;
