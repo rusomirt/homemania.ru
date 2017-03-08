@@ -33,7 +33,7 @@ module.exports = function(grunt) {
           compass: true,
         },
         files: {
-          'css/style.css' : 'sass/style.scss'
+          'css/style.css' : 'sass/*.scss'
         }
       }
     },
