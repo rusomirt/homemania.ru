@@ -1,21 +1,22 @@
 jQuery(function ($) {
 
-  function carouselOnResize() {
+  function carouselInspirationOnResize() {
     let carouselImgWidth = 1600;
     let carouselImgHeight = 500;
     let carouselImgRatio = carouselImgWidth/carouselImgHeight;
 
-    let currentScreenWidth = $(".carousel .carousel-item.active").width();
+    const $carouselItems = $("#carousel-inspiration").find(".carousel-item");
+    let currentScreenWidth = $carouselItems.first().width();
 
-    $(".carousel .carousel-item").each( function(index) {
+    $carouselItems.each( function() {
       $(this).height( currentScreenWidth/carouselImgRatio );
     });
   }
 
-  carouselOnResize();
+  carouselInspirationOnResize();
 
   $(window).resize( function() {
-    carouselOnResize();
+    carouselInspirationOnResize();
   });
 
 });
