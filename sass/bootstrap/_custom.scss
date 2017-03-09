@@ -16,3 +16,13 @@ $input-border-color:             rgba($black,.4);
 $input-border-radius:            0;
 $input-group-addon-bg:           $gray-lighter;
 $input-group-addon-border-color: $input-border-color;
+
+// Grid containers
+// Define the maximum width of `.container` for different screen sizes.
+$container-max-widths: (
+        xs: 100%,   // Containers are fluid when width < 540px
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px
+);
