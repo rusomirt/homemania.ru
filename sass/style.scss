@@ -22,6 +22,7 @@ Theme Name: Homemania
 $header-padding-top: 60px;
 $header-padding-bottom: 40px;
 $header-title-font-size: 4rem;
+$header-title-font-size-xs: 2em;
 $header-title-txt-color: $white;
 $header-title-font: "Playfair Display";
 
@@ -38,18 +39,19 @@ $logsign-txt-color: $white;
 $logsign-font: "Fira Sans";
 
 header {
-  padding-top: $header-padding-top;
-  padding-bottom: $header-padding-bottom;
+  padding-top: $header-padding-top/2;
+  padding-bottom: $header-padding-bottom/2;
 
   .header-title {
     font-family: $header-title-font;
-    font-size: $header-title-font-size;
+    font-size: $header-title-font-size/4*3;
     text-align: center;
     color: $header-title-txt-color;
   }
 }
 .social {
   padding: $social-padding;
+  margin-bottom: $spacer/2;
 
   li {
     margin: $social-icon-margin;
@@ -71,7 +73,7 @@ header {
   }
 }
 .login-signup {
-  margin-top: $logsign-margin-top;
+  margin-top: $logsign-margin-top/2;
   font-family: $logsign-font;
   font-size: $logsign-font-size;
   color: $logsign-txt-color;
@@ -141,3 +143,20 @@ $searchbox-btn-border: 1px solid $input-group-addon-border-color;
   }
 }
 
+// SM and larger screens (> 540px)
+@include media-breakpoint-up(sm) {
+  header {
+    padding-top: $header-padding-top;
+    padding-bottom: $header-padding-bottom;
+
+    .header-title {
+      font-size: $header-title-font-size;
+    }
+  }
+  .login-signup {
+    margin-top: $logsign-margin-top;
+    font-size: $logsign-font-size;
+  }
+}
+
+//
