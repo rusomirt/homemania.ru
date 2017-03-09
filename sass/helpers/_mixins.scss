@@ -1,8 +1,0 @@
-/* MIXINS */
-@mixin transition-cubic-bezier ($time) {
-  -webkit-transition: all $time cubic-bezier(0.42, 0, 0.58, 1);
-  -moz-transition: all $time cubic-bezier(0.42, 0, 0.58, 1);
-  -ms-transition: all $time cubic-bezier(0.42, 0, 0.58, 1);
-  -o-transition: all $time cubic-bezier(0.42, 0, 0.58, 1);
-  transition: all $time cubic-bezier(0.42, 0, 0.58, 1);
-}

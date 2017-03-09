@@ -1,0 +1,18 @@
+// Bootstrap overrides
+//
+// Copy variables from `_variables.scss` to this file to override default values
+// without modifying source files.
+
+// Colors
+$brand-primary:                     rgb(31, 185, 185);
+
+// Navbar
+$navbar-light-color:                rgba($black,.7);
+$navbar-light-hover-color:          rgba($black,1);
+$navbar-light-active-color:         $brand-primary;
+
+// Forms
+$input-border-color:             rgba($black,.4);
+$input-border-radius:            0;
+$input-group-addon-bg:           $gray-lighter;
+$input-group-addon-border-color: $input-border-color;

@@ -1,22 +1,9 @@
 /*
 Theme Name: Homemania
 */
+
 //bootstrap
-@import "scss/bootstrap";
-// typography
-@import "base/typography";
-
-// compass
-//@import "compass";
-
-// import files
-@import "base/import";
-
-// mixins
-@import "helpers/mixins";
-
-// variables
-@import "helpers/variables";
+@import "bootstrap/bootstrap";
 
 // For debugging
 .border-black {border: 1px solid black}
@@ -44,14 +31,15 @@ $social-icon-margin: $spacer * 0.1;
 $social-icon-size: 35px;
 $social-icon-color: $white;
 
-// login/signup block
+// Login/signup block
 $logsign-margin-top: $spacer * 0.5;
 $logsign-font-size: 1rem;
 $logsign-txt-color: $white;
 $logsign-font: "Fira Sans";
 
+// Navbar
+
 header {
-  background-color: $brand-primary;
   padding-top: $header-padding-top;
   padding-bottom: $header-padding-bottom;
 
@@ -95,5 +83,71 @@ header {
   }
 }
 
+// Icons
+$icons-size: 1.2rem;
+$icons-top-space: $spacer * 0.25;
+$icons-mr: $spacer * 0.5;
+.icon {
+  display: inline-block;
+  width: $icons-size;
+  height: $icons-size;
+  position: relative;
+  top: $icons-top-space;
+  margin-right: $icons-mr;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-light-bulb { background-image: url("../img/icons/light-bulb.png"); }
+.icon-paper { background-image: url("../img/icons/paper.png"); }
+.icon-cart { background-image: url("../img/icons/cart.png"); }
+.icon-star { background-image: url("../img/icons/star.png"); }
+.icon-speeches { background-image: url("../img/icons/speeches.png"); }
 
+@mixin nav-justified($breakpoint: md) {
+  width: 100%;
+
+  .nav-item {
+    float: none;
+  }
+
+  .nav-link {
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  @include media-breakpoint-up($breakpoint) {
+    .nav-item {
+      display: table-cell;
+      width: 1%;
+    }
+    .nav-link {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.navbar{
+  font-family: "Fira Sans" !important;
+  font-size: 20px;
+  //@include nav-justified;
+
+  .navbar-nav {
+    //@extend .d-flex;
+    //@extend .align-items-center;
+
+    .nav-item {
+      //@extend .bg-green;
+
+      .nav-link {
+        //@extend .bg-red;
+        .icon {
+        }
+      }
+    }
+  }
+
+  .icon-search {
+    color: $input-group-addon-border-color;
+  }
+}
 
