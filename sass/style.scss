@@ -129,6 +129,7 @@ $icons-mr: $spacer * 0.5;
 .navbar{
   font-family: "Fira Sans" !important;
   font-size: 20px;
+  min-height: 60px;
   //@include nav-justified;
 
   .navbar-nav {
