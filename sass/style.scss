@@ -111,16 +111,19 @@ $navbar-collapsed-height: 60px;
   font-size: $navbar-font-size;
   min-height: $navbar-collapsed-height;
 
-  .navbar-nav {
-    //@extend .d-flex;
-    //@extend .align-items-center;
+  .navbar-collapse {
 
-    .nav-item {
-      //@extend .bg-green;
+    .navbar-nav {
+      //@extend .d-flex;
+      //@extend .align-items-center;
 
-      .nav-link {
-        //@extend .bg-red;
-        .icon {
+      .nav-item {
+        //@extend .bg-green;
+
+        .nav-link {
+          //@extend .bg-red;
+          .icon {
+          }
         }
       }
     }
