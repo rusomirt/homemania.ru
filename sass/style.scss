@@ -11,6 +11,13 @@
 .bg-green {background-color: lightgreen}
 .bg-blue {background-color: lightblue}
 
+// Text container
+$txt-cntnr-font: "Fira Sans";
+$txt-cntnr-font-size: 1rem;
+$txt-cntnr-font-size-sm: 1.75rem;
+$txt-cntnr-p: $spacer;
+$txt-cntnr-p-sm: $spacer * 2;
+
 // Page header
 $header-padding-top: 30px;
 $header-padding-top-sm: 60px;
@@ -82,6 +89,14 @@ $overlay-btn-padding: ($spacer * 0.25) ($spacer * 6);
 $overlay-btn-translate-y: 100%;
 $overlay-btn-translate-y-sm: 0;
 
+
+.txt-container {
+  text-align: center;
+  font-family: $txt-cntnr-font;
+  font-size: $txt-cntnr-font-size;
+  padding: $txt-cntnr-p;
+}
+
 header {
   padding-top: $header-padding-top;
   padding-bottom: $header-padding-bottom;
@@ -113,7 +128,7 @@ header {
       border-radius: 50%;
       -moz-border-radius: 50%;
       -webkit-border-radius: 50%;
-      -o-border-radius: 50%;
+      //-o-border-radius: 50%;
     }
   }
 }
@@ -237,6 +252,11 @@ header {
 
 // SM and larger screens (> 540px)
 @include media-breakpoint-up(sm) {
+  .txt-container {
+    font-size: $txt-cntnr-font-size-sm;
+    padding: $txt-cntnr-p-sm;
+  }
+
   header {
     padding-top: $header-padding-top-sm;
     padding-bottom: $header-padding-bottom-sm;
