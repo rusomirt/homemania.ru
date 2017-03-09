@@ -37,8 +37,6 @@ $logsign-font-size: 1rem;
 $logsign-txt-color: $white;
 $logsign-font: "Fira Sans";
 
-// Navbar
-
 header {
   padding-top: $header-padding-top;
   padding-bottom: $header-padding-bottom;
@@ -103,34 +101,15 @@ $icons-mr: $spacer * 0.5;
 .icon-star { background-image: url("../img/icons/star.png"); }
 .icon-speeches { background-image: url("../img/icons/speeches.png"); }
 
-@mixin nav-justified($breakpoint: md) {
-  width: 100%;
-
-  .nav-item {
-    float: none;
-  }
-
-  .nav-link {
-    text-align: center;
-    margin-bottom: 5px;
-  }
-
-  @include media-breakpoint-up($breakpoint) {
-    .nav-item {
-      display: table-cell;
-      width: 1%;
-    }
-    .nav-link {
-      margin-bottom: 0;
-    }
-  }
-}
+// Navbar
+$navbar-font: "Fira Sans";
+$navbar-font-size: 1.25em;
+$navbar-collapsed-height: 60px;
 
 .navbar{
-  font-family: "Fira Sans" !important;
-  font-size: 20px;
-  min-height: 60px;
-  //@include nav-justified;
+  font-family: $navbar-font;
+  font-size: $navbar-font-size;
+  min-height: $navbar-collapsed-height;
 
   .navbar-nav {
     //@extend .d-flex;
