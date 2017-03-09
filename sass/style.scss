@@ -26,6 +26,7 @@ $social-padding: 0;
 $social-icon-margin: $spacer * 0.1;
 $social-icon-size: 35px;
 $social-icon-color: $white;
+
 $icons-size: 1.2rem;
 $icons-top-space: $spacer * 0.25;
 $icons-mr: $spacer * 0.5;
@@ -41,8 +42,45 @@ $logsign-font: "Fira Sans";
 $navbar-font: "Fira Sans";
 $navbar-font-size: 1.25em;
 $navbar-collapsed-height: 60px;
+
 $searchbox-width: 275px;
 $searchbox-btn-border: 1px solid $input-group-addon-border-color;
+
+// Carousel
+$carousel-mb: $spacer * 3;
+$carousel-mb-sm: $spacer * 2.5;
+
+$overlay-z-index: 12;
+
+$overlay-header-font: "Playfair Display";
+$overlay-header-font-size: 2rem;
+$overlay-header-font-size-sm: 4rem;
+$overlay-header-color: $white;
+$overlay-header-mt: 8px;
+$overlay-header-mt-sm: -60px;
+
+$overlay-txt-font: "Fira Sans";
+$overlay-txt-font-size: 0.7rem;
+$overlay-txt-font-size-sm: 1rem;
+$overlay-txt-color: $black;
+$overlay-txt-width: 60%;
+$overlay-txt-min-width: 320px;
+$overlay-txt-min-width-sm: 480px;
+$overlay-txt-bg-color: rgba(255, 255, 255, 0.8);
+$overlay-txt-pt: $spacer * 0.25;
+$overlay-txt-pb: $spacer * 0.5;
+$overlay-txt-pb-sm: $spacer * 1.5;
+$overlay-txt-px: $spacer * 0.25;
+$overlay-txt-px-sm: $spacer * 2;
+
+$overlay-btn-font: "Fira Sans";
+$overlay-btn-font-size: 1rem;
+$overlay-btn-font-size-sm: 1.5rem;
+$overlay-btn-bottom: 0;
+$overlay-btn-bottom-sm: -($spacer * 1.5);
+$overlay-btn-padding: ($spacer * 0.25) ($spacer * 6);
+$overlay-btn-translate-y: 100%;
+$overlay-btn-translate-y-sm: 0;
 
 header {
   padding-top: $header-padding-top;
@@ -140,6 +178,63 @@ header {
   }
 }
 
+.carousel {
+  margin-bottom: $carousel-mb;
+
+  .carousel-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    z-index: $overlay-z-index;
+
+    .overlay-header {
+      font-family: $overlay-header-font;
+      font-size: $overlay-header-font-size;
+      color: $overlay-header-color;
+      width: 100%;
+      text-align: center;
+      margin-top: $overlay-header-mt;
+      margin-bottom: 0;
+    }
+
+    .overlay-txt {
+      // 1st invisible block - for 'justify-content' aligning
+      &:first-of-type {
+        visibility: hidden;
+      }
+      &:last-of-type {
+        padding-bottom: $overlay-txt-pb;
+      }
+      padding-top: $overlay-txt-pt;
+      padding-left: $overlay-txt-px;
+      padding-right: $overlay-txt-px;
+      font-family: $overlay-txt-font;
+      font-size: $overlay-txt-font-size;
+      color: $overlay-txt-color;
+      align-self: center;
+      width: $overlay-txt-width;
+      margin: 0 auto;
+      min-width: $overlay-txt-min-width;
+      text-align: center;
+      background-color: $overlay-txt-bg-color;
+    }
+
+    button {
+      font-family: $overlay-btn-font;
+      font-size: $overlay-btn-font-size;
+      position: absolute;
+      bottom: $overlay-btn-bottom;
+      left: 50%;
+      transform: translate(-50%, $overlay-btn-translate-y);
+      padding: $overlay-btn-padding;
+    }
+  }
+}
+
+
 // SM and larger screens (> 540px)
 @include media-breakpoint-up(sm) {
   header {
@@ -154,6 +249,30 @@ header {
   .login-signup {
     margin-top: $logsign-margin-top-sm;
   }
+
+  .carousel {
+    margin-bottom: $carousel-mb-sm;
+
+    .carousel-overlay {
+      .overlay-header {
+        margin-top: $overlay-header-mt-sm;
+        font-size: $overlay-header-font-size-sm;
+      }
+      .overlay-txt {
+        &:last-of-type {
+          padding-bottom: $overlay-txt-pb-sm;
+        }
+        padding-left: $overlay-txt-px-sm;
+        padding-right: $overlay-txt-px-sm;
+        font-size: $overlay-txt-font-size-sm;
+        min-width: $overlay-txt-min-width-sm;
+      }
+      button {
+        font-size: $overlay-btn-font-size-sm;
+        bottom: $overlay-btn-bottom-sm;
+        transform: translate(-50%, $overlay-btn-translate-y-sm);
+      }
+    }
+  }
 }
 
-//

@@ -1,4 +1,4 @@
-$(document).ready(function () {
+jQuery(function ($) {
 
   function carouselOnResize() {
     let carouselImgWidth = 1600;

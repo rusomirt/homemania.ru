@@ -3,6 +3,9 @@
 // Copy variables from `_variables.scss` to this file to override default values
 // without modifying source files.
 
+// Spacing
+$spacer:   1rem;
+
 // Colors
 $brand-primary:                     rgb(31, 185, 185);
 
@@ -26,3 +29,10 @@ $container-max-widths: (
         lg: 960px,
         xl: 1140px
 );
+
+// Buttons
+$btn-primary-bg:                 $brand-primary;
+$btn-primary-border:             $btn-primary-bg;
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius:              2px;
+
