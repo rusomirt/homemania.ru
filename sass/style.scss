@@ -12,9 +12,9 @@ Theme Name: Homemania
 .border-blue {border: 1px solid blue}
 .bg-black {background-color: black}
 .bg-white {background-color: white}
-.bg-red {background-color: red}
-.bg-green {background-color: green}
-.bg-blue {background-color: blue}
+.bg-red {background-color: lightpink}
+.bg-green {background-color: lightgreen}
+.bg-blue {background-color: lightblue}
 
 // Variables
 
@@ -105,6 +105,8 @@ $icons-mr: $spacer * 0.5;
 $navbar-font: "Fira Sans";
 $navbar-font-size: 1.25em;
 $navbar-collapsed-height: 60px;
+$searchbox-width: 275px;
+$searchbox-btn-border: 1px solid $input-group-addon-border-color;
 
 .navbar{
   font-family: $navbar-font;
@@ -112,25 +114,21 @@ $navbar-collapsed-height: 60px;
   min-height: $navbar-collapsed-height;
 
   .navbar-collapse {
+    @extend .d-lg-flex;
 
     .navbar-nav {
-      //@extend .d-flex;
-      //@extend .align-items-center;
-
-      .nav-item {
-        //@extend .bg-green;
-
-        .nav-link {
-          //@extend .bg-red;
-          .icon {
-          }
-        }
-      }
+      @extend .d-lg-flex;
+      @extend .justify-content-lg-around;
+      width: 100%;
+    }
+    .form-inline {
+      flex-basis: $searchbox-width;
+      flex-shrink: 0;
     }
   }
 
   .input-group-btn {
-    border: 1px solid $input-group-addon-border-color;
+    border: $searchbox-btn-border;
 
     .btn {
       border:none;

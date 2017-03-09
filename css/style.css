@@ -4339,7 +4339,7 @@ a.bg-inverse:focus, a.bg-inverse:hover {
   .d-lg-table-cell {
     display: table-cell !important; }
 
-  .d-lg-flex {
+  .d-lg-flex, .navbar .navbar-collapse, .navbar .navbar-collapse .navbar-nav {
     display: flex !important; }
 
   .d-lg-inline-flex {
@@ -4699,7 +4699,7 @@ a.bg-inverse:focus, a.bg-inverse:hover {
   .justify-content-lg-between {
     justify-content: space-between !important; }
 
-  .justify-content-lg-around {
+  .justify-content-lg-around, .navbar .navbar-collapse .navbar-nav {
     justify-content: space-around !important; }
 
   .align-items-lg-start {
@@ -6663,13 +6663,13 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   background-color: white; }
 
 .bg-red {
-  background-color: red; }
+  background-color: lightpink; }
 
 .bg-green {
-  background-color: green; }
+  background-color: lightgreen; }
 
 .bg-blue {
-  background-color: blue; }
+  background-color: lightblue; }
 
 header {
   padding-top: 60px;
@@ -6732,9 +6732,20 @@ header {
   background-image: url("../img/icons/speeches.png"); }
 
 .navbar {
-  font-family: "Fira Sans" !important;
-  font-size: 20px; }
-  .navbar .icon-search {
-    color: rgba(0, 0, 0, 0.4); }
+  font-family: "Fira Sans";
+  font-size: 1.25em;
+  min-height: 60px; }
+  .navbar .navbar-collapse .navbar-nav {
+    width: 100%; }
+  .navbar .navbar-collapse .form-inline {
+    flex-basis: 275px;
+    flex-shrink: 0; }
+  .navbar .input-group-btn {
+    border: 1px solid rgba(0, 0, 0, 0.4); }
+    .navbar .input-group-btn .btn {
+      border: none;
+      background-color: #eceeef; }
+      .navbar .input-group-btn .btn .icon-search {
+        color: rgba(0, 0, 0, 0.4); }
 
 /*# sourceMappingURL=style.css.map */
