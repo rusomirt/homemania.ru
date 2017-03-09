@@ -126,8 +126,17 @@ $navbar-collapsed-height: 60px;
     }
   }
 
-  .icon-search {
-    color: $input-group-addon-border-color;
+  .input-group-btn {
+    border: 1px solid $input-group-addon-border-color;
+
+    .btn {
+      border:none;
+      background-color: $input-group-addon-bg;
+
+      .icon-search {
+        color: $input-group-addon-border-color;
+      }
+    }
   }
 }
 
