@@ -1,8 +1,3 @@
-/*
-Theme Name: Homemania
-*/
-
-//bootstrap
 @import "bootstrap/bootstrap";
 
 // For debugging
@@ -16,13 +11,13 @@ Theme Name: Homemania
 .bg-green {background-color: lightgreen}
 .bg-blue {background-color: lightblue}
 
-// Variables
-
 // Page header
-$header-padding-top: 60px;
-$header-padding-bottom: 40px;
-$header-title-font-size: 4rem;
-$header-title-font-size-xs: 2em;
+$header-padding-top: 30px;
+$header-padding-top-sm: 60px;
+$header-padding-bottom: 20px;
+$header-padding-bottom-sm: 40px;
+$header-title-font-size: 3rem;
+$header-title-font-size-sm: 4rem;
 $header-title-txt-color: $white;
 $header-title-font: "Playfair Display";
 
@@ -31,24 +26,36 @@ $social-padding: 0;
 $social-icon-margin: $spacer * 0.1;
 $social-icon-size: 35px;
 $social-icon-color: $white;
+$icons-size: 1.2rem;
+$icons-top-space: $spacer * 0.25;
+$icons-mr: $spacer * 0.5;
 
 // Login/signup block
-$logsign-margin-top: $spacer * 0.5;
+$logsign-margin-top: $spacer * 0.25;
+$logsign-margin-top-sm: $spacer * 0.5;
 $logsign-font-size: 1rem;
 $logsign-txt-color: $white;
 $logsign-font: "Fira Sans";
 
+// Navbar
+$navbar-font: "Fira Sans";
+$navbar-font-size: 1.25em;
+$navbar-collapsed-height: 60px;
+$searchbox-width: 275px;
+$searchbox-btn-border: 1px solid $input-group-addon-border-color;
+
 header {
-  padding-top: $header-padding-top/2;
-  padding-bottom: $header-padding-bottom/2;
+  padding-top: $header-padding-top;
+  padding-bottom: $header-padding-bottom;
 
   .header-title {
     font-family: $header-title-font;
-    font-size: $header-title-font-size/4*3;
+    font-size: $header-title-font-size;
     text-align: center;
     color: $header-title-txt-color;
   }
 }
+
 .social {
   padding: $social-padding;
   margin-bottom: $spacer/2;
@@ -72,8 +79,9 @@ header {
     }
   }
 }
+
 .login-signup {
-  margin-top: $logsign-margin-top/2;
+  margin-top: $logsign-margin-top;
   font-family: $logsign-font;
   font-size: $logsign-font-size;
   color: $logsign-txt-color;
@@ -83,10 +91,6 @@ header {
   }
 }
 
-// Icons
-$icons-size: 1.2rem;
-$icons-top-space: $spacer * 0.25;
-$icons-mr: $spacer * 0.5;
 .icon {
   display: inline-block;
   width: $icons-size;
@@ -102,13 +106,6 @@ $icons-mr: $spacer * 0.5;
 .icon-cart { background-image: url("../img/icons/cart.png"); }
 .icon-star { background-image: url("../img/icons/star.png"); }
 .icon-speeches { background-image: url("../img/icons/speeches.png"); }
-
-// Navbar
-$navbar-font: "Fira Sans";
-$navbar-font-size: 1.25em;
-$navbar-collapsed-height: 60px;
-$searchbox-width: 275px;
-$searchbox-btn-border: 1px solid $input-group-addon-border-color;
 
 .navbar{
   font-family: $navbar-font;
@@ -146,16 +143,16 @@ $searchbox-btn-border: 1px solid $input-group-addon-border-color;
 // SM and larger screens (> 540px)
 @include media-breakpoint-up(sm) {
   header {
-    padding-top: $header-padding-top;
-    padding-bottom: $header-padding-bottom;
+    padding-top: $header-padding-top-sm;
+    padding-bottom: $header-padding-bottom-sm;
 
     .header-title {
-      font-size: $header-title-font-size;
+      font-size: $header-title-font-size-sm;
     }
   }
+
   .login-signup {
-    margin-top: $logsign-margin-top;
-    font-size: $logsign-font-size;
+    margin-top: $logsign-margin-top-sm;
   }
 }
 
