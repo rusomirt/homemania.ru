@@ -56,6 +56,7 @@ $searchbox-btn-border: 1px solid $input-group-addon-border-color;
 // Carousel
 $carousel-mb: $spacer * 3;
 $carousel-mb-sm: $spacer * 2.5;
+$carousel-img-width: 1600px;
 
 $overlay-z-index: 12;
 
@@ -69,10 +70,12 @@ $overlay-header-mt-sm: -60px;
 $overlay-txt-font: "Fira Sans";
 $overlay-txt-font-size: 0.7rem;
 $overlay-txt-font-size-sm: 1rem;
+$overlay-txt-font-size-lg: 1.5rem;
 $overlay-txt-color: $black;
-$overlay-txt-width: 60%;
+$overlay-txt-width: 70%;
 $overlay-txt-min-width: 320px;
 $overlay-txt-min-width-sm: 480px;
+$overlay-txt-max-width: 830px;
 $overlay-txt-bg-color: rgba(255, 255, 255, 0.8);
 $overlay-txt-pt: $spacer * 0.25;
 $overlay-txt-pb: $spacer * 0.5;
@@ -193,8 +196,9 @@ header {
   }
 }
 
-.carousel {
-  margin-bottom: $carousel-mb;
+#carousel-inspiration {
+  margin: 0 auto $carousel-mb auto;
+  max-width: $carousel-img-width;
 
   .carousel-overlay {
     position: absolute;
@@ -231,8 +235,9 @@ header {
       color: $overlay-txt-color;
       align-self: center;
       width: $overlay-txt-width;
-      margin: 0 auto;
       min-width: $overlay-txt-min-width;
+      max-width: $overlay-txt-max-width;
+      margin: 0 auto;
       text-align: center;
       background-color: $overlay-txt-bg-color;
     }
@@ -270,7 +275,7 @@ header {
     margin-top: $logsign-margin-top-sm;
   }
 
-  .carousel {
+  #carousel-inspiration {
     margin-bottom: $carousel-mb-sm;
 
     .carousel-overlay {
@@ -296,3 +301,13 @@ header {
   }
 }
 
+// LG and larger screens (> 992px)
+@include media-breakpoint-up(lg) {
+  #carousel-inspiration {
+    .carousel-overlay {
+      .overlay-txt {
+        font-size: $overlay-txt-font-size-lg;
+      }
+    }
+  }
+}
