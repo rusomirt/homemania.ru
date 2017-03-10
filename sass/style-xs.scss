@@ -55,22 +55,6 @@ header {
   }
 }
 
-.icon {
-  display: inline-block;
-  width: $icons-size;
-  height: $icons-size;
-  position: relative;
-  top: $icons-top-space;
-  margin-right: $icons-mr;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-.icon-light-bulb { background-image: url("../img/icons/light-bulb.png"); }
-.icon-paper { background-image: url("../img/icons/paper.png"); }
-.icon-cart { background-image: url("../img/icons/cart.png"); }
-.icon-star { background-image: url("../img/icons/star.png"); }
-.icon-speeches { background-image: url("../img/icons/speeches.png"); }
-
 .navbar{
   // Any element with margin-top: $global-block-my
   // will follow the navbar without gap
