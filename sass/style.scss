@@ -47,7 +47,7 @@ $logsign-font: "Fira Sans";
 
 // Navbar
 $navbar-font: "Fira Sans";
-$navbar-font-size: 1.25em;
+$navbar-font-size: 1.25rem;
 $navbar-collapsed-height: 60px;
 
 $searchbox-width: 275px;
@@ -127,7 +127,7 @@ header {
       color: $social-icon-color;
       font-size: $social-icon-size*0.6;
       text-align: center;
-      padding-top: $social-icon-size*0.15;
+      padding-top: $social-icon-size*0.2;
       border-radius: 50%;
       -moz-border-radius: 50%;
       -webkit-border-radius: 50%;
