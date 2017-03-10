@@ -1,6 +1,9 @@
 @import "bootstrap/bootstrap";
+// Bootstrap defaults override in bootstrap/_custom.scss
 
+// ----------------------------------------------------------------------------
 // For debugging
+// ----------------------------------------------------------------------------
 .border-black {border: 1px solid black}
 .border-red {border: 1px solid red}
 .border-green {border: 1px solid green}
@@ -11,12 +14,18 @@
 .bg-green {background-color: lightgreen}
 .bg-blue {background-color: lightblue}
 
+// ----------------------------------------------------------------------------
+// Variables
+// ----------------------------------------------------------------------------
+
 // Globals
 $global-my: $spacer *2;
-$txt-color-default: rgb(51, 51, 51);
+$global-headers-font: "Playfair Display";
+$global-txt-font: "Fira Sans";
+$global-txt-color: rgb(51, 51, 51);
 
 // Text container
-$txt-cntnr-font: "Fira Sans";
+//$txt-cntnr-font: "Fira Sans";
 $txt-cntnr-font-size: 1rem;
 $txt-cntnr-font-size-sm: 1.75rem;
 $txt-cntnr-p: $spacer;
@@ -30,7 +39,7 @@ $header-padding-bottom-sm: 40px;
 $header-title-font-size: 3rem;
 $header-title-font-size-sm: 4rem;
 $header-title-txt-color: $white;
-$header-title-font: "Playfair Display";
+//$header-title-font: "Playfair Display";
 
 // Social icons block
 $social-padding: 0;
@@ -47,10 +56,10 @@ $logsign-margin-top: $spacer * 0.25;
 $logsign-margin-top-sm: $spacer * 0.5;
 $logsign-font-size: 1rem;
 $logsign-txt-color: $white;
-$logsign-font: "Fira Sans";
+//$logsign-font: "Fira Sans";
 
 // Navbar
-$navbar-font: "Fira Sans";
+//$navbar-font: "Fira Sans";
 $navbar-font-size: 1.25rem;
 $navbar-collapsed-height: 60px;
 
@@ -65,14 +74,14 @@ $carousel-img-width: 1600px;
 
 $overlay-z-index: 12;
 
-$overlay-header-font: "Playfair Display";
+//$overlay-header-font: "Playfair Display";
 $overlay-header-font-size: 2rem;
 $overlay-header-font-size-sm: 4rem;
 $overlay-header-color: $white;
 $overlay-header-mt: 8px;
 $overlay-header-mt-sm: -60px;
 
-$overlay-txt-font: "Fira Sans";
+//$overlay-txt-font: "Fira Sans";
 $overlay-txt-font-size: 0.7rem;
 $overlay-txt-font-size-sm: 1rem;
 $overlay-txt-font-size-lg: 1.5rem;
@@ -88,7 +97,7 @@ $overlay-txt-pb-sm: $spacer * 1.5;
 $overlay-txt-px: $spacer * 0.25;
 $overlay-txt-px-sm: $spacer * 2;
 
-$overlay-btn-font: "Fira Sans";
+//$overlay-btn-font: "Fira Sans";
 $overlay-btn-font-size: 1rem;
 $overlay-btn-font-size-sm: 1.5rem;
 $overlay-btn-bottom: 0;
@@ -98,34 +107,43 @@ $overlay-btn-translate-y: 100%;
 $overlay-btn-translate-y-sm: 0;
 
 // 2
-$carousel-header-font: "Playfair Display";
+//$carousel-header-font: "Playfair Display";
 $carousel-header-font-size: 2.75rem;
-$carousel-header-small-font: "Fira Sans";
+//$carousel-header-txt-font: "Fira Sans";
+$carousel-header-txt-font-size: 1.5rem;
 
-$carousel-indicators-font: "Fira Sans";
+//$carousel-indicators-font: "Fira Sans";
 $carousel-indicators-font-size: 1.5rem;
 $carousel-indicators-inactive-color: rgb(51, 51, 51);
 $carousel-indicators-active-color: $brand-primary;
 
 $carousel-caption-width: 40%;
 $carousel-caption-bg-color: rgba(255, 255, 255, 0.651);
-$carousel-caption-header-font: "Playfair Display";
+//$carousel-caption-header-font: "Playfair Display";
 $carousel-caption-header-font-size: 2rem;
-$carousel-caption-txt-font: "Fira Sans";
+//$carousel-caption-txt-font: "Fira Sans";
 $carousel-caption-txt-font-size: 1.5rem;
 
 $carousel-controls-size: 40px;
 $carousel-controls-arrow-color: $brand-primary;
 $carousel-controls-border-color: rgb(172, 172, 172);
 
+// ----------------------------------------------------------------------------
+// All screen widths by default
+// ----------------------------------------------------------------------------
 
 body {
-  color: $txt-color-default;
+  font-family: $global-txt-font;
+  color: $global-txt-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $global-headers-font;
 }
 
 .txt-container {
   text-align: center;
-  font-family: $txt-cntnr-font;
+  //font-family: $txt-cntnr-font;
   font-size: $txt-cntnr-font-size;
   padding: $txt-cntnr-p;
 }
@@ -135,7 +153,7 @@ header {
   padding-bottom: $header-padding-bottom;
 
   .header-title {
-    font-family: $header-title-font;
+    //font-family: $header-title-font;
     font-size: $header-title-font-size;
     text-align: center;
     color: $header-title-txt-color;
@@ -168,7 +186,7 @@ header {
 
 .login-signup {
   margin-top: $logsign-margin-top;
-  font-family: $logsign-font;
+  //font-family: $logsign-font;
   font-size: $logsign-font-size;
   color: $logsign-txt-color;
 
@@ -194,7 +212,7 @@ header {
 .icon-speeches { background-image: url("../img/icons/speeches.png"); }
 
 .navbar{
-  font-family: $navbar-font;
+  //font-family: $navbar-font;
   font-size: $navbar-font-size;
   min-height: $navbar-collapsed-height;
 
@@ -240,7 +258,7 @@ header {
     z-index: $overlay-z-index;
 
     .overlay-header {
-      font-family: $overlay-header-font;
+      //font-family: $overlay-header-font;
       font-size: $overlay-header-font-size;
       color: $overlay-header-color;
       width: 100%;
@@ -260,7 +278,7 @@ header {
       padding-top: $overlay-txt-pt;
       padding-left: $overlay-txt-px;
       padding-right: $overlay-txt-px;
-      font-family: $overlay-txt-font;
+      //font-family: $overlay-txt-font;
       font-size: $overlay-txt-font-size;
       color: $overlay-txt-color;
       align-self: center;
@@ -273,7 +291,7 @@ header {
     }
 
     button {
-      font-family: $overlay-btn-font;
+      //font-family: $overlay-btn-font;
       font-size: $overlay-btn-font-size;
       position: absolute;
       bottom: $overlay-btn-bottom;
@@ -284,18 +302,20 @@ header {
   }
 }
 
-// Slider 2 - Makeovers
 #carousel-makeovers {
   margin: $global-my 0;
+  text-align: center;
 
   .carousel-header {
-    font-family: $carousel-header-font;
-    font-size: $carousel-header-font-size;
-    text-align: center;
-    margin: $global-my;
-
-    small {
-      font-family: $carousel-header-small-font;
+    h2 {
+      //font-family: $carousel-header-font;
+      font-size: $carousel-header-font-size;
+      margin: $global-my;
+    }
+    p {
+      //font-family: $carousel-header-txt-font;
+      font-size: $carousel-header-txt-font-size;
+      margin: $global-my;
     }
   }
 
@@ -309,7 +329,7 @@ header {
       margin: 0 30px;
       padding: 10px 0;
       text-indent: 0;
-      font-family: $carousel-indicators-font;
+      //font-family: $carousel-indicators-font;
       font-size: $carousel-indicators-font-size;
       text-align: center;
       color: $carousel-indicators-inactive-color;
@@ -335,15 +355,15 @@ header {
         background-color: $carousel-caption-bg-color;
 
         h3 {
-          font-family: $carousel-caption-header-font;
+          //font-family: $carousel-caption-header-font;
           font-size: $carousel-caption-header-font-size;
-          color: $txt-color-default;
+          color: $global-txt-color;
         }
 
         p {
-          font-family: $carousel-caption-txt-font;
+          //font-family: $carousel-caption-txt-font;
           font-size: $carousel-caption-txt-font-size;
-          color: $txt-color-default;
+          color: $global-txt-color;
         }
       }
     }
@@ -370,7 +390,10 @@ header {
   .carousel-control-next i { text-indent: 2px; }
 }
 
+// ----------------------------------------------------------------------------
 // SM and larger screens (> 540px)
+// ----------------------------------------------------------------------------
+
 @include media-breakpoint-up(sm) {
   .txt-container {
     font-size: $txt-cntnr-font-size-sm;
@@ -416,7 +439,10 @@ header {
   }
 }
 
+// ----------------------------------------------------------------------------
 // LG and larger screens (> 992px)
+// ----------------------------------------------------------------------------
+
 @include media-breakpoint-up(lg) {
   #carousel-inspiration {
     .carousel-overlay {
@@ -426,3 +452,5 @@ header {
     }
   }
 }
+
+// ----------------------------------------------------------------------------
