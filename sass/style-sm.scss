@@ -1,0 +1,46 @@
+// SM and larger screens (> 540px)
+
+@include media-breakpoint-up(sm) {
+  .txt-container {
+    font-size: $txt-cntnr-font-size-sm;
+    //padding: $txt-cntnr-p-sm;
+  }
+
+  header {
+    padding-top: $header-padding-top-sm;
+    padding-bottom: $header-padding-bottom-sm;
+
+    .header-title {
+      font-size: $header-title-font-size-sm;
+    }
+  }
+
+  .login-signup {
+    margin-top: $logsign-margin-top-sm;
+  }
+
+  #carousel-inspiration {
+    margin-bottom: $carousel-mb-sm;
+
+    .carousel-overlay {
+      .overlay-header {
+        margin-top: $overlay-header-mt-sm;
+        font-size: $overlay-header-font-size-sm;
+      }
+      .overlay-txt {
+        &:last-of-type {
+          padding-bottom: $overlay-txt-pb-sm;
+        }
+        padding-left: $overlay-txt-px-sm;
+        padding-right: $overlay-txt-px-sm;
+        font-size: $overlay-txt-font-size-sm;
+        min-width: $overlay-txt-min-width-sm;
+      }
+      button {
+        font-size: $overlay-btn-font-size-sm;
+        bottom: $overlay-btn-bottom-sm;
+        transform: translate(-50%, $overlay-btn-translate-y-sm);
+      }
+    }
+  }
+}

@@ -1,0 +1,274 @@
+// All screens
+
+// For debugging
+.border-black {border: 1px solid black}
+.border-red {border: 1px solid red}
+.border-green {border: 1px solid green}
+.border-blue {border: 1px solid blue}
+.bg-black {background-color: black}
+.bg-white {background-color: white}
+.bg-red {background-color: lightpink}
+.bg-green {background-color: lightgreen}
+.bg-blue {background-color: lightblue}
+
+
+body {
+  font-family: $global-txt-font;
+  color: $global-txt-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $global-headers-font;
+}
+
+.txt-container {
+  text-align: center;
+  //font-family: $txt-cntnr-font;
+  font-size: $txt-cntnr-font-size;
+  //padding: $txt-cntnr-p;
+  margin: $global-block-my 0;
+}
+
+header {
+  padding-top: $header-padding-top;
+  padding-bottom: $header-padding-bottom;
+
+  .header-title {
+    //font-family: $header-title-font;
+    font-size: $header-title-font-size;
+    text-align: center;
+    color: $header-title-txt-color;
+  }
+}
+
+.social {
+  padding: $social-padding;
+  margin-bottom: $spacer/2;
+
+  li {
+    margin: $social-icon-margin;
+    list-style: none outside none;
+    display: inline-block;
+
+    i {
+      width: $social-icon-size;
+      height: $social-icon-size;
+      color: $social-icon-color;
+      font-size: $social-icon-size*0.6;
+      text-align: center;
+      padding-top: $social-icon-size*0.2;
+      border-radius: 50%;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      //-o-border-radius: 50%;
+    }
+  }
+}
+
+.login-signup {
+  margin-top: $logsign-margin-top;
+  //font-family: $logsign-font;
+  font-size: $logsign-font-size;
+  color: $logsign-txt-color;
+
+  a {
+    color: $logsign-txt-color;
+  }
+}
+
+.icon {
+  display: inline-block;
+  width: $icons-size;
+  height: $icons-size;
+  position: relative;
+  top: $icons-top-space;
+  margin-right: $icons-mr;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-light-bulb { background-image: url("../img/icons/light-bulb.png"); }
+.icon-paper { background-image: url("../img/icons/paper.png"); }
+.icon-cart { background-image: url("../img/icons/cart.png"); }
+.icon-star { background-image: url("../img/icons/star.png"); }
+.icon-speeches { background-image: url("../img/icons/speeches.png"); }
+
+.navbar{
+  //font-family: $navbar-font;
+  font-size: $navbar-font-size;
+  min-height: $navbar-collapsed-height;
+
+  .navbar-collapse {
+    @extend .d-lg-flex;
+
+    .navbar-nav {
+      @extend .d-lg-flex;
+      @extend .justify-content-lg-around;
+      width: 100%;
+    }
+    .form-inline {
+      flex-basis: $searchbox-width;
+      flex-shrink: 0;
+    }
+  }
+
+  .input-group-btn {
+    border: $searchbox-btn-border;
+
+    .btn {
+      border:none;
+      background-color: $input-group-addon-bg;
+
+      .icon-search {
+        color: $input-group-addon-border-color;
+      }
+    }
+  }
+}
+
+#carousel-inspiration {
+  margin: 0 auto $global-block-my*1.5 auto;
+  max-width: $carousel-img-width;
+
+  .carousel-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    z-index: $overlay-z-index;
+
+    .overlay-header {
+      //font-family: $overlay-header-font;
+      font-size: $overlay-header-font-size;
+      color: $overlay-header-color;
+      width: 100%;
+      text-align: center;
+      margin-top: $overlay-header-mt;
+      margin-bottom: 0;
+    }
+
+    .overlay-txt {
+      // 1st invisible block - for 'justify-content' aligning
+      &:first-of-type {
+        visibility: hidden;
+      }
+      &:last-of-type {
+        padding-bottom: $overlay-txt-pb;
+      }
+      padding-top: $overlay-txt-pt;
+      padding-left: $overlay-txt-px;
+      padding-right: $overlay-txt-px;
+      //font-family: $overlay-txt-font;
+      font-size: $overlay-txt-font-size;
+      color: $overlay-txt-color;
+      align-self: center;
+      width: $overlay-txt-width;
+      min-width: $overlay-txt-min-width;
+      max-width: $overlay-txt-max-width;
+      margin: 0 auto;
+      text-align: center;
+      background-color: $overlay-txt-bg-color;
+    }
+
+    button {
+      //font-family: $overlay-btn-font;
+      font-size: $overlay-btn-font-size;
+      position: absolute;
+      bottom: $overlay-btn-bottom;
+      left: 50%;
+      transform: translate(-50%, $overlay-btn-translate-y);
+      padding: $overlay-btn-padding;
+    }
+  }
+}
+
+#carousel-makeovers {
+  margin: $global-block-my 0;
+  text-align: center;
+
+  .carousel-header {
+    margin: $global-block-my 0;
+
+    h2 {
+      //font-family: $carousel-header-font;
+      font-size: $carousel-header-font-size;
+      margin: $global-elem-my;
+    }
+    p {
+      //font-family: $carousel-header-txt-font;
+      font-size: $carousel-header-txt-font-size;
+      margin: $global-elem-my;
+    }
+  }
+
+  .carousel-indicators {
+    position: inherit;
+    li {
+      height: auto;
+      width: auto;
+      max-width: 100%;
+      flex-grow: 0;
+      margin: 0 30px;
+      padding: 10px 0;
+      text-indent: 0;
+      //font-family: $carousel-indicators-font;
+      font-size: $carousel-indicators-font-size;
+      text-align: center;
+      color: $carousel-indicators-inactive-color;
+      background-color: transparent;
+      &.active {
+        color: $carousel-indicators-active-color;
+        border-bottom: 3px solid $carousel-indicators-active-color;
+      }
+    }
+  }
+
+  .carousel-inner {
+
+    .carousel-item {
+
+      .carousel-caption {
+        width: $carousel-caption-width;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        right: auto;
+        bottom: auto;
+        background-color: $carousel-caption-bg-color;
+
+        h3 {
+          //font-family: $carousel-caption-header-font;
+          font-size: $carousel-caption-header-font-size;
+          color: $global-txt-color;
+        }
+
+        p {
+          //font-family: $carousel-caption-txt-font;
+          font-size: $carousel-caption-txt-font-size;
+          color: $global-txt-color;
+        }
+      }
+    }
+  }
+
+  .carousel-control-next,
+  .carousel-control-prev{
+    i {
+      font-size: $carousel-controls-size;
+      width: $carousel-controls-size;
+      height: $carousel-controls-size;
+      color: $carousel-controls-arrow-color;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      line-height: 0.9em;
+      border-radius: 50%;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      border: 2px solid $carousel-controls-border-color;
+    }
+  }
+  .carousel-control-prev i { text-indent: -2px; }
+  .carousel-control-next i { text-indent: 2px; }
+}
