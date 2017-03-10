@@ -1,9 +1,11 @@
 jQuery(function ($) {
 
+  // Calculation of bootstrap carousel height: #carousel-inspiration.
+  // All slides are 1600x500.
   function carouselInspirationOnResize() {
-    let carouselImgWidth = 1600;
-    let carouselImgHeight = 500;
-    let carouselImgRatio = carouselImgWidth/carouselImgHeight;
+    const carouselImgWidth = 1600;
+    const carouselImgHeight = 500;
+    const carouselImgRatio = carouselImgWidth/carouselImgHeight;
 
     const $carouselItems = $("#carousel-inspiration").find(".carousel-item");
     let currentScreenWidth = $carouselItems.first().width();
@@ -13,8 +15,10 @@ jQuery(function ($) {
     });
   }
 
+  // Calculation of bootstrap carousel height: #carousel-makeovers.
+  // All slides consist of square images (horizontally stacked).
   function carouselMakeoversOnResize() {
-    let carouselImgRatio = 2; // 2 square images
+    const carouselImgRatio = 2; // 2 square images
 
     const $carouselItems = $("#carousel-makeovers").find(".carousel-item");
     let currentScreenWidth = $carouselItems.first().width();
