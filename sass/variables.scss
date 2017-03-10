@@ -1,0 +1,112 @@
+// Globals
+$global-block-my: $spacer *2;
+$global-block-my-sm: $spacer *2;
+$global-elem-my: $spacer;
+$global-elem-my-sm: $spacer;
+$global-headers-font: "Playfair Display";
+$global-txt-font: "Fira Sans";
+$global-txt-color: rgb(51, 51, 51);
+
+// Text container
+//$txt-cntnr-font: "Fira Sans";
+$txt-cntnr-font-size: 1rem;
+$txt-cntnr-font-size-sm: 1.5rem;
+//$txt-cntnr-p: $spacer;
+//$txt-cntnr-p-sm: $spacer * 2;
+
+// Page header
+$header-padding-top: 30px;
+$header-padding-top-sm: 60px;
+$header-padding-bottom: 20px;
+$header-padding-bottom-sm: 40px;
+$header-title-font-size: 3rem;
+$header-title-font-size-sm: 4rem;
+$header-title-txt-color: $white;
+//$header-title-font: "Playfair Display";
+
+// Social icons block
+$social-padding: 0;
+$social-icon-margin: $spacer * 0.1;
+$social-icon-size: 35px;
+$social-icon-color: $white;
+
+$icons-size: 1.2rem;
+$icons-top-space: $spacer * 0.25;
+$icons-mr: $spacer * 0.5;
+
+// Login/signup block
+$logsign-margin-top: $spacer * 0.25;
+$logsign-margin-top-sm: $spacer * 0.5;
+$logsign-font-size: 1rem;
+$logsign-txt-color: $white;
+//$logsign-font: "Fira Sans";
+
+// Navbar
+//$navbar-font: "Fira Sans";
+$navbar-font-size: 1.25rem;
+$navbar-collapsed-height: 60px;
+
+$searchbox-width: 275px;
+$searchbox-btn-border: 1px solid $input-group-addon-border-color;
+
+// Carousel
+// 1
+$carousel-mb: $spacer * 3;
+$carousel-mb-sm: $spacer * 2.5;
+$carousel-img-width: 1600px;
+
+$overlay-z-index: 12;
+
+//$overlay-header-font: "Playfair Display";
+$overlay-header-font-size: 2rem;
+$overlay-header-font-size-sm: 4rem;
+$overlay-header-color: $white;
+$overlay-header-mt: 8px;
+$overlay-header-mt-sm: -60px;
+
+//$overlay-txt-font: "Fira Sans";
+$overlay-txt-font-size: 0.7rem;
+$overlay-txt-font-size-sm: 1rem;
+$overlay-txt-font-size-lg: 1.5rem;
+$overlay-txt-color: $black;
+$overlay-txt-width: 70%;
+$overlay-txt-min-width: 320px;
+$overlay-txt-min-width-sm: 480px;
+$overlay-txt-max-width: 830px;
+$overlay-txt-bg-color: rgba(255, 255, 255, 0.8);
+$overlay-txt-pt: $spacer * 0.25;
+$overlay-txt-pb: $spacer * 0.5;
+$overlay-txt-pb-sm: $spacer * 1.5;
+$overlay-txt-px: $spacer * 0.25;
+$overlay-txt-px-sm: $spacer * 2;
+
+//$overlay-btn-font: "Fira Sans";
+$overlay-btn-font-size: 1rem;
+$overlay-btn-font-size-sm: 1.5rem;
+$overlay-btn-bottom: 0;
+$overlay-btn-bottom-sm: -($spacer * 1.5);
+$overlay-btn-padding: ($spacer * 0.25) ($spacer * 6);
+$overlay-btn-translate-y: 100%;
+$overlay-btn-translate-y-sm: 0;
+
+// 2
+//$carousel-header-font: "Playfair Display";
+$carousel-header-font-size: 2.75rem;
+//$carousel-header-txt-font: "Fira Sans";
+$carousel-header-txt-font-size: 1.5rem;
+
+//$carousel-indicators-font: "Fira Sans";
+$carousel-indicators-font-size: 1.5rem;
+$carousel-indicators-inactive-color: rgb(51, 51, 51);
+$carousel-indicators-active-color: $brand-primary;
+
+$carousel-caption-width: 40%;
+$carousel-caption-bg-color: rgba(255, 255, 255, 0.651);
+//$carousel-caption-header-font: "Playfair Display";
+$carousel-caption-header-font-size: 2rem;
+//$carousel-caption-txt-font: "Fira Sans";
+$carousel-caption-txt-font-size: 1.5rem;
+
+$carousel-controls-size: 40px;
+$carousel-controls-arrow-color: $brand-primary;
+$carousel-controls-border-color: rgb(172, 172, 172);
