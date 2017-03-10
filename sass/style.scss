@@ -11,6 +11,10 @@
 .bg-green {background-color: lightgreen}
 .bg-blue {background-color: lightblue}
 
+// Globals
+$global-my: $spacer *2;
+$txt-color-default: rgb(51, 51, 51);
+
 // Text container
 $txt-cntnr-font: "Fira Sans";
 $txt-cntnr-font-size: 1rem;
@@ -54,6 +58,7 @@ $searchbox-width: 275px;
 $searchbox-btn-border: 1px solid $input-group-addon-border-color;
 
 // Carousel
+// 1
 $carousel-mb: $spacer * 3;
 $carousel-mb-sm: $spacer * 2.5;
 $carousel-img-width: 1600px;
@@ -92,6 +97,31 @@ $overlay-btn-padding: ($spacer * 0.25) ($spacer * 6);
 $overlay-btn-translate-y: 100%;
 $overlay-btn-translate-y-sm: 0;
 
+// 2
+$carousel-header-font: "Playfair Display";
+$carousel-header-font-size: 2.75rem;
+$carousel-header-small-font: "Fira Sans";
+
+$carousel-indicators-font: "Fira Sans";
+$carousel-indicators-font-size: 1.5rem;
+$carousel-indicators-inactive-color: rgb(51, 51, 51);
+$carousel-indicators-active-color: $brand-primary;
+
+$carousel-caption-width: 40%;
+$carousel-caption-bg-color: rgba(255, 255, 255, 0.651);
+$carousel-caption-header-font: "Playfair Display";
+$carousel-caption-header-font-size: 2rem;
+$carousel-caption-txt-font: "Fira Sans";
+$carousel-caption-txt-font-size: 1.5rem;
+
+$carousel-controls-size: 40px;
+$carousel-controls-arrow-color: $brand-primary;
+$carousel-controls-border-color: rgb(172, 172, 172);
+
+
+body {
+  color: $txt-color-default;
+}
 
 .txt-container {
   text-align: center;
@@ -254,6 +284,91 @@ header {
   }
 }
 
+// Slider 2 - Makeovers
+#carousel-makeovers {
+  margin: $global-my 0;
+
+  .carousel-header {
+    font-family: $carousel-header-font;
+    font-size: $carousel-header-font-size;
+    text-align: center;
+    margin: $global-my;
+
+    small {
+      font-family: $carousel-header-small-font;
+    }
+  }
+
+  .carousel-indicators {
+    position: inherit;
+    li {
+      height: auto;
+      width: auto;
+      max-width: 100%;
+      flex-grow: 0;
+      margin: 0 30px;
+      padding: 10px 0;
+      text-indent: 0;
+      font-family: $carousel-indicators-font;
+      font-size: $carousel-indicators-font-size;
+      text-align: center;
+      color: $carousel-indicators-inactive-color;
+      background-color: transparent;
+      &.active {
+        color: $carousel-indicators-active-color;
+        border-bottom: 3px solid $carousel-indicators-active-color;
+      }
+    }
+  }
+
+  .carousel-inner {
+
+    .carousel-item {
+
+      .carousel-caption {
+        width: $carousel-caption-width;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        right: auto;
+        bottom: auto;
+        background-color: $carousel-caption-bg-color;
+
+        h3 {
+          font-family: $carousel-caption-header-font;
+          font-size: $carousel-caption-header-font-size;
+          color: $txt-color-default;
+        }
+
+        p {
+          font-family: $carousel-caption-txt-font;
+          font-size: $carousel-caption-txt-font-size;
+          color: $txt-color-default;
+        }
+      }
+    }
+  }
+
+  .carousel-control-next,
+  .carousel-control-prev{
+    i {
+      font-size: $carousel-controls-size;
+      width: $carousel-controls-size;
+      height: $carousel-controls-size;
+      color: $carousel-controls-arrow-color;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      line-height: 0.9em;
+      border-radius: 50%;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      border: 2px solid $carousel-controls-border-color;
+    }
+  }
+  .carousel-control-prev i { text-indent: -2px; }
+  .carousel-control-next i { text-indent: 2px; }
+}
 
 // SM and larger screens (> 540px)
 @include media-breakpoint-up(sm) {
