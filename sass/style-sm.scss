@@ -14,8 +14,12 @@
     margin-top: $logsign-margin-top-sm;
   }
 
+  .navbar {
+    margin: 0 0 (-$global-block-my-sm) 0;
+  }
+
   #carousel-inspiration {
-    margin-bottom: $carousel-mb-sm;
+    margin: $global-block-my-sm 0 $carousel-mb-sm 0;
 
     .carousel-overlay {
       .overlay-header {

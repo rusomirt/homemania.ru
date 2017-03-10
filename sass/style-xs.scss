@@ -72,6 +72,7 @@ header {
 .icon-speeches { background-image: url("../img/icons/speeches.png"); }
 
 .navbar{
+  margin: 0 0 (-$global-block-my) 0;
   font-size: $navbar-font-size;
   min-height: $navbar-collapsed-height;
 
@@ -104,7 +105,7 @@ header {
 }
 
 #carousel-inspiration {
-  margin: 0 auto $carousel-mb auto;
+  margin: $global-block-my auto $carousel-mb auto;
   max-width: $carousel-img-width;
 
   .carousel-overlay {
