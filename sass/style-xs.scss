@@ -72,6 +72,8 @@ header {
 .icon-speeches { background-image: url("../img/icons/speeches.png"); }
 
 .navbar{
+  // Any element with margin-top: $global-block-my
+  // will follow the navbar without gap
   margin: 0 0 (-$global-block-my) 0;
   font-size: $navbar-font-size;
   min-height: $navbar-collapsed-height;
