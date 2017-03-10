@@ -1,32 +1,13 @@
 // All screens
 
-// For debugging
-.border-black {border: 1px solid black}
-.border-red {border: 1px solid red}
-.border-green {border: 1px solid green}
-.border-blue {border: 1px solid blue}
-.bg-black {background-color: black}
-.bg-white {background-color: white}
-.bg-red {background-color: lightpink}
-.bg-green {background-color: lightgreen}
-.bg-blue {background-color: lightblue}
-
-
 body {
   font-family: $global-txt-font;
   color: $global-txt-color;
+  line-height: 1.15;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $global-headers-font;
-}
-
-.txt-container {
-  text-align: center;
-  //font-family: $txt-cntnr-font;
-  font-size: $txt-cntnr-font-size;
-  //padding: $txt-cntnr-p;
-  margin: $global-block-my 0;
 }
 
 header {
@@ -34,7 +15,6 @@ header {
   padding-bottom: $header-padding-bottom;
 
   .header-title {
-    //font-family: $header-title-font;
     font-size: $header-title-font-size;
     text-align: center;
     color: $header-title-txt-color;
@@ -67,7 +47,6 @@ header {
 
 .login-signup {
   margin-top: $logsign-margin-top;
-  //font-family: $logsign-font;
   font-size: $logsign-font-size;
   color: $logsign-txt-color;
 
@@ -93,7 +72,6 @@ header {
 .icon-speeches { background-image: url("../img/icons/speeches.png"); }
 
 .navbar{
-  //font-family: $navbar-font;
   font-size: $navbar-font-size;
   min-height: $navbar-collapsed-height;
 
@@ -126,7 +104,7 @@ header {
 }
 
 #carousel-inspiration {
-  margin: 0 auto $global-block-my*1.5 auto;
+  margin: 0 auto $carousel-mb auto;
   max-width: $carousel-img-width;
 
   .carousel-overlay {
@@ -139,7 +117,6 @@ header {
     z-index: $overlay-z-index;
 
     .overlay-header {
-      //font-family: $overlay-header-font;
       font-size: $overlay-header-font-size;
       color: $overlay-header-color;
       width: 100%;
@@ -159,7 +136,6 @@ header {
       padding-top: $overlay-txt-pt;
       padding-left: $overlay-txt-px;
       padding-right: $overlay-txt-px;
-      //font-family: $overlay-txt-font;
       font-size: $overlay-txt-font-size;
       color: $overlay-txt-color;
       align-self: center;
@@ -172,7 +148,6 @@ header {
     }
 
     button {
-      //font-family: $overlay-btn-font;
       font-size: $overlay-btn-font-size;
       position: absolute;
       bottom: $overlay-btn-bottom;
@@ -183,6 +158,12 @@ header {
   }
 }
 
+.txt-container {
+  text-align: center;
+  font-size: $txt-cntnr-font-size;
+  margin: $global-block-my 0;
+}
+
 #carousel-makeovers {
   margin: $global-block-my 0;
   text-align: center;
@@ -191,12 +172,10 @@ header {
     margin: $global-block-my 0;
 
     h2 {
-      //font-family: $carousel-header-font;
       font-size: $carousel-header-font-size;
       margin: $global-elem-my;
     }
     p {
-      //font-family: $carousel-header-txt-font;
       font-size: $carousel-header-txt-font-size;
       margin: $global-elem-my;
     }
@@ -212,7 +191,6 @@ header {
       margin: 0 30px;
       padding: 10px 0;
       text-indent: 0;
-      //font-family: $carousel-indicators-font;
       font-size: $carousel-indicators-font-size;
       text-align: center;
       color: $carousel-indicators-inactive-color;
@@ -238,13 +216,11 @@ header {
         background-color: $carousel-caption-bg-color;
 
         h3 {
-          //font-family: $carousel-caption-header-font;
           font-size: $carousel-caption-header-font-size;
           color: $global-txt-color;
         }
 
         p {
-          //font-family: $carousel-caption-txt-font;
           font-size: $carousel-caption-txt-font-size;
           color: $global-txt-color;
         }

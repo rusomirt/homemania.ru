@@ -1,11 +1,6 @@
 // SM and larger screens (> 540px)
 
 @include media-breakpoint-up(sm) {
-  .txt-container {
-    font-size: $txt-cntnr-font-size-sm;
-    //padding: $txt-cntnr-p-sm;
-  }
-
   header {
     padding-top: $header-padding-top-sm;
     padding-bottom: $header-padding-bottom-sm;
@@ -40,7 +35,98 @@
         font-size: $overlay-btn-font-size-sm;
         bottom: $overlay-btn-bottom-sm;
         transform: translate(-50%, $overlay-btn-translate-y-sm);
+        padding: $overlay-btn-padding-sm;
       }
     }
   }
+
+  .txt-container {
+    font-size: $txt-cntnr-font-size-sm;
+    //padding: $txt-cntnr-p-sm;
+  }
+
+  #carousel-makeovers {
+    margin: $global-block-my-sm 0;
+
+    .carousel-header {
+      margin: $global-block-my-sm 0;
+
+      h2 {
+        font-size: $carousel-header-font-size-sm;
+        margin: $global-elem-my-sm;
+      }
+      p {
+        font-size: $carousel-header-txt-font-size-sm;
+        margin: $global-elem-my-sm;
+      }
+    }
+
+    .carousel-indicators {
+      position: inherit;
+      li {
+        height: auto;
+        width: auto;
+        max-width: 100%;
+        flex-grow: 0;
+        margin: 0 30px;
+        padding: 10px 0;
+        text-indent: 0;
+        font-size: $carousel-indicators-font-size;
+        text-align: center;
+        color: $carousel-indicators-inactive-color;
+        background-color: transparent;
+        &.active {
+          color: $carousel-indicators-active-color;
+          border-bottom: 3px solid $carousel-indicators-active-color;
+        }
+      }
+    }
+
+    .carousel-inner {
+
+      .carousel-item {
+
+        .carousel-caption {
+          width: $carousel-caption-width;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          right: auto;
+          bottom: auto;
+          background-color: $carousel-caption-bg-color;
+
+          h3 {
+            font-size: $carousel-caption-header-font-size;
+            color: $global-txt-color;
+          }
+
+          p {
+            font-size: $carousel-caption-txt-font-size;
+            color: $global-txt-color;
+          }
+        }
+      }
+    }
+
+    .carousel-control-next,
+    .carousel-control-prev{
+      i {
+        font-size: $carousel-controls-size;
+        width: $carousel-controls-size;
+        height: $carousel-controls-size;
+        color: $carousel-controls-arrow-color;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        line-height: 0.9em;
+        border-radius: 50%;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border: 2px solid $carousel-controls-border-color;
+      }
+    }
+    .carousel-control-prev i { text-indent: -2px; }
+    .carousel-control-next i { text-indent: 2px; }
+  }
+
 }
