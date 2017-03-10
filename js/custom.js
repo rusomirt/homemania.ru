@@ -13,10 +13,23 @@ jQuery(function ($) {
     });
   }
 
+  function carouselMakeoversOnResize() {
+    let carouselImgRatio = 2; // 2 square images
+
+    const $carouselItems = $("#carousel-makeovers").find(".carousel-item");
+    let currentScreenWidth = $carouselItems.first().width();
+
+    $carouselItems.each( function() {
+      $(this).height( currentScreenWidth/carouselImgRatio );
+    });
+  }
+
   carouselInspirationOnResize();
+  carouselMakeoversOnResize();
 
   $(window).resize( function() {
     carouselInspirationOnResize();
+    carouselMakeoversOnResize();
   });
 
 });
