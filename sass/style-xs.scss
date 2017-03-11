@@ -330,7 +330,6 @@ header {
 
           .btn {
             padding: $global-elem-spacer $global-elem-spacer*8;
-            margin: 0 auto;
           }
         }
       }
@@ -350,3 +349,58 @@ header {
   }
 }
 
+.picture {
+
+   .picture__img {
+     width: 100%;
+     height: 100%;
+   }
+
+   .picture__caption {
+     text-align: center;
+     padding: $global-elem-spacer 0;
+   }
+ }
+
+.gallery {
+
+  .gallery__header {
+    font-size: $gallery-header-font-size;
+    text-align: center;
+    margin: $global-block-spacer 0;
+  }
+
+  .gallery__body {
+    @extend .row;
+    justify-content: center;
+
+    .gallery__item {
+      @extend .col-auto;
+      width: $gallery-item-size;
+      margin: $global-elem-spacer;
+    }
+  }
+}
+
+.shop {
+  font-size: $shop-txt-font-size;
+  margin: $global-block-spacer 0;
+
+  .shop__header {
+    font-size: $shop-header-font-size;
+    text-align: center;
+  }
+
+  .shop__btn-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: $global-block-spacer 0;
+
+    .shop__btn {
+      @extend .btn;
+      @extend .btn-primary;
+      font-size: $shop-btn-font-size;
+      padding: $global-elem-spacer $global-elem-spacer*8;
+    }
+  }
+}

@@ -187,4 +187,48 @@
     }
   }
 
+  .picture {
+
+    .picture__img {
+    }
+
+    .picture__caption {
+      padding: $global-elem-spacer-sm 0;
+    }
+  }
+
+  .gallery {
+
+    .gallery__header {
+      font-size: $gallery-header-font-size-sm;
+      margin: $global-block-spacer-sm 0;
+    }
+
+    .gallery__body {
+
+      .gallery__item {
+        width: $gallery-item-size-sm;
+        margin: $global-elem-spacer-sm;
+      }
+    }
+  }
+
+  .shop {
+    font-size: $shop-txt-font-size-sm;
+    margin: $global-block-spacer-sm 0;
+
+    .shop__header {
+      font-size: $shop-header-font-size-sm;
+    }
+
+    .shop__btn-wrapper {
+      padding: $global-block-spacer-sm 0;
+
+      .shop__btn {
+        font-size: $shop-btn-font-size;
+        padding: $global-elem-spacer-sm $global-elem-spacer-sm*8;
+      }
+    }
+  }
+
 }
