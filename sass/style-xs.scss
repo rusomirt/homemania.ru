@@ -56,9 +56,9 @@ header {
 }
 
 .navbar{
-  // Any element with margin-top: $global-block-my
+  // Any element with margin-top: $global-block-spacer
   // will follow the navbar without gap
-  margin: 0 0 (-$global-block-my) 0;
+  margin: 0 0 (-$global-block-spacer) 0;
   font-size: $navbar-font-size;
   min-height: $navbar-collapsed-height;
 
@@ -91,7 +91,7 @@ header {
 }
 
 #carousel-inspiration {
-  margin: $global-block-my auto $carousel-mb auto;
+  margin: $global-block-spacer auto $carousel-mb auto;
   max-width: $carousel-img-width;
 
   .carousel-overlay {
@@ -148,23 +148,23 @@ header {
 .txt-container {
   text-align: center;
   font-size: $txt-cntnr-font-size;
-  margin: $global-block-my 0;
+  margin: $global-block-spacer 0;
 }
 
 #carousel-makeovers {
-  margin: $global-block-my 0;
+  margin: $global-block-spacer 0;
   text-align: center;
 
   .carousel-header {
-    margin: $global-block-my 0;
+    margin: $global-block-spacer 0;
 
     h2 {
       font-size: $carousel-header-font-size;
-      margin: $global-elem-my;
+      margin: $global-elem-spacer;
     }
     p {
       font-size: $carousel-header-txt-font-size;
-      margin: $global-elem-my;
+      margin: $global-elem-spacer;
     }
   }
 
@@ -192,6 +192,22 @@ header {
   .carousel-inner {
 
     .carousel-item {
+      justify-content: space-between;
+
+      .makeovers-img-holder {
+        width: 49%;
+        background-size: auto;
+        background-repeat: no-repeat;
+      }
+
+      #img-bedroom-left { background-image: url("../img/slider2-slide1-img1.png"); }
+      #img-bedroom-right { background-image: url("../img/slider2-slide1-img2.png"); }
+      #img-guestroom-left { background-image: url("../img/slider2-slide1-img1.png"); }
+      #img-guestroom-right { background-image: url("../img/slider2-slide1-img2.png"); }
+      #img-bathroom-left { background-image: url("../img/slider2-slide1-img1.png"); }
+      #img-bathroom-right { background-image: url("../img/slider2-slide1-img2.png"); }
+      #img-kitchen-left { background-image: url("../img/slider2-slide1-img1.png"); }
+      #img-kitchen-right { background-image: url("../img/slider2-slide1-img2.png"); }
 
       .carousel-caption {
         width: $carousel-caption-width;
@@ -235,3 +251,71 @@ header {
   .carousel-control-prev i { text-indent: -2px; }
   .carousel-control-next i { text-indent: 2px; }
 }
+
+.ideas {
+  margin: $global-block-spacer 0;
+  font-size: $ideas-txt-font-size;
+
+  .ideas-header {
+    font-size: $ideas-header-font-size;
+    text-align: center;
+    margin: $global-block-spacer 0;
+  }
+
+  .ideas-list {
+    @extend .list-unstyled;
+
+    .idea {
+      display: flex;
+      flex-direction: column;
+      align-items: center;  // Image ratio retain
+      margin: $global-block-spacer 0;
+
+      .idea-img {
+        width: 50%;
+        margin: 0 0 $global-elem-spacer 0;
+      }
+      .idea-body {
+        padding: $global-elem-spacer;
+
+        .idea-floats-wrapper {
+          padding: $global-elem-spacer 0;
+          font-size: $idea-floats-font-size;
+          @extend .clearfix;
+
+          .idea-tags { float: left;}
+          .idea-date { float: right;}
+        }
+
+        .idea-header {
+          font-size: $idea-header-font-size;
+          margin: $global-block-spacer 0;
+        }
+        .idea-teaser{}
+        .idea-btn-wrapper {
+          display: flex;
+          justify-content: center;
+          padding: $global-block-spacer 0;
+
+          .btn {
+            padding: $global-elem-spacer $global-elem-spacer*8;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+  .ideas-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: $global-block-spacer 0;
+
+    .btn {
+      width: 50%;
+      min-width: 250px;
+      padding: $global-elem-spacer 0;
+      font-size: $ideas-btn-font-size;
+    }
+  }
+}
+

@@ -1,8 +1,11 @@
 // Globals
-$global-block-my: $spacer;
-$global-block-my-sm: $spacer *2;
-$global-elem-my: $spacer * 0.5;
-$global-elem-my-sm: $spacer * 0.5;
+// Global larger spacer (inter-block)
+$global-block-spacer: $spacer;
+$global-block-spacer-sm: $spacer *2;
+// Global smaller spacer (inter-element)
+$global-elem-spacer: $spacer * 0.5;
+$global-elem-spacer-sm: $spacer * 0.5;
+// Global text
 $global-headers-font: "Playfair Display";
 $global-txt-font: "Fira Sans Light";
 $global-txt-color: rgb(51, 51, 51);
@@ -41,8 +44,8 @@ $searchbox-btn-border: 1px solid $input-group-addon-border-color;
 
 // Carousel
 // 1
-$carousel-mb: $global-block-my*3.5;
-$carousel-mb-sm: $global-block-my*4;
+$carousel-mb: $global-block-spacer*3.5;
+$carousel-mb-sm: $global-block-spacer*4;
 $carousel-img-width: 1600px;
 
 $overlay-z-index: 12;
@@ -58,7 +61,7 @@ $overlay-txt-font-size-sm: 1.2rem;
 $overlay-txt-font-size-lg: 1.5rem;
 $overlay-txt-color: $black;
 $overlay-txt-width: 70%;
-$overlay-txt-min-width: 320px;
+$overlay-txt-min-width: 240px;
 $overlay-txt-min-width-sm: 480px;
 $overlay-txt-max-width: 830px;
 $overlay-txt-bg-color: rgba(255, 255, 255, 0.8);
@@ -95,3 +98,13 @@ $carousel-caption-txt-font-size: 1.5rem;
 $carousel-controls-size: 40px;
 $carousel-controls-arrow-color: $brand-primary;
 $carousel-controls-border-color: rgb(172, 172, 172);
+
+// Ideas
+$ideas-txt-font-size: 1rem;
+$ideas-txt-font-size-sm: 1rem;
+$ideas-header-font-size: 1.5rem;
+$ideas-header-font-size-sm: 2.5rem;
+$idea-header-font-size: 1.2rem;
+$idea-header-font-size-sm: 1.5rem;
+$idea-floats-font-size: 0.8em;
+$ideas-btn-font-size: 1.2em;

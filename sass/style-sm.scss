@@ -15,13 +15,13 @@
   }
 
   .navbar {
-    // Any element with margin-top: $global-block-my
+    // Any element with margin-top: $global-block-spacer
     // will follow the navbar without gap
-    margin: 0 0 (-$global-block-my-sm) 0;
+    margin: 0 0 (-$global-block-spacer-sm) 0;
   }
 
   #carousel-inspiration {
-    margin: $global-block-my-sm 0 $carousel-mb-sm 0;
+    margin: $global-block-spacer-sm 0 $carousel-mb-sm 0;
 
     .carousel-overlay {
       .overlay-header {
@@ -52,18 +52,18 @@
   }
 
   #carousel-makeovers {
-    margin: $global-block-my-sm 0;
+    margin: $global-block-spacer-sm 0;
 
     .carousel-header {
-      margin: $global-block-my-sm 0;
+      margin: $global-block-spacer-sm 0;
 
       h2 {
         font-size: $carousel-header-font-size-sm;
-        margin: $global-elem-my-sm;
+        margin: $global-elem-spacer-sm;
       }
       p {
         font-size: $carousel-header-txt-font-size-sm;
-        margin: $global-elem-my-sm;
+        margin: $global-elem-spacer-sm;
       }
     }
 
@@ -133,6 +133,59 @@
     }
     .carousel-control-prev i { text-indent: -2px; }
     .carousel-control-next i { text-indent: 2px; }
+  }
+
+  .ideas {
+    margin: $global-block-spacer-sm 0;
+    font-size: $ideas-txt-font-size-sm;
+
+    .ideas-header {
+      font-size: $ideas-header-font-size-sm;
+      margin: $global-block-spacer-sm 0;
+    }
+
+    .ideas-list {
+
+      .idea {
+        margin: $global-block-spacer-sm 0;
+        flex-direction: row;
+        align-items: flex-start;  // Image ratio retain
+
+        .idea-img {
+          margin: 0 $global-elem-spacer 0 0;
+        }
+        .idea-body {
+          padding: $global-elem-spacer-sm;
+
+          .idea-floats-wrapper {
+            padding: $global-elem-spacer-sm 0;
+
+            .idea-tags {}
+            .idea-date {}
+          }
+
+          .idea-header {
+            font-size: $idea-header-font-size-sm;
+            margin: $global-block-spacer-sm 0;
+          }
+          .idea-teaser{}
+          .idea-btn-wrapper {
+            padding: $global-block-spacer-sm 0;
+
+            .btn {
+              padding: $global-elem-spacer-sm $global-elem-spacer-sm*8;
+            }
+          }
+        }
+      }
+    }
+    .idea-btn-wrapper {
+      padding: $global-block-spacer-sm 0;
+
+      .btn {
+        padding: $global-elem-spacer-sm 0;
+      }
+    }
   }
 
 }
