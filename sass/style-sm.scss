@@ -20,38 +20,11 @@
     margin: 0 0 (-$global-block-spacer-sm) 0;
   }
 
-  #carousel-inspiration {
-    margin: $global-block-spacer-sm 0 $carousel-mb-sm 0;
-
-    .carousel-overlay {
-      .overlay-header {
-        margin-top: $overlay-header-mt-sm;
-        font-size: $overlay-header-font-size-sm;
-      }
-      .overlay-txt {
-        &:last-of-type {
-          padding-bottom: $overlay-txt-pb-sm;
-        }
-        padding-left: $overlay-txt-px-sm;
-        padding-right: $overlay-txt-px-sm;
-        font-size: $overlay-txt-font-size-sm;
-        min-width: $overlay-txt-min-width-sm;
-      }
-      button {
-        font-size: $overlay-btn-font-size-sm;
-        bottom: $overlay-btn-bottom-sm;
-        transform: translate(-50%, $overlay-btn-translate-y-sm);
-        padding: $overlay-btn-padding-sm;
-      }
-    }
-  }
-
   .txt-container {
     font-size: $txt-cntnr-font-size-sm;
-    //padding: $txt-cntnr-p-sm;
   }
 
-  #carousel-makeovers {
+  .carousel {
     margin: $global-block-spacer-sm 0;
 
     .carousel-header {
@@ -133,6 +106,32 @@
     }
     .carousel-control-prev i { text-indent: -2px; }
     .carousel-control-next i { text-indent: 2px; }
+
+    .carousel-overlay {
+      .overlay-header {
+        margin-top: $overlay-header-mt-sm;
+        font-size: $overlay-header-font-size-sm;
+      }
+      .overlay-txt {
+        &:last-of-type {
+          padding-bottom: $overlay-txt-pb-sm;
+        }
+        padding-left: $overlay-txt-px-sm;
+        padding-right: $overlay-txt-px-sm;
+        font-size: $overlay-txt-font-size-sm;
+        min-width: $overlay-txt-min-width-sm;
+      }
+      button {
+        font-size: $overlay-btn-font-size-sm;
+        bottom: $overlay-btn-bottom-sm;
+        transform: translate(-50%, $overlay-btn-translate-y-sm);
+        padding: $overlay-btn-padding-sm;
+      }
+    }
+  }
+
+  #carousel-inspiration {
+    margin: $global-block-spacer-sm 0 $carousel-mb-sm 0;
   }
 
   .ideas {

@@ -90,68 +90,13 @@ header {
   }
 }
 
-#carousel-inspiration {
-  margin: $global-block-spacer auto $carousel-mb auto;
-  max-width: $carousel-img-width;
-
-  .carousel-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    z-index: $overlay-z-index;
-
-    .overlay-header {
-      font-size: $overlay-header-font-size;
-      color: $overlay-header-color;
-      width: 100%;
-      text-align: center;
-      margin-top: $overlay-header-mt;
-      margin-bottom: 0;
-    }
-
-    .overlay-txt {
-      // 1st invisible block - for 'justify-content' aligning
-      &:first-of-type {
-        visibility: hidden;
-      }
-      &:last-of-type {
-        padding-bottom: $overlay-txt-pb;
-      }
-      padding-top: $overlay-txt-pt;
-      padding-left: $overlay-txt-px;
-      padding-right: $overlay-txt-px;
-      font-size: $overlay-txt-font-size;
-      color: $overlay-txt-color;
-      align-self: center;
-      width: $overlay-txt-width;
-      min-width: $overlay-txt-min-width;
-      max-width: $overlay-txt-max-width;
-      margin: 0 auto;
-      text-align: center;
-      background-color: $overlay-txt-bg-color;
-    }
-
-    button {
-      font-size: $overlay-btn-font-size;
-      position: absolute;
-      bottom: $overlay-btn-bottom;
-      left: 50%;
-      transform: translate(-50%, $overlay-btn-translate-y);
-      padding: $overlay-btn-padding;
-    }
-  }
-}
-
 .txt-container {
   text-align: center;
   font-size: $txt-cntnr-font-size;
   margin: $global-block-spacer 0;
 }
 
-#carousel-makeovers {
+.carousel {
   margin: $global-block-spacer 0;
   text-align: center;
 
@@ -229,7 +174,38 @@ header {
         }
       }
     }
-  }
+
+
+
+
+    .carousel-item-row {
+      font-size: 0;
+      -ms-flex-wrap: wrap;
+      -ms-flex-direction: column;
+      -webkit-flex-flow: row wrap;
+      flex-flow: row wrap;
+
+      .carousel-img-wrapper {
+        flex: auto;
+        width: 1px; // Any px value for proper sizing
+        &:not(:first-of-type) {
+          margin-left: 1rem;
+        }
+
+        .carousel-img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+    .carousel-item-row.active {
+      display: -ms-flexbox;
+      display: -webkit-box;
+      display: flex;
+    }
+
+
+    }
 
   .carousel-control-next,
   .carousel-control-prev{
@@ -250,6 +226,61 @@ header {
   }
   .carousel-control-prev i { text-indent: -2px; }
   .carousel-control-next i { text-indent: 2px; }
+
+  .carousel-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    z-index: $overlay-z-index;
+
+    .overlay-header {
+      font-size: $overlay-header-font-size;
+      color: $overlay-header-color;
+      width: 100%;
+      text-align: center;
+      margin-top: $overlay-header-mt;
+      margin-bottom: 0;
+    }
+
+    .overlay-txt {
+      // 1st invisible block - for 'justify-content' aligning
+      &:first-of-type {
+        visibility: hidden;
+      }
+      &:last-of-type {
+        padding-bottom: $overlay-txt-pb;
+      }
+      padding-top: $overlay-txt-pt;
+      padding-left: $overlay-txt-px;
+      padding-right: $overlay-txt-px;
+      font-size: $overlay-txt-font-size;
+      color: $overlay-txt-color;
+      align-self: center;
+      width: $overlay-txt-width;
+      min-width: $overlay-txt-min-width;
+      max-width: $overlay-txt-max-width;
+      margin: 0 auto;
+      text-align: center;
+      background-color: $overlay-txt-bg-color;
+    }
+
+    button {
+      font-size: $overlay-btn-font-size;
+      position: absolute;
+      bottom: $overlay-btn-bottom;
+      left: 50%;
+      transform: translate(-50%, $overlay-btn-translate-y);
+      padding: $overlay-btn-padding;
+    }
+  }
+}
+
+#carousel-inspiration {
+  margin: $global-block-spacer auto $carousel-mb auto;
+  max-width: $carousel-img-width;
 }
 
 .ideas {
