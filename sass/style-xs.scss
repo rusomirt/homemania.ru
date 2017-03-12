@@ -390,11 +390,18 @@ header {
     justify-content: center;
 
     .gallery__item {
-      @extend .col-6;
-      @extend .col-sm-3;
-      //width: $gallery-item-width;
-      //margin: $global-elem-spacer;
+      padding: $gallery-item-padding;
     }
+  }
+}
+.gallery--4col {
+  .gallery__item {
+    @include make-col(1, 2);
+  }
+}
+.gallery--5col {
+  .gallery__item {
+    @include make-col(1, 3);
   }
 }
 

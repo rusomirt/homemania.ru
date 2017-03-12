@@ -144,7 +144,7 @@
   }
 
   #carousel-inspiration {
-    margin: $global-block-spacer-sm 0 $carousel-inspiration-mb-sm 0;
+    margin: $global-block-spacer-sm auto $carousel-inspiration-mb-sm auto;
   }
 
   .ideas {
@@ -224,10 +224,16 @@
 
     .gallery__body {
 
-      .gallery__item {
-        //width: $gallery-item-width-sm;
-        //margin: $global-elem-spacer-sm;
-      }
+    }
+  }
+  .gallery--4col {
+    .gallery__item {
+      @include make-col(1, 4);
+    }
+  }
+  .gallery--5col {
+    .gallery__item {
+      @include make-col(1, 5);
     }
   }
 
