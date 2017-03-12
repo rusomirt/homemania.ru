@@ -223,7 +223,6 @@
 
     .gallery__body {
       .gallery__item {
-        @include make-col(1, 4);
       }
     }
   }

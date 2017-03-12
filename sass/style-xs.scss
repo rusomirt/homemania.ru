@@ -389,7 +389,7 @@ header {
     justify-content: center;
 
     .gallery__item {
-      @include make-col(1, 2);  // by default - .gallery--4-col
+      @extend .gallery--4col;  // by default - .gallery--4-col
       padding: $gallery-item-padding;
     }
   }
