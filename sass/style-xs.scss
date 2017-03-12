@@ -2,6 +2,7 @@
 
 body {
   font-family: $global-txt-font;
+  font-size: $global-txt-font-size;
   color: $global-txt-color;
   line-height: 1.15;
 }
@@ -9,13 +10,22 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: $global-headers-font;
 }
+h1 {
+  font-size: $global-h1-font-size;
+}
+h2 {
+  font-size: $global-h2-font-size;
+}
+h3 {
+  font-size: $global-h3-font-size;
+}
 
 header {
   padding-top: $header-padding-top;
   padding-bottom: $header-padding-bottom;
 
   .header-title {
-    font-size: $header-title-font-size;
+    //font-size: $header-title-font-size;
     text-align: center;
     color: $header-title-txt-color;
   }
@@ -104,11 +114,11 @@ header {
     margin: $global-block-spacer 0;
 
     h2 {
-      font-size: $carousel-header-font-size;
+      //font-size: $carousel-header-font-size;
       margin: $global-elem-spacer;
     }
     p {
-      font-size: $carousel-header-txt-font-size;
+      //font-size: $carousel-header-txt-font-size;
       margin: $global-elem-spacer;
     }
   }
@@ -123,7 +133,7 @@ header {
       margin: 0 30px;
       padding: 10px 0;
       text-indent: 0;
-      font-size: $carousel-indicators-font-size;
+      //font-size: $carousel-indicators-font-size;
       text-align: center;
       color: $carousel-indicators-inactive-color;
       background-color: transparent;
@@ -164,12 +174,12 @@ header {
         background-color: $carousel-caption-bg-color;
 
         h3 {
-          font-size: $carousel-caption-header-font-size;
+          //font-size: $carousel-caption-header-font-size;
           color: $global-txt-color;
         }
 
         p {
-          font-size: $carousel-caption-txt-font-size;
+          //font-size: $carousel-caption-txt-font-size;
           color: $global-txt-color;
         }
       }
@@ -279,16 +289,16 @@ header {
 }
 
 #carousel-inspiration {
-  margin: $global-block-spacer auto $carousel-mb auto;
+  margin: $global-block-spacer auto $carousel-inspiration-mb auto;
   max-width: $carousel-img-width;
 }
 
 .ideas {
   margin: $global-block-spacer 0;
-  font-size: $ideas-txt-font-size;
+  //font-size: $ideas-txt-font-size;
 
   .ideas-header {
-    font-size: $ideas-header-font-size;
+    //font-size: $ideas-header-font-size;
     text-align: center;
     margin: $global-block-spacer 0;
   }
@@ -304,7 +314,8 @@ header {
 
       .idea-img {
         width: 50%;
-        margin: 0 0 $global-elem-spacer 0;
+        //margin: 0 0 $global-elem-spacer 0;
+        margin: 0;
       }
       .idea-body {
         padding: $global-elem-spacer;
@@ -319,14 +330,17 @@ header {
         }
 
         .idea-header {
-          font-size: $idea-header-font-size;
-          margin: $global-block-spacer 0;
+          //font-size: $idea-header-font-size;
+          margin: $global-elem-spacer 0;
         }
-        .idea-teaser{}
+        .idea-teaser{
+          font-size: $idea-txt-font-size;
+          line-height: $idea-body-line-height;
+        }
         .idea-btn-wrapper {
           display: flex;
           justify-content: center;
-          padding: $global-block-spacer 0;
+          padding: $global-elem-spacer 0;
 
           .btn {
             padding: $global-elem-spacer $global-elem-spacer*8;
@@ -338,11 +352,11 @@ header {
   .ideas-btn-wrapper {
     display: flex;
     justify-content: center;
-    padding: $global-block-spacer 0;
+    padding: $global-elem-spacer 0;
 
     .btn {
       width: 50%;
-      min-width: 250px;
+      min-width: $ideas-btn-min-width;
       padding: $global-elem-spacer 0;
       font-size: $ideas-btn-font-size;
     }
@@ -357,6 +371,7 @@ header {
    }
 
    .picture__caption {
+     font-size: $picture-font-size;
      text-align: center;
      padding: $global-elem-spacer 0;
    }
@@ -365,7 +380,7 @@ header {
 .gallery {
 
   .gallery__header {
-    font-size: $gallery-header-font-size;
+    //font-size: $gallery-header-font-size;
     text-align: center;
     margin: $global-block-spacer 0;
   }
@@ -375,19 +390,20 @@ header {
     justify-content: center;
 
     .gallery__item {
-      @extend .col-auto;
-      width: $gallery-item-size;
-      margin: $global-elem-spacer;
+      @extend .col-6;
+      @extend .col-sm-3;
+      //width: $gallery-item-width;
+      //margin: $global-elem-spacer;
     }
   }
 }
 
 .shop {
-  font-size: $shop-txt-font-size;
+  //font-size: $shop-txt-font-size;
   margin: $global-block-spacer 0;
 
   .shop__header {
-    font-size: $shop-header-font-size;
+    //font-size: $shop-header-font-size;
     text-align: center;
   }
 

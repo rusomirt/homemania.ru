@@ -1,12 +1,25 @@
 // SM and larger screens (> 540px)
 
 @include media-breakpoint-up(sm) {
+  body {
+    font-size: $global-txt-font-size-sm;
+  }
+  h1 {
+    font-size: $global-h1-font-size-sm;
+  }
+  h2 {
+    font-size: $global-h2-font-size-sm;
+  }
+  h3 {
+    font-size: $global-h3-font-size-sm;
+  }
+
   header {
     padding-top: $header-padding-top-sm;
     padding-bottom: $header-padding-bottom-sm;
 
     .header-title {
-      font-size: $header-title-font-size-sm;
+      //font-size: $header-title-font-size-sm;
     }
   }
 
@@ -16,8 +29,8 @@
 
   .navbar {
     // Any element with margin-top: $global-block-spacer
-    // will follow the navbar without gap
-    margin: 0 0 (-$global-block-spacer-sm) 0;
+    // will follow the navbar without big gap
+    margin: 0.25*$global-block-spacer-sm 0 (-0.75*$global-block-spacer-sm) 0;
   }
 
   .txt-container {
@@ -31,11 +44,11 @@
       margin: $global-block-spacer-sm 0;
 
       h2 {
-        font-size: $carousel-header-font-size-sm;
+        //font-size: $carousel-header-font-size-sm;
         margin: $global-elem-spacer-sm;
       }
       p {
-        font-size: $carousel-header-txt-font-size-sm;
+        //font-size: $carousel-header-txt-font-size-sm;
         margin: $global-elem-spacer-sm;
       }
     }
@@ -50,7 +63,7 @@
         margin: 0 30px;
         padding: 10px 0;
         text-indent: 0;
-        font-size: $carousel-indicators-font-size;
+        //font-size: $carousel-indicators-font-size;
         text-align: center;
         color: $carousel-indicators-inactive-color;
         background-color: transparent;
@@ -75,12 +88,12 @@
           background-color: $carousel-caption-bg-color;
 
           h3 {
-            font-size: $carousel-caption-header-font-size;
+            //font-size: $carousel-caption-header-font-size;
             color: $global-txt-color;
           }
 
           p {
-            font-size: $carousel-caption-txt-font-size;
+            //font-size: $carousel-caption-txt-font-size;
             color: $global-txt-color;
           }
         }
@@ -131,15 +144,15 @@
   }
 
   #carousel-inspiration {
-    margin: $global-block-spacer-sm 0 $carousel-mb-sm 0;
+    margin: $global-block-spacer-sm 0 $carousel-inspiration-mb-sm 0;
   }
 
   .ideas {
     margin: $global-block-spacer-sm 0;
-    font-size: $ideas-txt-font-size-sm;
+    //font-size: $ideas-txt-font-size-sm;
 
     .ideas-header {
-      font-size: $ideas-header-font-size-sm;
+      //font-size: $ideas-header-font-size-sm;
       margin: $global-block-spacer-sm 0;
     }
 
@@ -158,16 +171,19 @@
 
           .idea-floats-wrapper {
             padding: $global-elem-spacer-sm 0;
+            font-size: $idea-floats-font-size-sm;
 
             .idea-tags {}
             .idea-date {}
           }
 
           .idea-header {
-            font-size: $idea-header-font-size-sm;
+            //font-size: $idea-header-font-size-sm;
             margin: $global-block-spacer-sm 0;
           }
-          .idea-teaser{}
+          .idea-teaser{
+            font-size: $idea-txt-font-size-sm;
+          }
           .idea-btn-wrapper {
             padding: $global-block-spacer-sm 0;
 
@@ -178,10 +194,11 @@
         }
       }
     }
-    .idea-btn-wrapper {
+    .ideas-btn-wrapper {
       padding: $global-block-spacer-sm 0;
 
       .btn {
+        min-width: $ideas-btn-min-width-sm;
         padding: $global-elem-spacer-sm 0;
       }
     }
@@ -193,6 +210,7 @@
     }
 
     .picture__caption {
+      font-size: $picture-font-size-sm;
       padding: $global-elem-spacer-sm 0;
     }
   }
@@ -200,25 +218,25 @@
   .gallery {
 
     .gallery__header {
-      font-size: $gallery-header-font-size-sm;
+      //font-size: $gallery-header-font-size-sm;
       margin: $global-block-spacer-sm 0;
     }
 
     .gallery__body {
 
       .gallery__item {
-        width: $gallery-item-size-sm;
-        margin: $global-elem-spacer-sm;
+        //width: $gallery-item-width-sm;
+        //margin: $global-elem-spacer-sm;
       }
     }
   }
 
   .shop {
-    font-size: $shop-txt-font-size-sm;
+    //font-size: $shop-txt-font-size-sm;
     margin: $global-block-spacer-sm 0;
 
     .shop__header {
-      font-size: $shop-header-font-size-sm;
+      //font-size: $shop-header-font-size-sm;
     }
 
     .shop__btn-wrapper {

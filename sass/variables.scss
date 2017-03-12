@@ -1,26 +1,35 @@
 // Globals
 // Global larger spacer (inter-block)
-$global-block-spacer: $spacer;
-$global-block-spacer-sm: $spacer *2;
+$global-block-spacer: $spacer*2;
+$global-block-spacer-sm: $spacer*2;
 // Global smaller spacer (inter-element)
 $global-elem-spacer: $spacer * 0.5;
 $global-elem-spacer-sm: $spacer * 0.5;
-// Global text
+// Global font
 $global-headers-font: "Playfair Display";
+$global-h1-font-size: 2.5rem;
+$global-h1-font-size-sm: 60px;//3.5rem;
+$global-h2-font-size: 1.5rem;
+$global-h2-font-size-sm: 44px;//2.5rem;
+$global-h3-font-size: 1.2rem;
+$global-h3-font-size-sm: 30px;//1.5rem;
+
 $global-txt-font: "Fira Sans Light";
+$global-txt-font-size: 1rem;
+$global-txt-font-size-sm: 1.5rem;
 $global-txt-color: rgb(51, 51, 51);
 
 // Text container
 $txt-cntnr-font-size: 1rem;
-$txt-cntnr-font-size-sm: 1.5rem;
+$txt-cntnr-font-size-sm: 1.7rem;
 
 // Page header
 $header-padding-top: 20px;
 $header-padding-top-sm: 40px;
 $header-padding-bottom: 15px;
 $header-padding-bottom-sm: 20px;
-$header-title-font-size: 2.5rem;
-$header-title-font-size-sm: 3.5rem;
+//$header-title-font-size: 2.5rem;
+//$header-title-font-size-sm: 3.5rem;
 $header-title-txt-color: $white;
 
 // Social icons block
@@ -36,7 +45,7 @@ $logsign-font-size: 1rem;
 $logsign-txt-color: $white;
 
 // Navbar
-$navbar-font-size: 1.25rem;
+$navbar-font-size: 1.2rem;
 $navbar-collapsed-height: 60px;
 
 $searchbox-width: 275px;
@@ -44,14 +53,14 @@ $searchbox-btn-border: 1px solid $input-group-addon-border-color;
 
 // Carousel
 // 1
-$carousel-mb: $global-block-spacer*3.5;
-$carousel-mb-sm: $global-block-spacer*4;
+$carousel-inspiration-mb: $global-block-spacer*2.5;
+$carousel-inspiration-mb-sm: $global-block-spacer*3;
 $carousel-img-width: 1600px;
 
 $overlay-z-index: 12;
 
 $overlay-header-font-size: 2rem;
-$overlay-header-font-size-sm: 4rem;
+$overlay-header-font-size-sm: 4.5rem;
 $overlay-header-color: $white;
 $overlay-header-mt: 8px;
 $overlay-header-mt-sm: -60px;
@@ -60,7 +69,7 @@ $overlay-txt-font-size: 0.8rem;
 $overlay-txt-font-size-sm: 1.2rem;
 $overlay-txt-font-size-lg: 1.5rem;
 $overlay-txt-color: $black;
-$overlay-txt-width: 70%;
+$overlay-txt-width: 50%;
 $overlay-txt-min-width: 240px;
 $overlay-txt-min-width-sm: 480px;
 $overlay-txt-max-width: 830px;
@@ -81,46 +90,53 @@ $overlay-btn-translate-y: 100%;
 $overlay-btn-translate-y-sm: 0;
 
 // 2
-$carousel-header-font-size: 1.5rem;
-$carousel-header-font-size-sm: 2.5rem;
-$carousel-header-txt-font-size: 1rem;
-$carousel-header-txt-font-size-sm: 1.5rem;
+//$carousel-header-font-size: 1.5rem;
+//$carousel-header-font-size-sm: 2.5rem;
+//$carousel-header-txt-font-size: 1rem;
+//$carousel-header-txt-font-size-sm: 1.5rem;
 
-$carousel-indicators-font-size: 1.5rem;
+//$carousel-indicators-font-size: 1.5rem;
 $carousel-indicators-inactive-color: rgb(51, 51, 51);
 $carousel-indicators-active-color: $brand-primary;
 
 $carousel-caption-width: 40%;
 $carousel-caption-bg-color: rgba(255, 255, 255, 0.651);
-$carousel-caption-header-font-size: 2rem;
-$carousel-caption-txt-font-size: 1.5rem;
+//$carousel-caption-header-font-size: 2rem;
+//$carousel-caption-txt-font-size: 1.5rem;
 
 $carousel-controls-size: 40px;
 $carousel-controls-arrow-color: $brand-primary;
 $carousel-controls-border-color: rgb(172, 172, 172);
 
 // Ideas
-$ideas-txt-font-size: 1rem;
-$ideas-txt-font-size-sm: 1rem;
-$ideas-header-font-size: 1.5rem;
-$ideas-header-font-size-sm: 2.5rem;
-$idea-header-font-size: 1.2rem;
-$idea-header-font-size-sm: 1.5rem;
+//$ideas-txt-font-size: 1rem;
+//$ideas-txt-font-size-sm: 1rem;
+//$ideas-header-font-size: 1.5rem;
+//$ideas-header-font-size-sm: 2.5rem;
+//$idea-header-font-size: 1.2rem;
+//$idea-header-font-size-sm: 1.5rem;
 $idea-floats-font-size: 0.8em;
-$ideas-btn-font-size: 1.2em;
+$idea-floats-font-size-sm: 0.6em;
+$idea-body-line-height: 1.5;
+$idea-txt-font-size: 1em;
+$idea-txt-font-size-sm: 0.75em;
+$ideas-btn-font-size: 1em;
+$ideas-btn-min-width: 250px;
+$ideas-btn-min-width-sm: 500px;
 
 // Picture
 $picture-font-size: 1em;
+$picture-font-size-sm: 0.75em;
 
 // Gallery
-$gallery-header-font-size: 1.2rem;
-$gallery-header-font-size-sm: 1.5rem;
-$gallery-item-size: 100px;
-$gallery-item-size-sm: 200px;
+//$gallery-header-font-size: 1.2rem;
+//$gallery-header-font-size-sm: 1.5rem;
+//$gallery-item-width: 100px;
+//$gallery-item-width-sm: 23%;//200px;
 
 // Shop
-$shop-txt-font-size: 1rem;
-$shop-txt-font-size-sm: 1rem;
-$shop-header-font-size: 1.5rem;
-$shop-header-font-size-sm: 2.5rem;
-$shop-btn-font-size: 1.2em;
+//$shop-txt-font-size: 1rem;
+//$shop-txt-font-size-sm: 1rem;
+//$shop-header-font-size: 1.5rem;
+//$shop-header-font-size-sm: 2.5rem;
+$shop-btn-font-size: 1em;
