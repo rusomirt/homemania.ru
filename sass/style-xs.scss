@@ -380,7 +380,6 @@ header {
 .gallery {
 
   .gallery__header {
-    //font-size: $gallery-header-font-size;
     text-align: center;
     margin: $global-block-spacer 0;
   }
@@ -390,6 +389,7 @@ header {
     justify-content: center;
 
     .gallery__item {
+      @include make-col(1, 2);  // by default - .gallery--4-col
       padding: $gallery-item-padding;
     }
   }
@@ -406,11 +406,9 @@ header {
 }
 
 .shop {
-  //font-size: $shop-txt-font-size;
   margin: $global-block-spacer 0;
 
   .shop__header {
-    //font-size: $shop-header-font-size;
     text-align: center;
   }
 

@@ -218,12 +218,13 @@
   .gallery {
 
     .gallery__header {
-      //font-size: $gallery-header-font-size-sm;
       margin: $global-block-spacer-sm 0;
     }
 
     .gallery__body {
-
+      .gallery__item {
+        @include make-col(1, 4);
+      }
     }
   }
   .gallery--4col {
@@ -238,11 +239,9 @@
   }
 
   .shop {
-    //font-size: $shop-txt-font-size-sm;
     margin: $global-block-spacer-sm 0;
 
     .shop__header {
-      //font-size: $shop-header-font-size-sm;
     }
 
     .shop__btn-wrapper {
