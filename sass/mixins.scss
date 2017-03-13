@@ -1,4 +1,6 @@
+// ----------------------------------------------------------------------------
 // Set a responsive-styled CSS property.
+// ----------------------------------------------------------------------------
 // $mapped-value contains list of property values
 // for different screen widths.
 @mixin responsive-prop($property, $mapped-values) {
