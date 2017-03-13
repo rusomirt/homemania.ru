@@ -216,13 +216,3 @@ $shop-btn-paddings: (
         xs: $global-elem-spacer $global-elem-spacer*8,
         sm: $global-elem-spacer-sm $global-elem-spacer-sm*8,
 );
-
-
-@mixin responsive-prop($property, $mapped-values) {
-  @each $breakpoint, $value in $mapped-values {
-    @include media-breakpoint-up($breakpoint) {
-      #{$property}: $value;
-    }
-  }
-}
-
