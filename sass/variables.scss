@@ -2,9 +2,9 @@
 // Globals
 // ----------------------------------------------------------------------------
 
-// Global larger spacers (inter-block)
+// Global block spacers
 $global-block-spacer: $spacer*2;
-$global-block-spacer-sm: $spacer*2;
+$global-block-spacer-sm: $spacer*4;
 $global-block-spacers-vertical: (
         xs: $global-block-spacer 0,
         sm: $global-block-spacer-sm 0,
@@ -14,7 +14,19 @@ $global-block-spacers-all: (
         sm: $global-block-spacer-sm,
 );
 
-// Global smaller spacers (inter-element)
+// Global element bigger spacers (inter-element)
+$global-elem-big-spacer: $spacer * 1;
+$global-elem-big-spacer-sm: $spacer * 2;
+$global-elem-big-spacers-vertical: (
+        xs: $global-elem-big-spacer 0,
+        sm: $global-elem-big-spacer-sm 0,
+);
+$global-elem-spacers-all: (
+        xs: $global-elem-big-spacer,
+        sm: $global-elem-big-spacer-sm,
+);
+
+// Global element smaller spacers (inter-element)
 $global-elem-spacer: $spacer * 0.5;
 $global-elem-spacer-sm: $spacer * 0.5;
 $global-elem-spacers-vertical: (
@@ -103,7 +115,7 @@ $txt-container-font-sizes: (
 // ----------------------------------------------------------------------------
 $crsl-margins: $global-block-spacers-vertical;
 
-$crsl-heading-margins: $global-block-spacers-vertical;
+$crsl-heading-margins: $global-elem-big-spacers-vertical;
 $crsl-header-margins: $global-elem-spacers-vertical;
 $crsl-subheader-margins: $global-elem-spacers-vertical;
 
@@ -139,8 +151,9 @@ $crsl-caption-transforms: (
 $crsl-caption-bg-color: rgba(255, 255, 255, 0.651);
 
 $crsl-controls-widths: (
-        xs: 15%,
-        sm: 10%,
+        xs: 25%,
+        sm: 15%,
+        md: 10%,
 );
 $crsl-controls-size: 40px;
 $crsl-controls-arrow-color: $brand-primary;
@@ -197,13 +210,26 @@ $carousel-inspiration-img-width: 1600px;
 // ----------------------------------------------------------------------------
 // #carousel-styles
 // ----------------------------------------------------------------------------
-
+$crsl-styles-header-margins: (
+        xs: $global-elem-big-spacer auto $global-elem-big-spacer auto,
+        sm: $global-elem-big-spacer-sm auto $global-elem-big-spacer-sm auto,
+);
+$crsl-styles-header-paddings: (
+        xs: $global-elem-spacer $global-elem-spacer*4,
+        sm: $global-elem-spacer-sm $global-elem-spacer-sm*4,
+);
+$crsl-styles-h3-font-sizes: (
+        xs: 1.2rem,
+        sm: 1.3rem,
+        md: 1.5rem,
+);
 
 // ----------------------------------------------------------------------------
 // Ideas
 // ----------------------------------------------------------------------------
 $ideas-margins: $global-block-spacers-vertical;
-$ideas-header-margins: $global-block-spacers-vertical;
+$ideas-header-margins: $global-elem-big-spacers-vertical;
+$ideas-header-paddings: $global-elem-spacers-vertical;
 $ideas-btn-wrapper-paddings: $global-elem-spacers-vertical;
 $ideas-btn-font-size: 1em;
 $ideas-btn-min-widths: (
@@ -220,21 +246,21 @@ $idea-align-items: (
         xs: center,
         sm: flex-start,
 );
-$idea-margins: $global-block-spacers-vertical;
+$idea-margins: $global-elem-big-spacers-vertical;
 $idea-img-margins: (
         xs: 0,
         sm: 0 $global-elem-spacer 0 0,
 );
 $idea-body-paddings: (
-        xs: $global-elem-spacer*2 0 0 0,
-        sm: 0 0 0 $global-elem-spacer-sm*2,
+        xs: $global-elem-spacer 0 0 0,
+        sm: 0 0 0 $global-elem-spacer-sm,
 );
 $idea-floats-wrapper-padding: $global-elem-spacers-vertical;
 $idea-floats-font-sizes: (
         xs: 0.8em,
         sm: 0.6em,
 );
-$idea-header-margins: $global-block-spacers-vertical;
+$idea-header-margins: $global-elem-big-spacers-vertical;
 $idea-teaser-font-sizes: (
         xs: 1em,
         sm: 0.75em,
@@ -243,7 +269,8 @@ $idea-teaser-line-height: 1.5;
 $idea-btn-wrapper-paddings: $global-elem-spacers-vertical;
 $idea-btn-paddings: (
         xs: $global-elem-spacer $global-elem-spacer*8,
-        sm: $global-elem-spacer-sm $global-elem-spacer-sm*8,
+        sm: $global-elem-spacer-sm $global-elem-spacer-sm*4,
+        md: $global-elem-spacer-sm $global-elem-spacer-sm*8,
 );
 
 // ----------------------------------------------------------------------------
@@ -258,14 +285,17 @@ $picture-caption-paddings: $global-elem-spacers-vertical;
 // ----------------------------------------------------------------------------
 // Gallery
 // ----------------------------------------------------------------------------
-$gallery-header-margins: $global-block-spacers-vertical;
+$gallery-header-margins: $global-elem-spacers-vertical;
+$gallery-header-paddings: $global-elem-spacers-vertical;
 $gallery-item-padding: 1%;
 
 // ----------------------------------------------------------------------------
 // Shop
 // ----------------------------------------------------------------------------
 $shop-margins: $global-block-spacers-vertical;
-$shop-btn-wrapper-paddings: $global-block-spacers-vertical;
+$shop-header-margins: $global-elem-big-spacers-vertical;
+$shop-header-paddings: $global-elem-spacers-vertical;
+$shop-btn-wrapper-paddings: $global-elem-big-spacers-vertical;
 $shop-btn-font-size: 1em;
 $shop-btn-paddings: (
         xs: $global-elem-spacer $global-elem-spacer*8,

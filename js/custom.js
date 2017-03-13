@@ -28,12 +28,24 @@ jQuery(function ($) {
     });
   }
 
+  // Adjust the height of carousel controls to height of images in this carousel
+  function carouselStylesControlsHeight() {
+    // Get the height of first visible image
+    const $carousel = $("#carousel-styles");
+    const carouselImgHeight = $carousel.find(".picture__img")
+      .filter(":visible").first().height();
+    $carousel.find(".carousel-control-prev, .carousel-control-next")
+      .height(carouselImgHeight);
+  }
+
   carouselInspirationOnResize();
   carouselMakeoversOnResize();
+  carouselStylesControlsHeight();
 
   $(window).resize( function() {
     carouselInspirationOnResize();
     carouselMakeoversOnResize();
+    carouselStylesControlsHeight();
   });
 
 

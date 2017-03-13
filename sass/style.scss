@@ -176,6 +176,11 @@ h3 {
 
   .carousel-indicators {
     position: inherit;
+    margin-left: 0;
+    margin-right: 0;
+    border-top: 1px solid rgb(215, 215, 215);
+    border-bottom: 1px solid rgb(215, 215, 215);
+
     li {
       height: auto;
       width: auto;
@@ -269,6 +274,7 @@ h3 {
       width: 100%;
       text-align: center;
       @include responsive-prop(margin, $crsl-ovrl-header-margins);
+      text-shadow: 1px 1px 0 rgba(1, 1, 1, 0.33);
     }
 
     .overlay-txt {
@@ -341,6 +347,23 @@ h3 {
 }
 
 #carousel-styles {
+  background: url("../img/style-bg.png");
+
+  .carousel-header {
+    display: inline-block;
+    @include responsive-prop(margin, $crsl-styles-header-margins);
+    @include responsive-prop(padding, $crsl-styles-header-paddings);
+    background-color: rgb(255, 255, 255);
+  }
+
+  h3 {
+    @include responsive-prop(font-size, $crsl-styles-h3-font-sizes);
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    bottom: auto;   // Height of controls is adjusted in JavaScript
+  }
 
   .inner-wrapper {
     position: relative;
@@ -394,9 +417,14 @@ h3 {
 .ideas {
   @include responsive-prop(margin, $ideas-margins);
 
-  .ideas-header {
-    text-align: center;
+  .header-left-wrapper {
     @include responsive-prop(margin, $ideas-header-margins);
+    @include responsive-prop(padding, $ideas-header-paddings);
+
+    .ideas-header {
+      display: inline;
+      border-bottom: 2px solid $brand-primary;
+    }
   }
 
   .ideas-list {
@@ -453,6 +481,7 @@ h3 {
       @include responsive-prop(min-width, $ideas-btn-min-widths);
       @include responsive-prop(padding, $ideas-btn-paddings);
       font-size: $ideas-btn-font-size;
+      box-shadow: 2px 2px 3px 0 rgba(1, 1, 1, 0.5);
     }
   }
 }
@@ -476,6 +505,8 @@ h3 {
   .gallery__header {
     text-align: center;
     @include responsive-prop(margin, $gallery-header-margins);
+    @include responsive-prop(padding, $gallery-header-paddings);
+    border-bottom: 1px solid rgb(215, 215, 215);
   }
 
   .gallery__body {
@@ -511,8 +542,14 @@ h3 {
 .shop {
   @include responsive-prop(margin, $shop-margins);
 
-  .shop__header {
-    text-align: center;
+  .shop__header-wrapper {
+    @include responsive-prop(margin, $shop-header-margins);
+    @include responsive-prop(padding, $shop-header-paddings);
+
+    .shop__header {
+      display: inline;
+      border-bottom: 2px solid $brand-primary;
+    }
   }
 
   .shop__btn-wrapper {
@@ -525,6 +562,8 @@ h3 {
       @extend .btn-primary;
       font-size: $shop-btn-font-size;
       @include responsive-prop(padding, $shop-btn-paddings);
+      box-shadow: 2px 2px 5px 0 rgba(1, 1, 1, 0.5);
     }
   }
 }
+
