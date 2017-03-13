@@ -199,44 +199,16 @@ h3 {
 
   .carousel-inner {
 
-    .carousel-item {
-      justify-content: space-between;
+    .carousel-caption {
 
-      .makeovers-img-holder {
-        width: 49%;
-        background-size: auto;
-        background-repeat: no-repeat;
+      h3 {
+        color: $global-txt-color;
       }
 
-      #img-bedroom-left { background-image: url("../img/slider2-slide1-img1.png"); }
-      #img-bedroom-right { background-image: url("../img/slider2-slide1-img2.png"); }
-      #img-guestroom-left { background-image: url("../img/slider2-slide1-img1.png"); }
-      #img-guestroom-right { background-image: url("../img/slider2-slide1-img2.png"); }
-      #img-bathroom-left { background-image: url("../img/slider2-slide1-img1.png"); }
-      #img-bathroom-right { background-image: url("../img/slider2-slide1-img2.png"); }
-      #img-kitchen-left { background-image: url("../img/slider2-slide1-img1.png"); }
-      #img-kitchen-right { background-image: url("../img/slider2-slide1-img2.png"); }
-
-      .carousel-caption {
-        width: $crsl-caption-width;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        right: auto;
-        bottom: auto;
-        background-color: $crsl-caption-bg-color;
-
-        h3 {
-          color: $global-txt-color;
-        }
-
-        p {
-          color: $global-txt-color;
-        }
+      p {
+        color: $global-txt-color;
       }
     }
-
-
 
 
     .carousel-item-row {
@@ -270,6 +242,7 @@ h3 {
 
   .carousel-control-next,
   .carousel-control-prev{
+    @include responsive-prop(width, $crsl-controls-widths);
     i {
       font-size: $crsl-controls-size;
       width: $crsl-controls-size;
@@ -335,6 +308,45 @@ h3 {
 #carousel-inspiration {
   @include responsive-prop(margin, $carousel-inspiration-margins);
   max-width: $carousel-inspiration-img-width;
+}
+
+#carousel-makeovers {
+  overflow: visible;
+  @include responsive-prop(padding, $crsl-inner-paddings);
+
+  .carousel-inner {
+    overflow: visible;
+  }
+  .carousel-item {
+    justify-content: space-between;
+
+    .makeovers-img-holder {
+      width: 49%;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    #img-bedroom-left { background-image: url("../img/slider2-slide1-img1.png"); }
+    #img-bedroom-right { background-image: url("../img/slider2-slide1-img2.png"); }
+    #img-guestroom-left { background-image: url("../img/slider2-slide1-img1.png"); }
+    #img-guestroom-right { background-image: url("../img/slider2-slide1-img2.png"); }
+    #img-bathroom-left { background-image: url("../img/slider2-slide1-img1.png"); }
+    #img-bathroom-right { background-image: url("../img/slider2-slide1-img2.png"); }
+    #img-kitchen-left { background-image: url("../img/slider2-slide1-img1.png"); }
+    #img-kitchen-right { background-image: url("../img/slider2-slide1-img2.png"); }
+
+    .carousel-caption {
+      display: block;
+      @include responsive-prop(width, $crsl-caption-widths);
+      @include responsive-prop(bottom, $crsl-caption-bottoms);
+      left: 50%;
+      @include responsive-prop(transform, $crsl-caption-transforms);
+      //right: auto;
+      //top: auto;
+      @include responsive-prop(padding, $crsl-caption-paddings);
+      background-color: $crsl-caption-bg-color;
+    }
+  }
 }
 
 .ideas {

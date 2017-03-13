@@ -108,17 +108,40 @@ $crsl-header-margins: $global-elem-spacers-vertical;
 $crsl-subheader-margins: $global-elem-spacers-vertical;
 
 $crsl-indicators-margins: (
-        xs: 0 30px,
+        xs: 0 8px,
+        sm: 0 30px,
 );
 $crsl-indicators-paddings: (
-        xs: 10px 0,
+        xs: 5px 0,
+        sm: 10px 0,
 );
 $crsl-indicators-inactive-color: rgb(51, 51, 51);
 $crsl-indicators-active-color: $brand-primary;
 
-$crsl-caption-width: 40%;
+$crsl-inner-paddings: (
+        xs: 0 0 125px 0,
+        sm: 0,
+);
+
+$crsl-caption-widths: (
+        xs: 320px,
+        sm: 400px,
+);
+$crsl-caption-paddings: $global-elem-spacers-all;
+$crsl-caption-bottoms: (
+        xs: 0,
+        sm: 50%,
+);
+$crsl-caption-transforms: (
+        xs: translate(-50%, 100%),
+        sm: translate(-50%, 50%),
+);
 $crsl-caption-bg-color: rgba(255, 255, 255, 0.651);
 
+$crsl-controls-widths: (
+        xs: 15%,
+        sm: 10%,
+);
 $crsl-controls-size: 40px;
 $crsl-controls-arrow-color: $brand-primary;
 $crsl-controls-border-color: rgb(172, 172, 172);
