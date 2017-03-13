@@ -24,7 +24,7 @@ module.exports = function(grunt) {
       sass:{
         files: ['sass/*.scss',
                 'sass/bootstrap/_custom.scss'],
-        tasks: ['sass', 'cssmin']
+        tasks: ['sass', 'cssmin', 'autoprefixer']
       }
     },
 
@@ -97,6 +97,9 @@ module.exports = function(grunt) {
 
   // Load the plugin that provides the "sass" task.
   grunt.loadNpmTasks('grunt-contrib-sass');
+
+  // Load the plugin that provides the "autoprefixer" task.
+  grunt.loadNpmTasks('grunt-autoprefixer');
 
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-uglify');
