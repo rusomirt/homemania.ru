@@ -36,4 +36,24 @@ jQuery(function ($) {
     carouselMakeoversOnResize();
   });
 
+
+  //
+  $("#carousel-styles").find(".carousel-item").each(function(){
+    let next = $(this).next();
+    if (!next.length) {
+      next = $(this).siblings(':first');
+    }
+    next.children(':first-child').clone().appendTo($(this));
+
+    if (next.next().length>0) {
+
+      next.next().children(':first-child').clone().appendTo($(this)).addClass('rightest');
+
+    }
+    else {
+      $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+
+    }
+  });
+
 });
