@@ -1,6 +1,8 @@
+// ----------------------------------------------------------------------------
 // Globals
+// ----------------------------------------------------------------------------
 
-// Global larger spacer (inter-block)
+// Global larger spacers (inter-block)
 $global-block-spacer: $spacer*2;
 $global-block-spacer-sm: $spacer*2;
 $global-block-spacers-vertical: (
@@ -11,7 +13,8 @@ $global-block-spacers-all: (
         xs: $global-block-spacer,
         sm: $global-block-spacer-sm,
 );
-// Global smaller spacer (inter-element)
+
+// Global smaller spacers (inter-element)
 $global-elem-spacer: $spacer * 0.5;
 $global-elem-spacer-sm: $spacer * 0.5;
 $global-elem-spacers-vertical: (
@@ -22,7 +25,8 @@ $global-elem-spacers-all: (
         xs: $global-elem-spacer,
         sm: $global-elem-spacer-sm,
 );
-// Global font
+
+// Global fonts
 $global-headers-font: "Playfair Display";
 $global-h1-font-sizes: (
         xs: 2.5rem,
@@ -43,20 +47,27 @@ $global-txt-font-sizes: (
 );
 $global-txt-color: rgb(51, 51, 51);
 
+
+// ----------------------------------------------------------------------------
 // Page header
+// ----------------------------------------------------------------------------
 $header-paddings: (
         xs: 20px 0 15px 0,
         sm: 40px 0 20px 0,
 );
 $header-title-txt-color: $white;
 
+// ----------------------------------------------------------------------------
 // Social icons block
+// ----------------------------------------------------------------------------
 $social-padding: 0;
 $social-icon-margin: $spacer * 0.1;
 $social-icon-size: 35px;
 $social-icon-color: $white;
 
+// ----------------------------------------------------------------------------
 // Login/signup block
+// ----------------------------------------------------------------------------
 $logsign-margins: (
         xs: 0.25rem 0 0 0,
         sm: 0.5rem 0 0 0,
@@ -64,7 +75,9 @@ $logsign-margins: (
 $logsign-font-size: 1rem;
 $logsign-txt-color: $white;
 
+// ----------------------------------------------------------------------------
 // Navbar
+// ----------------------------------------------------------------------------
 // Any element with margin-top: $global-block-spacer
 // will follow the navbar without too big spacer
 $navbar-margins: (
@@ -77,13 +90,17 @@ $navbar-collapsed-height: 60px;
 $searchbox-width: 275px;
 $searchbox-btn-border: 1px solid $input-group-addon-border-color;
 
+// ----------------------------------------------------------------------------
 // Text container
+// ----------------------------------------------------------------------------
 $txt-container-font-sizes: (
         xs: 1rem,
         sm: 1.7rem,
 );
 
+// ----------------------------------------------------------------------------
 // Carousel
+// ----------------------------------------------------------------------------
 $crsl-margins: $global-block-spacers-vertical;
 
 $crsl-heading-margins: $global-block-spacers-vertical;
@@ -145,14 +162,18 @@ $cral-ovrl-btn-transforms: (
         sm: translate(-50%, 0),
 );
 
+// ----------------------------------------------------------------------------
 // #carousel-inspiration
+// ----------------------------------------------------------------------------
 $carousel-inspiration-margins: (
         xs: $global-block-spacer auto $global-block-spacer*2.5 auto,
         sm: $global-block-spacer-sm auto $global-block-spacer*3 auto,
 );
 $carousel-inspiration-img-width: 1600px;
 
+// ----------------------------------------------------------------------------
 // Ideas
+// ----------------------------------------------------------------------------
 $ideas-margins: $global-block-spacers-vertical;
 $ideas-header-margins: $global-block-spacers-vertical;
 $ideas-btn-wrapper-paddings: $global-elem-spacers-vertical;
@@ -197,18 +218,24 @@ $idea-btn-paddings: (
         sm: $global-elem-spacer-sm $global-elem-spacer-sm*8,
 );
 
+// ----------------------------------------------------------------------------
 // Picture
+// ----------------------------------------------------------------------------
 $picture-caption-font-sizes: (
         xs: 0.9em,
         sm: 0.75em,
 );
 $picture-caption-paddings: $global-elem-spacers-vertical;
 
+// ----------------------------------------------------------------------------
 // Gallery
+// ----------------------------------------------------------------------------
 $gallery-header-margins: $global-block-spacers-vertical;
 $gallery-item-padding: 1%;
 
+// ----------------------------------------------------------------------------
 // Shop
+// ----------------------------------------------------------------------------
 $shop-margins: $global-block-spacers-vertical;
 $shop-btn-wrapper-paddings: $global-block-spacers-vertical;
 $shop-btn-font-size: 1em;
