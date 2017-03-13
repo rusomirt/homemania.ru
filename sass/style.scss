@@ -92,9 +92,6 @@ h3 {
       text-align: center;
       padding-top: $social-icon-size*0.2;
       border-radius: 50%;
-      -moz-border-radius: 50%;
-      -webkit-border-radius: 50%;
-      //-o-border-radius: 50%;
 
       //&.social-links__icon--facebook {
       //  @extend .fa-facebook;
@@ -232,8 +229,6 @@ h3 {
       }
     }
     .carousel-item-row.active {
-      display: -ms-flexbox;
-      display: -webkit-box;
       display: flex;
     }
 
@@ -253,8 +248,6 @@ h3 {
       padding: 0;
       line-height: 0.9em;
       border-radius: 50%;
-      -moz-border-radius: 50%;
-      -webkit-border-radius: 50%;
       border: 3px solid $crsl-controls-border-color;
     }
   }
@@ -341,8 +334,6 @@ h3 {
       @include responsive-prop(bottom, $crsl-caption-bottoms);
       left: 50%;
       @include responsive-prop(transform, $crsl-caption-transforms);
-      //right: auto;
-      //top: auto;
       @include responsive-prop(padding, $crsl-caption-paddings);
       background-color: $crsl-caption-bg-color;
     }
