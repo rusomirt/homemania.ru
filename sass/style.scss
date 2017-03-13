@@ -1,3 +1,7 @@
+// ----------------------------------------------------------------------------
+// File includes
+// ----------------------------------------------------------------------------
+
 // Bootstrap
 @import "bootstrap/bootstrap";
 // Bootstrap default variables are overrided in bootstrap/_custom.scss
@@ -8,6 +12,9 @@
 // Mixins
 @import "mixins";
 
+// ----------------------------------------------------------------------------
+// Global styles
+// ----------------------------------------------------------------------------
 
 body {
   font-family: $global-txt-font;
@@ -28,6 +35,10 @@ h2 {
 h3 {
   @include responsive-prop(font-size, $global-h3-font-sizes);
 }
+
+// ----------------------------------------------------------------------------
+// Components
+// ----------------------------------------------------------------------------
 
 header {
   @include responsive-prop(padding, $header-paddings);
