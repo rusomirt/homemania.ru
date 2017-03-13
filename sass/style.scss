@@ -5,11 +5,418 @@
 // Variables
 @import "variables";
 
-// All screens
-@import "style-xs";
 
-// SM and larger screens (> 540px)
-@import "style-sm";
+body {
+  font-family: $global-txt-font;
+  @include responsive-prop(font-size, $global-txt-font-sizes);
+  color: $global-txt-color;
+  line-height: 1.15;
+}
 
-// LG and larger screens (> 992px)
-@import "style-lg";
+h1, h2, h3, h4, h5, h6 {
+  font-family: $global-headers-font;
+}
+h1 {
+  @include responsive-prop(font-size, $global-h1-font-sizes);
+}
+h2 {
+  @include responsive-prop(font-size, $global-h2-font-sizes);
+}
+h3 {
+  @include responsive-prop(font-size, $global-h3-font-sizes);
+}
+
+header {
+  @include responsive-prop(padding, $header-paddings);
+
+  .header-title {
+    text-align: center;
+    color: $header-title-txt-color;
+  }
+}
+
+.social {
+  padding: $social-padding;
+  margin-bottom: $spacer/2;
+
+  li {
+    margin: $social-icon-margin;
+    list-style: none outside none;
+    display: inline-block;
+
+    i {
+      width: $social-icon-size;
+      height: $social-icon-size;
+      color: $social-icon-color;
+      font-size: $social-icon-size*0.6;
+      text-align: center;
+      padding-top: $social-icon-size*0.2;
+      border-radius: 50%;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      //-o-border-radius: 50%;
+    }
+  }
+}
+
+.login-signup {
+  @include responsive-prop(margin, $logsign-margins);
+  font-size: $logsign-font-size;
+  color: $logsign-txt-color;
+
+  a {
+    color: $logsign-txt-color;
+  }
+}
+
+.navbar{
+  @include responsive-prop(margin, $navbar-margins);
+  font-size: $navbar-font-size;
+  min-height: $navbar-collapsed-height;
+
+  .navbar-collapse {
+    @extend .d-lg-flex;
+
+    .navbar-nav {
+      @extend .d-lg-flex;
+      @extend .justify-content-lg-around;
+      width: 100%;
+    }
+    .form-inline {
+      flex-basis: $searchbox-width;
+      flex-shrink: 0;
+    }
+  }
+
+  .input-group-btn {
+    border: $searchbox-btn-border;
+
+    .btn {
+      border:none;
+      background-color: $input-group-addon-bg;
+
+      .icon-search {
+        color: $input-group-addon-border-color;
+      }
+    }
+  }
+}
+
+.txt-container {
+  text-align: center;
+  @include responsive-prop(font-size, $txt-container-font-sizes);
+  margin: $global-block-spacer 0;
+}
+
+.carousel {
+  @include responsive-prop(margin, $crsl-margins);
+  text-align: center;
+
+  .carousel-header {
+    @include responsive-prop(margin, $crsl-heading-margins);
+
+    h2 {
+      @include responsive-prop(margin, $crsl-header-margins);
+    }
+    p {
+      @include responsive-prop(margin, $crsl-subheader-margins);
+    }
+  }
+
+  .carousel-indicators {
+    position: inherit;
+    li {
+      height: auto;
+      width: auto;
+      max-width: 100%;
+      flex-grow: 0;
+      @include responsive-prop(margin, $crsl-indicators-margins);
+      @include responsive-prop(padding, $crsl-indicators-paddings);
+      text-indent: 0;
+      text-align: center;
+      color: $crsl-indicators-inactive-color;
+      background-color: transparent;
+      &.active {
+        color: $crsl-indicators-active-color;
+        border-bottom: 3px solid $crsl-indicators-active-color;
+      }
+    }
+  }
+
+  .carousel-inner {
+
+    .carousel-item {
+      justify-content: space-between;
+
+      .makeovers-img-holder {
+        width: 49%;
+        background-size: auto;
+        background-repeat: no-repeat;
+      }
+
+      #img-bedroom-left { background-image: url("../img/slider2-slide1-img1.png"); }
+      #img-bedroom-right { background-image: url("../img/slider2-slide1-img2.png"); }
+      #img-guestroom-left { background-image: url("../img/slider2-slide1-img1.png"); }
+      #img-guestroom-right { background-image: url("../img/slider2-slide1-img2.png"); }
+      #img-bathroom-left { background-image: url("../img/slider2-slide1-img1.png"); }
+      #img-bathroom-right { background-image: url("../img/slider2-slide1-img2.png"); }
+      #img-kitchen-left { background-image: url("../img/slider2-slide1-img1.png"); }
+      #img-kitchen-right { background-image: url("../img/slider2-slide1-img2.png"); }
+
+      .carousel-caption {
+        width: $crsl-caption-width;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        right: auto;
+        bottom: auto;
+        background-color: $crsl-caption-bg-color;
+
+        h3 {
+          color: $global-txt-color;
+        }
+
+        p {
+          color: $global-txt-color;
+        }
+      }
+    }
+
+
+
+
+    .carousel-item-row {
+      font-size: 0;
+      -ms-flex-wrap: wrap;
+      -ms-flex-direction: column;
+      -webkit-flex-flow: row wrap;
+      flex-flow: row wrap;
+
+      .carousel-img-wrapper {
+        flex: auto;
+        width: 1px; // Any px value for proper sizing
+        &:not(:first-of-type) {
+          margin-left: 1rem;
+        }
+
+        .carousel-img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+    .carousel-item-row.active {
+      display: -ms-flexbox;
+      display: -webkit-box;
+      display: flex;
+    }
+
+
+  }
+
+  .carousel-control-next,
+  .carousel-control-prev{
+    i {
+      font-size: $crsl-controls-size;
+      width: $crsl-controls-size;
+      height: $crsl-controls-size;
+      color: $crsl-controls-arrow-color;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      line-height: 0.9em;
+      border-radius: 50%;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      border: 3px solid $crsl-controls-border-color;
+    }
+  }
+  .carousel-control-prev i { text-indent: -2px; }
+  .carousel-control-next i { text-indent: 2px; }
+
+  .carousel-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    z-index: $crsl-ovrl-z-index;
+
+    .overlay-header {
+      @include responsive-prop(font-size, $crsl-ovrl-header-font-sizes);
+      color: $crsl-ovrl-header-color;
+      width: 100%;
+      text-align: center;
+      @include responsive-prop(margin, $crsl-ovrl-header-margins);
+    }
+
+    .overlay-txt {
+      // 1st invisible block - for 'justify-content' aligning
+      &:first-of-type {
+        visibility: hidden;
+      }
+      @include responsive-prop(padding, $crsl-ovrl-txt-paddings);
+      @include responsive-prop(font-size, $crsl-ovrl-txt-font-sizes);
+      color: $crsl-ovrl-txt-color;
+      align-self: center;
+      width: $crsl-ovrl-txt-width;
+      @include responsive-prop(min-width, $crsl-ovrl-txt-min-widths);
+      max-width: $crsl-ovrl-txt-max-width;
+      margin: 0 auto;
+      text-align: center;
+      background-color: $crsl-ovrl-txt-bg-color;
+    }
+
+    button {
+      position: absolute;
+      @include responsive-prop(bottom, $crsl-ovrl-btn-bottoms);
+      left: 50%;
+      @include responsive-prop(transform, $cral-ovrl-btn-transforms);
+      @include responsive-prop(padding, $crsl-ovrl-btn-paddings);
+    }
+  }
+}
+
+#carousel-inspiration {
+  @include responsive-prop(margin, $carousel-inspiration-margins);
+  max-width: $carousel-inspiration-img-width;
+}
+
+.ideas {
+  @include responsive-prop(margin, $ideas-margins);
+
+  .ideas-header {
+    text-align: center;
+    @include responsive-prop(margin, $ideas-header-margins);
+  }
+
+  .ideas-list {
+    @extend .list-unstyled;
+
+    .idea {
+      display: flex;
+      @include responsive-prop(flex-direction, $idea-flex-directions);
+      @include responsive-prop(align-items, $idea-align-items);
+      @include responsive-prop(margin, $idea-margins);
+
+      .idea-img {
+        width: 50%;
+        @include responsive-prop(margin, $idea-img-margins);
+      }
+      .idea-body {
+        @include responsive-prop(padding, $idea-body-paddings);
+
+        .idea-floats-wrapper {
+          @include responsive-prop(padding, $idea-floats-wrapper-padding);
+          @include responsive-prop(font-size, $idea-floats-font-sizes);
+          @extend .clearfix;
+
+          .idea-tags { float: left;}
+          .idea-date { float: right;}
+        }
+
+        .idea-header {
+          @include responsive-prop(margin, $idea-header-margins);
+        }
+        .idea-teaser{
+          @include responsive-prop(font-size, $idea-teaser-font-sizes);
+          line-height: $idea-teaser-line-height;
+        }
+        .idea-btn-wrapper {
+          display: flex;
+          justify-content: center;
+          @include responsive-prop(padding, $idea-btn-wrapper-paddings);
+
+          .btn {
+            @include responsive-prop(padding, $idea-btn-paddings);
+          }
+        }
+      }
+    }
+  }
+  .ideas-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    @include responsive-prop(padding, $ideas-btn-wrapper-paddings);
+
+    .btn {
+      width: 50%;
+      @include responsive-prop(min-width, $ideas-btn-min-widths);
+      @include responsive-prop(padding, $ideas-btn-paddings);
+      font-size: $ideas-btn-font-size;
+    }
+  }
+}
+
+.picture {
+
+  .picture__img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .picture__caption {
+    @include responsive-prop(font-size, $picture-caption-font-sizes);
+    text-align: center;
+    @include responsive-prop(padding, $picture-caption-paddings);
+  }
+}
+
+.gallery {
+
+  .gallery__header {
+    text-align: center;
+    @include responsive-prop(margin, $gallery-header-margins);
+  }
+
+  .gallery__body {
+    @extend .row;
+    justify-content: center;
+
+    .gallery__item {
+      @extend .gallery--4col;  // by default - .gallery--4-col
+      padding: $gallery-item-padding;
+    }
+  }
+
+  &.gallery--4col {
+    .gallery__item {
+      @include make-col(1, 2);
+
+      @include media-breakpoint-up(sm) {
+        @include make-col(1, 4);
+      }
+    }
+  }
+  &.gallery--5col {
+    .gallery__item {
+      @include make-col(1, 3);
+
+      @include media-breakpoint-up(sm) {
+        @include make-col(1, 5);
+      }
+    }
+  }
+}
+
+.shop {
+  @include responsive-prop(margin, $shop-margins);
+
+  .shop__header {
+    text-align: center;
+  }
+
+  .shop__btn-wrapper {
+    display: flex;
+    justify-content: center;
+    @include responsive-prop(padding, $shop-btn-wrapper-paddings);
+
+    .shop__btn {
+      @extend .btn;
+      @extend .btn-primary;
+      font-size: $shop-btn-font-size;
+      @include responsive-prop(padding, $shop-btn-paddings);
+    }
+  }
+}

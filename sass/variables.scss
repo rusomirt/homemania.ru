@@ -1,35 +1,53 @@
 // Globals
+
 // Global larger spacer (inter-block)
 $global-block-spacer: $spacer*2;
 $global-block-spacer-sm: $spacer*2;
+$global-block-spacers-vertical: (
+        xs: $global-block-spacer 0,
+        sm: $global-block-spacer-sm 0,
+);
+$global-block-spacers-all: (
+        xs: $global-block-spacer,
+        sm: $global-block-spacer-sm,
+);
 // Global smaller spacer (inter-element)
 $global-elem-spacer: $spacer * 0.5;
 $global-elem-spacer-sm: $spacer * 0.5;
+$global-elem-spacers-vertical: (
+        xs: $global-elem-spacer 0,
+        sm: $global-elem-spacer-sm 0,
+);
+$global-elem-spacers-all: (
+        xs: $global-elem-spacer,
+        sm: $global-elem-spacer-sm,
+);
 // Global font
 $global-headers-font: "Playfair Display";
-$global-h1-font-size: 2.5rem;
-$global-h1-font-size-sm: 60px;//3.5rem;
-$global-h2-font-size: 1.5rem;
-$global-h2-font-size-sm: 44px;//2.5rem;
-$global-h3-font-size: 1.2rem;
-$global-h3-font-size-sm: 30px;//1.5rem;
-
+$global-h1-font-sizes: (
+        xs: 2.5rem,
+        sm: 60px,
+);
+$global-h2-font-sizes: (
+        xs: 1.5rem,
+        sm: 44px,
+);
+$global-h3-font-sizes: (
+        xs: 1.2rem,
+        sm: 30px,
+);
 $global-txt-font: "Fira Sans Light";
-$global-txt-font-size: 1rem;
-$global-txt-font-size-sm: 1.5rem;
+$global-txt-font-sizes: (
+        xs: 1rem,
+        sm: 1.5rem,
+);
 $global-txt-color: rgb(51, 51, 51);
 
-// Text container
-$txt-cntnr-font-size: 1rem;
-$txt-cntnr-font-size-sm: 1.7rem;
-
 // Page header
-$header-padding-top: 20px;
-$header-padding-top-sm: 40px;
-$header-padding-bottom: 15px;
-$header-padding-bottom-sm: 20px;
-//$header-title-font-size: 2.5rem;
-//$header-title-font-size-sm: 3.5rem;
+$header-paddings: (
+        xs: 20px 0 15px 0,
+        sm: 40px 0 20px 0,
+);
 $header-title-txt-color: $white;
 
 // Social icons block
@@ -39,105 +57,172 @@ $social-icon-size: 35px;
 $social-icon-color: $white;
 
 // Login/signup block
-$logsign-margin-top: $spacer * 0.25;
-$logsign-margin-top-sm: $spacer * 0.5;
+$logsign-margins: (
+        xs: 0.25rem 0 0 0,
+        sm: 0.5rem 0 0 0,
+);
 $logsign-font-size: 1rem;
 $logsign-txt-color: $white;
 
 // Navbar
+// Any element with margin-top: $global-block-spacer
+// will follow the navbar without too big spacer
+$navbar-margins: (
+        xs: 0 0 (-$global-block-spacer) 0,
+        sm: 0.25*$global-block-spacer-sm 0 (-0.75*$global-block-spacer-sm) 0,
+);
 $navbar-font-size: 1.2rem;
 $navbar-collapsed-height: 60px;
 
 $searchbox-width: 275px;
 $searchbox-btn-border: 1px solid $input-group-addon-border-color;
 
+// Text container
+$txt-container-font-sizes: (
+        xs: 1rem,
+        sm: 1.7rem,
+);
+
 // Carousel
-// 1
-$carousel-inspiration-mb: $global-block-spacer*2.5;
-$carousel-inspiration-mb-sm: $global-block-spacer*3;
-$carousel-img-width: 1600px;
+$crsl-margins: $global-block-spacers-vertical;
 
-$overlay-z-index: 12;
+$crsl-heading-margins: $global-block-spacers-vertical;
+$crsl-header-margins: $global-elem-spacers-vertical;
+$crsl-subheader-margins: $global-elem-spacers-vertical;
 
-$overlay-header-font-size: 2rem;
-$overlay-header-font-size-sm: 4.5rem;
-$overlay-header-color: $white;
-$overlay-header-mt: 8px;
-$overlay-header-mt-sm: -60px;
+$crsl-indicators-margins: (
+        xs: 0 30px,
+);
+$crsl-indicators-paddings: (
+        xs: 10px 0,
+);
+$crsl-indicators-inactive-color: rgb(51, 51, 51);
+$crsl-indicators-active-color: $brand-primary;
 
-$overlay-txt-font-size: 0.8rem;
-$overlay-txt-font-size-sm: 1.2rem;
-$overlay-txt-font-size-lg: 1.5rem;
-$overlay-txt-color: $black;
-$overlay-txt-width: 50%;
-$overlay-txt-min-width: 240px;
-$overlay-txt-min-width-sm: 480px;
-$overlay-txt-max-width: 830px;
-$overlay-txt-bg-color: rgba(255, 255, 255, 0.8);
-$overlay-txt-pt: $spacer * 0.5;
-$overlay-txt-pb: $spacer * 0.5;
-$overlay-txt-pb-sm: $spacer * 2;
-$overlay-txt-px: $spacer * 0.25;
-$overlay-txt-px-sm: $spacer * 2;
+$crsl-caption-width: 40%;
+$crsl-caption-bg-color: rgba(255, 255, 255, 0.651);
 
-$overlay-btn-font-size: 1rem;
-$overlay-btn-font-size-sm: 1.5rem;
-$overlay-btn-bottom: 0;
-$overlay-btn-bottom-sm: -($spacer * 1.8);
-$overlay-btn-padding: ($spacer * 0.5) ($spacer * 4);
-$overlay-btn-padding-sm: ($spacer * 0.5) ($spacer * 6);
-$overlay-btn-translate-y: 100%;
-$overlay-btn-translate-y-sm: 0;
+$crsl-controls-size: 40px;
+$crsl-controls-arrow-color: $brand-primary;
+$crsl-controls-border-color: rgb(172, 172, 172);
 
-// 2
-//$carousel-header-font-size: 1.5rem;
-//$carousel-header-font-size-sm: 2.5rem;
-//$carousel-header-txt-font-size: 1rem;
-//$carousel-header-txt-font-size-sm: 1.5rem;
+$crsl-ovrl-z-index: 12;
+$crsl-ovrl-header-font-sizes: (
+        xs: 2rem,
+        sm: 4.5rem,
+);
+$crsl-ovrl-header-color: $white;
+$crsl-ovrl-header-margins: (
+        xs: 4px 0 0 0,
+        sm: -70px 0 0 0,
+);
+$crsl-ovrl-txt-font-sizes: (
+        xs: 0.8rem,
+        sm: 1.2rem,
+);
+$crsl-ovrl-txt-color: $black;
+$crsl-ovrl-txt-width: 50%;
+$crsl-ovrl-txt-min-widths: (
+        xs: 240px,
+        sm: 480px,
+);
+$crsl-ovrl-txt-max-width: 830px;
+$crsl-ovrl-txt-bg-color: rgba(255, 255, 255, 0.8);
+$crsl-ovrl-txt-paddings: (
+        xs: $spacer*0.5 $spacer*0.25 $spacer*0.5 $spacer*0.25,
+        sm: $spacer*0.5 $spacer*0.2 $spacer*2 $spacer*0.2,
+);
+$crsl-ovrl-btn-bottoms: (
+        xs: 0,
+        sm: -($spacer * 1.8),
+);
+$crsl-ovrl-btn-paddings: (
+        xs: ($spacer * 0.5) ($spacer * 4),
+        sm: ($spacer * 0.5) ($spacer * 6),
+);
+$cral-ovrl-btn-transforms: (
+        xs: translate(-50%, 100%),
+        sm: translate(-50%, 0),
+);
 
-//$carousel-indicators-font-size: 1.5rem;
-$carousel-indicators-inactive-color: rgb(51, 51, 51);
-$carousel-indicators-active-color: $brand-primary;
-
-$carousel-caption-width: 40%;
-$carousel-caption-bg-color: rgba(255, 255, 255, 0.651);
-//$carousel-caption-header-font-size: 2rem;
-//$carousel-caption-txt-font-size: 1.5rem;
-
-$carousel-controls-size: 40px;
-$carousel-controls-arrow-color: $brand-primary;
-$carousel-controls-border-color: rgb(172, 172, 172);
+// #carousel-inspiration
+$carousel-inspiration-margins: (
+        xs: $global-block-spacer auto $global-block-spacer*2.5 auto,
+        sm: $global-block-spacer-sm auto $global-block-spacer*3 auto,
+);
+$carousel-inspiration-img-width: 1600px;
 
 // Ideas
-//$ideas-txt-font-size: 1rem;
-//$ideas-txt-font-size-sm: 1rem;
-//$ideas-header-font-size: 1.5rem;
-//$ideas-header-font-size-sm: 2.5rem;
-//$idea-header-font-size: 1.2rem;
-//$idea-header-font-size-sm: 1.5rem;
-$idea-floats-font-size: 0.8em;
-$idea-floats-font-size-sm: 0.6em;
-$idea-body-line-height: 1.5;
-$idea-txt-font-size: 1em;
-$idea-txt-font-size-sm: 0.75em;
+$ideas-margins: $global-block-spacers-vertical;
+$ideas-header-margins: $global-block-spacers-vertical;
+$ideas-btn-wrapper-paddings: $global-elem-spacers-vertical;
 $ideas-btn-font-size: 1em;
-$ideas-btn-min-width: 250px;
-$ideas-btn-min-width-sm: 500px;
+$ideas-btn-min-widths: (
+        xs: 250px,
+        sm: 500px,
+);
+$ideas-btn-paddings: $global-elem-spacers-vertical;
+
+$idea-flex-directions: (
+        xs: column,
+        sm: row,
+);
+$idea-align-items: (
+        xs: center,
+        sm: flex-start,
+);
+$idea-margins: $global-block-spacers-vertical;
+$idea-img-margins: (
+        xs: 0,
+        sm: 0 $global-elem-spacer 0 0,
+);
+$idea-body-paddings: (
+        xs: $global-elem-spacer*2 0 0 0,
+        sm: 0 0 0 $global-elem-spacer-sm*2,
+);
+$idea-floats-wrapper-padding: $global-elem-spacers-vertical;
+$idea-floats-font-sizes: (
+        xs: 0.8em,
+        sm: 0.6em,
+);
+$idea-header-margins: $global-block-spacers-vertical;
+$idea-teaser-font-sizes: (
+        xs: 1em,
+        sm: 0.75em,
+);
+$idea-teaser-line-height: 1.5;
+$idea-btn-wrapper-paddings: $global-elem-spacers-vertical;
+$idea-btn-paddings: (
+        xs: $global-elem-spacer $global-elem-spacer*8,
+        sm: $global-elem-spacer-sm $global-elem-spacer-sm*8,
+);
 
 // Picture
-$picture-font-size: 1em;
-$picture-font-size-sm: 0.75em;
+$picture-caption-font-sizes: (
+        xs: 0.9em,
+        sm: 0.75em,
+);
+$picture-caption-paddings: $global-elem-spacers-vertical;
 
 // Gallery
+$gallery-header-margins: $global-block-spacers-vertical;
 $gallery-item-padding: 1%;
-//$gallery-header-font-size: 1.2rem;
-//$gallery-header-font-size-sm: 1.5rem;
-//$gallery-item-width: 100px;
-//$gallery-item-width-sm: 23%;//200px;
 
 // Shop
-//$shop-txt-font-size: 1rem;
-//$shop-txt-font-size-sm: 1rem;
-//$shop-header-font-size: 1.5rem;
-//$shop-header-font-size-sm: 2.5rem;
+$shop-margins: $global-block-spacers-vertical;
+$shop-btn-wrapper-paddings: $global-block-spacers-vertical;
 $shop-btn-font-size: 1em;
+$shop-btn-paddings: (
+        xs: $global-elem-spacer $global-elem-spacer*8,
+        sm: $global-elem-spacer-sm $global-elem-spacer-sm*8,
+);
+
+
+@mixin responsive-prop($property, $mapped-values) {
+  @each $breakpoint, $value in $mapped-values {
+    @include media-breakpoint-up($breakpoint) {
+      #{$property}: $value;
+    }
+  }
+}
+
