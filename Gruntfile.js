@@ -39,6 +39,14 @@ module.exports = function(grunt) {
       }
     },
 
+    autoprefixer:{
+      dist:{
+        files:{
+          'css/style.css':'css/style.css'
+        }
+      }
+    },
+
     concat: {
       options: {
         separator: ';',
