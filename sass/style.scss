@@ -90,7 +90,7 @@ h3 {
       color: $social-icon-color;
       font-size: $social-icon-size*0.6;
       text-align: center;
-      padding-top: $social-icon-size*0.2;
+      padding-top: $social-icon-size*0.17;
       border-radius: 50%;
 
       //&.social-links__icon--facebook {
@@ -124,6 +124,11 @@ h3 {
   @include responsive-prop(margin, $navbar-margins);
   font-size: $navbar-font-size;
   min-height: $navbar-collapsed-height;
+  padding: 0.5rem 0;
+
+  .container {
+    padding: 0 15px;
+  }
 
   .navbar-collapse {
     @extend .d-lg-flex;
@@ -448,17 +453,25 @@ h3 {
             height: 38px;
           }
           button {
-            padding: 0.2rem 1rem;
+            padding: 0.2rem 0.5rem;
             font-size: 0.8rem;
           }
           .photo-crsl-img-left {
             button {
               background-color: $color-green;
+              background-repeat: no-repeat;
+              background-position: 0.5rem center;
+              padding-left: 2.5rem;
+            }
+            .like {
+              background-image: url("../img/icons/heart.png");
+            }
+            .dislike {
+              background-image: url("../img/icons/smile-unhappy.png");
             }
           }
           .photo-crsl-img-right {
             button {
-              //height: 100%;
               background-color: $white;
               border: 1px solid $color-grey-light;
             }
@@ -483,6 +496,7 @@ h3 {
           }
           a {
             float: right;
+            font-size: 0.8em;
           }
         }
         .crsl-capt-links {
@@ -669,6 +683,8 @@ h3 {
 .breadcrumb {
   @include responsive-prop(margin, $brdcrmb-margins);
   @include responsive-prop(font-size, $brdcrmb-font-sizes);
+  padding-left: 0;
+  padding-right: 0;
 
   li {
     &:before {
@@ -679,5 +695,4 @@ h3 {
       color: $color-grey-light;
     }
   }
-
 }
