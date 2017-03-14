@@ -94,7 +94,8 @@ $logsign-txt-color: $white;
 // will follow the navbar without too big spacer
 $navbar-margins: (
         xs: 0 0 (-$global-block-spacer) 0,
-        sm: 0.25*$global-block-spacer-sm 0 (-0.75*$global-block-spacer-sm) 0,
+        //sm: 0.25*$global-block-spacer-sm 0 (-0.75*$global-block-spacer-sm) 0,
+        sm: $global-elem-spacer-sm 0 ($global-elem-spacer-sm - $global-block-spacer-sm) 0,
 );
 $navbar-font-size: 1.2rem;
 $navbar-collapsed-height: 60px;
