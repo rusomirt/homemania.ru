@@ -69,58 +69,8 @@ jQuery(function ($) {
   });
 
 
-  // // "myAwesomeDropzone" is the camelized version of the HTML element's ID
-  // Dropzone.options.myAwesomeDropzone = {
-  //   paramName: "file", // The name that will be used to transfer the file
-  //   maxFilesize: 2, // MB
-  //   accept: function(file, done) {
-  //     if (file.name == "+.png") {
-  //       done("Naha, you don't.");
-  //     }
-  //     else { done(); }
-  //   }
-  // };
-  //
-  //
-  // var isAdvancedUpload = function() {
-  //   var div = document.createElement('div');
-  //   return (('draggable' in div) || ('ondragstart' in div && 'ondrop' in div)) && 'FormData' in window && 'FileReader' in window;
-  // }();
-  //
-  // var $form = $('.box');
-  //
-  // if (isAdvancedUpload) {
-  //   $form.addClass('has-advanced-upload');
-  // }
-
-
-  $('.form input').change(function () {
-    $('.form p').text(this.files.length + " file(s) selected");
+  $('.upload__fileloader').change(function () {
+    $('.upload__fileloader-caption').text("Выбрано файлов: " + this.files.length);
   });
 
 });
-
-//DropzoneJS snippet - js
-
-// $.getScript('http://cdnjs.cloudflare.com/ajax/libs/dropzone/3.8.4/dropzone.min.js',function(){
-//   // instantiate the uploader
-//   $('#file-dropzone').dropzone({
-//     url: "/upload",
-//     maxFilesize: 100,
-//     paramName: "uploadfile",
-//     maxThumbnailFilesize: 5,
-//     init: function() {
-//
-//       this.on('success', function(file, json) {
-//       });
-//
-//       this.on('addedfile', function(file) {
-//
-//       });
-//
-//       this.on('drop', function(file) {
-//         alert('file');
-//       });
-//     }
-//   });
-// });
