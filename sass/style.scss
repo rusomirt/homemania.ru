@@ -487,6 +487,7 @@ h3 {
         .crsl-capt-desc {
           text-align: left;
           @include responsive-prop(margin, $crsl-capt-desc-margins);
+          @include responsive-prop(padding, $crsl-capt-desc-paddings);
 
           h3 {
             @include responsive-prop(font-size, $crsl-photo-header-font-sizes);
