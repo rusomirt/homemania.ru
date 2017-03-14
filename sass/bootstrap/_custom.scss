@@ -35,3 +35,10 @@ $btn-primary-bg:                 $brand-primary;
 $btn-primary-border:             $btn-primary-bg;
 // Allows for customizing button radius independently from global border radius
 $btn-border-radius:              2px;
+
+// Breadcrumbs
+
+$breadcrumb-bg:                 transparent;
+$breadcrumb-divider-color:      rgb(204, 204, 204);
+$breadcrumb-active-color:       rgb(153, 153, 153);
+$breadcrumb-divider:            ">";

@@ -2,6 +2,12 @@
 // Globals
 // ----------------------------------------------------------------------------
 
+// Colors
+$color-green: rgb(31, 185, 185);
+$color-grey-dark: rgb(153, 153, 153);
+$color-grey-light: rgb(204, 204, 204);
+$color-almost-black: rgb(51,51,51);
+
 // Global block spacers
 $global-block-spacer: $spacer*2;
 $global-block-spacer-sm: $spacer*4;
@@ -57,7 +63,7 @@ $global-txt-font-sizes: (
         xs: 1rem,
         sm: 1.5rem,
 );
-$global-txt-color: rgb(51, 51, 51);
+$global-txt-color: $color-almost-black;
 
 
 // ----------------------------------------------------------------------------
@@ -128,7 +134,7 @@ $crsl-indicators-paddings: (
         xs: 5px 0,
         sm: 10px 0,
 );
-$crsl-indicators-inactive-color: rgb(51, 51, 51);
+$crsl-indicators-inactive-color: $color-almost-black;
 $crsl-indicators-active-color: $brand-primary;
 
 $crsl-inner-paddings: (
@@ -158,7 +164,7 @@ $crsl-controls-widths: (
 );
 $crsl-controls-size: 40px;
 $crsl-controls-arrow-color: $brand-primary;
-$crsl-controls-border-color: rgb(172, 172, 172);
+$crsl-controls-border-color:$color-grey-dark;// rgb(172, 172, 172);
 
 $crsl-ovrl-z-index: 12;
 $crsl-ovrl-header-font-sizes: (
@@ -223,6 +229,42 @@ $crsl-styles-h3-font-sizes: (
         xs: 1.2rem,
         sm: 1.3rem,
         md: 1.5rem,
+);
+
+// ----------------------------------------------------------------------------
+// #carousel-photo
+// ----------------------------------------------------------------------------
+$crsl-photo-font-sizes: (
+        xs: 0.8rem,
+        sm: 1rem,
+);
+$crsl-photo-header-font-sizes: (
+        xs: 1.2rem,
+        sm: 1.5rem,
+);
+$crsl-photo-capt-flex-dir: (
+        xs: column,
+        sm: row,
+);
+$crsl-photo-capt-paddings: (
+        xs: 4.5rem 0 0 0,
+        sm: 2em 0 0 0,
+);
+$crsl-capt-desc-margins: (
+        xs: 0,
+        sm: 0 3rem 0 0,
+);
+$crsl-img-btns-transforms: (
+        xs: translate(0, 75%),
+        sm: translate(0, 50%),
+);
+$crsl-img-btns-flex-dirs: (
+        xs: column,
+        sm: row,
+);
+$crsl-img-btns-margins: (
+        xs: 0 0 0.2rem 0,
+        sm: 0 0.2rem 0 0,
 );
 
 // ----------------------------------------------------------------------------
@@ -301,4 +343,18 @@ $shop-btn-font-size: 1em;
 $shop-btn-paddings: (
         xs: $global-elem-spacer $global-elem-spacer*8,
         sm: $global-elem-spacer-sm $global-elem-spacer-sm*8,
+);
+
+
+
+// ----------------------------------------------------------------------------
+// Breadcrumb
+// ----------------------------------------------------------------------------
+$brdcrmb-margins: (
+        xs: $global-block-spacer 0 (-$global-block-spacer) 0,
+        sm: $global-block-spacer-sm 0 ($global-elem-spacer-sm - $global-block-spacer-sm) 0,
+);
+$brdcrmb-font-sizes: (
+        xs: 0.8rem,
+        sm: 1rem,
 );

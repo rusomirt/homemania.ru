@@ -178,8 +178,8 @@ h3 {
     position: inherit;
     margin-left: 0;
     margin-right: 0;
-    border-top: 1px solid rgb(215, 215, 215);
-    border-bottom: 1px solid rgb(215, 215, 215);
+    border-top: 1px solid $color-grey-light;//rgb(215, 215, 215);
+    border-bottom: 1px solid $color-grey-light;//rgb(215, 215, 215);
 
     li {
       height: auto;
@@ -302,6 +302,8 @@ h3 {
       @include responsive-prop(padding, $crsl-ovrl-btn-paddings);
     }
   }
+
+
 }
 
 #carousel-inspiration {
@@ -414,6 +416,102 @@ h3 {
 
 }
 
+#carousel-photo {
+  @include responsive-prop(font-size, $crsl-photo-font-sizes);
+  .carousel-inner {
+    .carousel-item {
+      flex-direction: column;
+
+      .crsl-img-wrapper {
+        position: relative;
+
+        img {
+          width: 100%;
+          //height: 100%;
+          display: block;
+        }
+
+        .carousel-img-photo-btns {
+          position: absolute;
+          bottom: 0;
+          @include responsive-prop(transform, $crsl-img-btns-transforms);
+
+          display: flex;
+          @include responsive-prop(flex-direction, $crsl-img-btns-flex-dirs);
+          width: 100%;
+          justify-content: center;
+          flex-wrap: wrap;
+
+          .photo-crsl-img-left,
+          button {
+            @include responsive-prop(margin, $crsl-img-btns-margins);
+            height: 38px;
+          }
+          button {
+            padding: 0.2rem 1rem;
+            font-size: 0.8rem;
+          }
+          .photo-crsl-img-left {
+            button {
+              background-color: $color-green;
+            }
+          }
+          .photo-crsl-img-right {
+            button {
+              //height: 100%;
+              background-color: $white;
+              border: 1px solid $color-grey-light;
+            }
+          }
+        }
+      }
+
+      .carousel-caption-photo {
+        display: flex;
+        @include responsive-prop(flex-direction, $crsl-photo-capt-flex-dir);
+        @include responsive-prop(padding, $crsl-photo-capt-paddings);
+
+        .crsl-capt-desc {
+          text-align: left;
+          @include responsive-prop(margin, $crsl-capt-desc-margins);
+
+          h3 {
+            @include responsive-prop(font-size, $crsl-photo-header-font-sizes);
+          }
+          p {
+
+          }
+          a {
+            float: right;
+          }
+        }
+        .crsl-capt-links {
+          margin: 0 auto;
+          p {
+            text-align: left;
+          }
+          .similar {
+            display: flex;
+            img + img {
+              margin-left: 0.5rem;
+            }
+          }
+          .social-links {
+            margin: 0.5rem 0 0 0;
+            padding: 0.5rem 0 0 0;
+            border-top: 1px solid $color-grey-light;
+
+            i {
+              color: $color-grey-light;
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
 .ideas {
   @include responsive-prop(margin, $ideas-margins);
 
@@ -506,7 +604,7 @@ h3 {
     text-align: center;
     @include responsive-prop(margin, $gallery-header-margins);
     @include responsive-prop(padding, $gallery-header-paddings);
-    border-bottom: 1px solid rgb(215, 215, 215);
+    border-bottom: 1px solid $color-grey-light;//rgb(215, 215, 215);
   }
 
   .gallery__body {
@@ -567,3 +665,19 @@ h3 {
   }
 }
 
+
+.breadcrumb {
+  @include responsive-prop(margin, $brdcrmb-margins);
+  @include responsive-prop(font-size, $brdcrmb-font-sizes);
+
+  li {
+    &:before {
+      padding-left: 0 !important;
+    }
+
+    a {
+      color: $color-grey-light;
+    }
+  }
+
+}
