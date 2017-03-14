@@ -6,6 +6,9 @@
 @import "bootstrap/bootstrap";
 // Bootstrap default variables are overrided in bootstrap/_custom.scss
 
+// Dropzone
+//@import url('//cdnjs.cloudflare.com/ajax/libs/dropzone/3.8.4/css/dropzone.css');
+
 // Variables
 @import "variables";
 
@@ -694,6 +697,121 @@ h3 {
 
     a {
       color: $color-grey-light;
+    }
+  }
+}
+
+
+.upload {
+  @include responsive-prop(margin, $upload-margins);
+
+  .upload__hdr-cntnr {
+    text-align: center;
+    @include responsive-prop(margin, $upload-hdr-cntnr-margins);
+    @include responsive-prop(padding, $upload-hdr-cntnr-paddings);
+    background: url("../img/style-bg.png");
+
+    .upload__hdr {
+      display: inline-block;
+      @include responsive-prop(font-size, $upload-hdr-font-sizes);
+      @include responsive-prop(padding, $upload-hdr-paddings);
+      background-color: $white;
+    }
+  }
+
+  .upload__txt {
+    @include responsive-prop(padding, $upload-txt-paddings);
+  }
+
+  .upload__form{
+    @include responsive-prop(padding, $upload-form-paddings);
+
+    .upload__form-group {
+      @extend .form-group;
+
+      .upload__lbl--rqd {
+        &:after {
+          content: '*';
+          color: red;
+        }
+      }
+      .upload__form-control {
+        @extend .form-control;
+        border-color: $color-grey-light;
+        color: $color-grey-light;
+
+        option, option:focus {
+          color: $color-grey-light !important;
+        }
+      }
+    }
+
+    .upload__fileloader-wrapper {
+      border: 2px dashed $color-grey-light;
+      position: relative;
+      @include responsive-prop(height, $upload-fileloader-wrapper-heights);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      @include responsive-prop(padding, $upload-fileloader-wrapper-paddings);
+
+      .upload__fileloader {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        outline: none;
+        opacity: 0;
+      }
+
+      .upload__fileloader-images {
+        display: flex;
+
+        .upload__fileloader-img-wrapper {
+          margin: 0 1rem;
+
+          .upload__fileloader-img {
+            width: 50px;
+            height: 50px;
+            background: url("../img/icons/upload-img.png") no-repeat;
+            background-size: contain;
+          }
+          .upload__fileloader-img-caption {
+            font-size: 0.8em;
+            color: $color-grey-light;
+            text-align: center;
+          }
+        }
+      }
+
+      .upload__fileloader-caption{
+        text-align: center;
+        color: $color-grey-light;
+      }
+    }
+
+    .upload__disclaimer{
+      @include responsive-prop(margin, $upload-disclaimer-margins);
+    }
+
+    .upload__btn-wrapper {
+      padding: 2rem 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-top: 2px solid $color-grey-light;
+
+      .upload__btn {
+        @extend .btn;
+        background-color: $color-green;
+        font-size: 1em;
+        color: $white;
+        margin: 0;
+        @include responsive-prop(padding, $upload-btn-paddings);
+        box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.6);
+      }
     }
   }
 }

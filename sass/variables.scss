@@ -362,3 +362,44 @@ $brdcrmb-font-sizes: (
         xs: 0.8rem,
         sm: 1rem,
 );
+
+
+// ----------------------------------------------------------------------------
+// Upload form
+// ----------------------------------------------------------------------------
+$upload-margins: $global-block-spacers-vertical;
+$upload-hdr-cntnr-margins: $global-elem-big-spacers-vertical;
+$upload-hdr-cntnr-paddings: (
+        xs: 1.5rem 0,
+        sm: 2.5rem 0,
+);
+$upload-hdr-font-sizes: (
+        xs: 1.5rem,
+        sm: 2.25rem,
+);
+$upload-hdr-paddings: (
+        xs: 0.5rem 1rem,
+        sm: 0.5rem 1rem,
+);
+$upload-txt-paddings: (
+        xs: 0,
+        sm: 0 5%,
+);
+$upload-form-paddings: (
+        xs: 0,
+        sm: 0 10%,
+        md: 0 20%,
+);
+$upload-fileloader-wrapper-heights: (
+        xs: 200px,
+        sm: 300px,
+);
+$upload-fileloader-wrapper-paddings: (
+        xs: 2em 0 0 0,
+        sm: 3em 0 0 0,
+);
+$upload-disclaimer-margins: $global-elem-big-spacers-vertical;
+$upload-btn-paddings: (
+        xs: 0.5rem 6rem,
+        sm: 0.5rem 8rem,
+);

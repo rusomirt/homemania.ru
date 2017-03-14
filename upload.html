@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Upload</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+</head>
+<body>
+
+<header class="page-header">
+    <div class="container">
+        <div class="page-header__content">
+            <div class="page-header__title-container">
+                <h1 class="page-header__title">HOMEMANIA</h1>
+            </div>
+            <div class="page-header__left-box">
+                <ul class="social-links">
+                    <li class="social-links__link">
+                        <a href="#"><i class="fa fa-facebook fa-border"></i></a>
+                    </li>
+                    <li class="social-links__link">
+                        <a href="#"><i class="fa fa-pinterest-p fa-border"></i></a>
+                    </li>
+                    <li class="social-links__link">
+                        <a href="#"><i class="fa fa-twitter fa-border"></i></a>
+                    </li>
+                    <li class="social-links__link">
+                        <a href="#"><i class="fa fa-instagram fa-border"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="page-header__right-box">
+                <div class="login-signup">
+                    <i class="fa fa-home"></i>
+                    <a class="login-signup__link" href="#">Войти</a>
+                    |
+                    <a class="login-signup__link" href="#">Регистрация</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<nav class="navbar navbar-toggleable-md navbar-light">
+    <div class="container">
+        <button class="navbar-toggler navbar-toggler-right" type="button"
+                data-toggle="collapse" data-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-lightbulb-o"></i> ИДЕИ
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-file-text-o"></i> СТАТЬИ
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-shopping-basket"></i> ПОКУПКИ
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fa  fa-star-o"></i> ДЕКОРАТОРЫ
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-comments-o"></i> ФОРУМ
+                    </a>
+                </li>
+            </ul>
+            <form class="form-inline ml-lg-4 my-2 my-lg-0">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Поиск .....">
+                    <span class="input-group-btn">
+                        <button class="btn btn-secondary" type="button">
+                            <i class="icon-search fa fa-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="upload">
+        <div class="upload__hdr-cntnr">
+            <h2 class="upload__hdr">Загрузите фото или файлы в альбом идей</h2>
+        </div>
+        <p class="upload__txt">Сохраняйте все ваши идеи вместе,
+            загружая свои фотографии и файлы в альбом идей.
+            <a href="#">Или загрузить фото к проекту</a>
+        </p>
+        <!--<form class="upload__form dropzone" action="#" method="post" enctype="multipart/form-data">-->
+            <!--<div class="upload__form-group">-->
+                <!--<label class="upload__lbl&#45;&#45;rqd" for="upload__select-album">Выберите альбом идей</label>-->
+                <!--<select class="upload__form-control" id="upload__select-album">-->
+                    <!--<option selected>В какой альбом идей вы хотите добавить фотографии?</option>-->
+                    <!--<option value="1">One</option>-->
+                    <!--<option value="2">Two</option>-->
+                    <!--<option value="3">Three</option>-->
+                <!--</select>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; Drop Zone &ndash;&gt;-->
+            <!--<h4>Or drag and drop files below</h4>-->
+            <!--<input type="file" name="file" />-->
+
+        <!--</form>-->
+
+        <!--<form class="box" method="post" action="" enctype="multipart/form-data">-->
+            <!--<div class="box__input">-->
+                <!--<input class="box__file" type="file" name="files[]" id="file" data-multiple-caption="{count} files selected" multiple />-->
+                <!--<label for="file"><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>-->
+                <!--<button class="box__button" type="submit">Upload</button>-->
+            <!--</div>-->
+            <!--<div class="box__uploading">Uploading&hellip;</div>-->
+            <!--<div class="box__success">Done!</div>-->
+            <!--<div class="box__error">Error! <span></span>.</div>-->
+        <!--</form>-->
+
+        <form action="#" method="POST" class="upload__form">
+            <div class="upload__form-group">
+                <label class="upload__lbl--rqd" for="upload__select-album">Выберите альбом идей</label>
+                <select class="upload__form-control" id="upload__select-album">
+                    <option selected disabled>В какой альбом идей вы хотите добавить фотографии?</option>
+                    <option value="album1">Альбом №1</option>
+                    <option value="album2">Альбом №2</option>
+                    <option value="album3">Альбом №3</option>
+                </select>
+            </div>
+            <div class="upload__form-group">
+                <label class="upload__lbl--rqd" for="upload__fileloader">Выберите альбом идей</label>
+                <div class="upload__fileloader-wrapper">
+                    <input type="file" multiple class="upload__fileloader" id="upload__fileloader">
+                    <div class="upload__fileloader-images">
+                        <div class="upload__fileloader-img-wrapper">
+                            <div class="upload__fileloader-img"></div>
+                            <div class="upload__fileloader-img-caption">JPG</div>
+                        </div>
+                        <div class="upload__fileloader-img-wrapper">
+                            <div class="upload__fileloader-img"></div>
+                            <div class="upload__fileloader-img-caption">PDF</div>
+                        </div>
+                    </div>
+                    <p class="upload__fileloader-caption">Перетащите сюда файлы или нажмите, чтобы загрузить</p>
+                </div>
+            </div>
+            <p class="upload__disclaimer">Загружая фотографии, вы даете согласие на их отображение на сайте Houzz
+                и при этом обладаете правами на изображения или имеете разрешение от
+                их автора на использование, а также принимаете Правила пользования
+                сайтом HOMEMANIA.</p>
+            <div class="upload__btn-wrapper">
+                <button class="upload__btn" type="submit">Загрузить</button>
+            </div>
+        </form>
+
+    </div>
+    <hr>
+
+</div>
+
+<script src="js/jquery/jquery.min.js"></script>
+<script src="js/tether/tether.min.js"></script>
+<script src="js/bootstrap/bootstrap.min.js"></script>
+<!--<script src="js/dropzone/dropzone.js"></script>-->
+<script src="js/custom.js"></script>
+
+</body>
+</html>
