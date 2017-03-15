@@ -332,9 +332,30 @@ $picture-caption-paddings: $global-elem-spacers-vertical;
 // ----------------------------------------------------------------------------
 // Gallery
 // ----------------------------------------------------------------------------
+$gallery-margins: $global-block-spacers-vertical;
+$gallery-viewall-font-sizes: (
+        xs: 0.8em,
+        sm: 0.6em,
+);
+$gallery-viewall-padding: 1rem 0 0 0;
+$gallery-viewall-tops: (
+        xs: 1.5rem,
+        sm: 2rem,
+        md: 0,
+);
 $gallery-header-margins: $global-elem-spacers-vertical;
+$gallery-header-big-margins: (
+        xs: 2rem 0,
+        md: 1.5rem 0,
+);
 $gallery-header-paddings: $global-elem-spacers-vertical;
 $gallery-item-padding: 1%;
+$gallery-add-item-wrapper-padding: 0.5rem;
+$gallery-add-btn-padding: 1em 0.8em 0.8em 3em;
+$gallery-add-btn-font-sizes: (
+        xs: 0.8rem,
+        xl: 1rem,
+);
 
 // ----------------------------------------------------------------------------
 // Shop

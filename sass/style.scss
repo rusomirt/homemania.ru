@@ -39,6 +39,11 @@ h3 {
   @include responsive-prop(font-size, $global-h3-font-sizes);
 }
 
+// All buttons have a "hand with finger" cursor
+button {
+  cursor: pointer;
+}
+
 // ----------------------------------------------------------------------------
 // Components
 // ----------------------------------------------------------------------------
@@ -461,9 +466,7 @@ h3 {
           }
           .photo-crsl-img-left {
             button {
-              background-color: $color-green;
-              background-repeat: no-repeat;
-              background-position: 0.5rem center;
+              background: $color-green no-repeat 0.5rem center;
               padding-left: 2.5rem;
             }
             .like {
@@ -617,12 +620,31 @@ h3 {
 }
 
 .gallery {
+  @include responsive-prop(margin, $gallery-margins);
+  position: relative;
+
+  .gallery__view-all {
+    position: absolute;
+    @include responsive-prop(top, $gallery-viewall-tops);
+    right: 0;
+    @include responsive-prop(font-size, $gallery-viewall-font-sizes);
+    color: $color-grey-light;
+    @include responsive-prop(margin, $gallery-header-margins);
+    padding: $gallery-viewall-padding;
+  }
 
   .gallery__header {
     text-align: center;
     @include responsive-prop(margin, $gallery-header-margins);
     @include responsive-prop(padding, $gallery-header-paddings);
-    border-bottom: 1px solid $color-grey-light;//rgb(215, 215, 215);
+
+    &.gallery__header--line {
+      border-bottom: 1px solid $color-grey-light;
+    }
+
+    &.gallery__header--big-margin {
+      @include responsive-prop(margin, $gallery-header-big-margins);
+    }
   }
 
   .gallery__body {
@@ -632,6 +654,27 @@ h3 {
     .gallery__item {
       @extend .gallery--4col;  // by default - .gallery--4-col
       padding: $gallery-item-padding;
+
+      .gallery__add-item-wrapper {
+        height: 100%;
+        border: 1px dashed $color-grey-light;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: $gallery-add-item-wrapper-padding;
+
+        .gallery__add-item-btn {
+          @extend .btn;
+          border-color: $color-grey-light;
+          @include responsive-prop(font-size, $gallery-add-btn-font-sizes);
+          font-family: $global-txt-font;
+          color: $color-grey-light;
+          white-space: normal;
+          background: transparent url("../img/icons/photo-camera.png")
+                      no-repeat 0.5em center;
+          padding: $gallery-add-btn-padding
+        }
+      }
     }
   }
 
