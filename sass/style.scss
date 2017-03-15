@@ -518,7 +518,7 @@ button {
           }
           .similar {
             display: flex;
-            img + img {
+            .similar__link + .similar__link {
               margin-left: 0.5rem;
             }
           }
@@ -612,14 +612,19 @@ button {
 
 .picture {
 
+  &:hover, &:focus {      // If this class is assigned to link
+    text-decoration: none;
+  }
+
   .picture__img {
     width: 100%;
-    //height: 100%;
   }
 
   .picture__caption {
     @include responsive-prop(font-size, $picture-caption-font-sizes);
     text-align: center;
+    text-decoration: none;
+    color: $global-txt-color;
     @include responsive-prop(padding, $picture-caption-paddings);
   }
 }
@@ -812,6 +817,7 @@ button {
         height: 100%;
         outline: none;
         opacity: 0;
+        cursor: pointer;
       }
 
       .upload__fileloader-images {
