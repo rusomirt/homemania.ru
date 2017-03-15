@@ -65,6 +65,8 @@ $global-txt-font-sizes: (
 );
 $global-txt-color: $color-almost-black;
 
+// Global border radius
+$global-border-radius: 3px;
 
 // ----------------------------------------------------------------------------
 // Page header
@@ -424,3 +426,42 @@ $upload-btn-paddings: (
         xs: 0.5rem 6rem,
         sm: 0.5rem 8rem,
 );
+
+
+
+// ----------------------------------------------------------------------------
+// Profile-cover
+// ----------------------------------------------------------------------------
+$profile-cover-margins: (
+        xs: 2rem 0 0 0,
+        sm: 4rem 0 0 0,
+);
+
+// ----------------------------------------------------------------------------
+// Profile
+// ----------------------------------------------------------------------------
+$profile-smaller-font-sizes: (
+        xs: 0.8rem,
+        sm: 1rem,
+);
+$profile-progress-height: 1.5em;
+$profile-progress-border-radius: $profile-progress-height * 0.4;
+
+// ----------------------------------------------------------------------------
+// Profile-nav
+// ----------------------------------------------------------------------------
+$profile-nav-margins: $global-elem-spacers-vertical;
+
+// ----------------------------------------------------------------------------
+// Prefs
+// ----------------------------------------------------------------------------
+$prefs-hdr-wrapper-margins: $global-elem-big-spacers-vertical;
+
+// ----------------------------------------------------------------------------
+// Tidings
+// ----------------------------------------------------------------------------
+$tidings-margins: $global-elem-big-spacers-vertical;
+$tidings-status-margins: $global-elem-spacers-vertical;
+$tiding-actions-paddings: $global-elem-spacers-all;
+$tiding-btn-paddings: $global-elem-spacers-all;
+$tidings-more-btn-margins: $global-elem-big-spacers-vertical;

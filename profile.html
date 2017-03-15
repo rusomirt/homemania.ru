@@ -96,6 +96,121 @@
 </nav>
 
 <div class="container">
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Homemania.ru</a></li>
+        <li class="breadcrumb-item active">Моя страница</li>
+    </ol>
+
+    <div class="profile-cover">
+        <img src="img/profile-cover-photo.png" class="profile-cover__img" />
+        <button class="profile-cover__img-change">
+            <i class="fa fa-camera"></i>&nbsp;Change Cover Photo
+        </button>
+        <a href="#" class="profile-cover__view-profile">Посмотреть мой профиль ></a>
+    </div>
+
+    <div class="profile-wrapper">
+        <div class="profile">
+            <div class="picture">
+                <img src="img/profile-photo.png" class="picture__img" />
+                <div class="picture__caption">Ксения Никитина</div>
+            </div>
+
+            <a href="#" class="profile__link">Редактирование моего профиля</a>
+            <button class="profile__btn">
+                <img src="img/icons/profile-invite-friends.png">
+                &nbsp;Пригласить друзей
+            </button>
+            <div class="profile__subscr">
+                <div class="profile__subscribers">0<br>Подписчики</div>
+                <div class="profile__subscribings">0<br>Подписки</div>
+            </div>
+            <button class="profile__btn">
+                <img src="img/icons/profile-load-photo.png">
+                &nbsp;Загрузить фото
+            </button>
+
+            <hr class="profile__hr">
+            <p class="profile__hdr">ЗАПОЛНЕНИЕ ПРОФИЛЯ</p>
+            <p class="profile__txt">Советы для заполнения профиля</p>
+
+            <p class="profile__txt">Уровень 1</p>
+            <div class="profile__progress">
+                <div class="profile__progress-bar" style="width: 15%">
+                    <div class="profile__progress-handle"></div>
+                </div>
+            </div>
+
+            <a href="#" class="profile__link">Загрузить фото для профиля</a>
+            <a href="#" class="profile__link">Создать альбом идей</a>
+            <a href="#" class="profile__link">Добавить 10 фото в альбом идей</a>
+            <a href="#" class="profile__link">Редактирование моего профиля</a>
+            <a href="#" class="profile__link">Пароль</a>
+            <a href="#" class="profile__link">Добавить учётную запись Facebook</a>
+
+        </div>
+
+        <div class="prefs">
+            <ul class="profile-nav">
+                <li class="profile-nav__item profile-nav__item--active">
+                    <a href="#" class="profile-nav__link">Мой профиль</a></li>
+                <li class="profile-nav__item">
+                    <a href="#" class="profile-nav__link">Альбом идей</a></li>
+                <li class="profile-nav__item">
+                    <a href="#" class="profile-nav__link">Мои фото</a></li>
+                <li class="profile-nav__item">
+                    <a href="#" class="profile-nav__link">Закладки</a></li>
+                <li class="profile-nav__item">
+                    <a href="#" class="profile-nav__link">Обновления</a></li>
+                <li class="profile-nav__item">
+                    <a href="#" class="profile-nav__link">Сообщения</a></li>
+            </ul>
+            <div class="prefs__hdr-wrapper">
+                <h2 class="prefs__hdr">Мои предпочтения</h2>
+            </div>
+            <p class="prefs__subhdr">Любимые стили</p>
+            <ul class="prefs__list">
+                <li class="prefs__list-item">Современный</li>
+                <li class="prefs__list-item">современный</li>
+                <li class="prefs__list-item">современный эклектичный</li>
+            </ul>
+            <p class="prefs__subhdr">Проекты</p>
+            <ul class="prefs__list">
+                <li class="prefs__list-item">Спальня</li>
+                <li class="prefs__list-item">Ванная</li>
+            </ul>
+            <p class="prefs__subhdr">Философия дизайна</p>
+            <p class="prefs__txt">Большой дизайн создает пространство, которое
+                беспрепятственно объединяет функцию, комфорт и стиль. Каждая комната
+                должна отразить индивидуальность и образ жизни ее жителей.</p>
+            <div class="tidings">
+                <h3 class="tidings__hdr">Ваши новости</h3>
+                <div class="tidings__status">
+                    <div class="tidings__status-input-wrapper">
+                        <input class="tidings__status-input" type="text"
+                               placeholder="Над чем вы сейчас работаете?" />
+                    </div>
+                </div>
+                <div class="tidings__tiding">
+                    <div class="tidings__tiding-content">
+                        <img src="img/tiding-img.png" class="tidings__tiding-img" />
+                        <p class="tidings__tiding-txt">В восточных интерьерах напольные
+                            подушки — это традиция, а вот в наших краях — это настоящая
+                            диковинка. Не стоит думать, что они гармонично впишутся разве
+                            что в бохо-интерьер (хотя здесь они всегда актуальны).</p>
+                        <div class="tidings__tiding-time">10 мин. назад</div>
+                    </div>
+                    <div class="tidings__tiding-actions">
+                        <button class="tidings__tiding-btn tidings__tiding-btn--like">Мне нравится</button>
+                        <button class="tidings__tiding-btn tidings__tiding-btn--comment">Комментировать</button>
+                    </div>
+                </div>
+                <button class="tidings__more-btn">Показать больше событий ></button>
+            </div>
+        </div>
+    </div>
+
     <div class="gallery gallery--4col">
         <a href="#" class="gallery__view-all">Смотреть все (134)</a>
         <h3 class="gallery__header gallery__header--big-margin">Альбомы идей</h3>
@@ -136,9 +251,9 @@
                 </a>
             </div>
             <div class="gallery__item">
-                <a href="#" class="gallery__add-item-wrapper">
+                <div class="gallery__add-item-wrapper">
                     <button class="gallery__add-item-btn">ДОБАВИТЬ АЛЬБОМ</button>
-                </a>
+                </div>
             </div>
         </div>
     </div>

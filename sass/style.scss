@@ -39,14 +39,23 @@ h3 {
   @include responsive-prop(font-size, $global-h3-font-sizes);
 }
 
-// All buttons have a "hand with finger" cursor
-button {
-  cursor: pointer;
-}
-
 // ----------------------------------------------------------------------------
 // Components
 // ----------------------------------------------------------------------------
+
+// Default button
+.btn {
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: $global-txt-font;
+  //font-size: 1em;
+  color: white;
+  white-space: normal;
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.6);
+  background-color: $color-green;
+  cursor: pointer;
+}
 
 .page-header {
   @extend .bg-primary;
@@ -154,6 +163,10 @@ button {
     .form-inline {
       flex-basis: $searchbox-width;
       flex-shrink: 0;
+
+      .btn {
+        box-shadow: none;
+      }
     }
   }
 
@@ -473,6 +486,7 @@ button {
             button {
               background: $color-green no-repeat 0.5rem center;
               padding-left: 2.5rem;
+              padding-top: 0.4rem;
             }
             .like {
               background-image: url("../img/icons/heart.png");
@@ -633,6 +647,10 @@ button {
   @include responsive-prop(margin, $gallery-margins);
   position: relative;
 
+  a {
+    text-decoration: none;
+  }
+
   .gallery__view-all {
     position: absolute;
     @include responsive-prop(top, $gallery-viewall-tops);
@@ -682,7 +700,8 @@ button {
           white-space: normal;
           background: transparent url("../img/icons/photo-camera.png")
                       no-repeat 0.5em center;
-          padding: $gallery-add-btn-padding
+          padding: $gallery-add-btn-padding;
+          box-shadow: none;
         }
       }
     }
@@ -744,9 +763,9 @@ button {
   padding-right: 0;
 
   li {
-    &:before {
-      padding-left: 0 !important;
-    }
+    //&:before {
+    //  padding-left: 0 !important;
+    //}
 
     a {
       color: $color-grey-light;
@@ -868,4 +887,306 @@ button {
       }
     }
   }
+}
+
+
+.profile-cover {
+  position: relative;
+  @include responsive-prop(margin, $profile-cover-margins);
+  font-size: 1rem;
+
+  .profile-cover__img {
+    width: 100%;
+  }
+
+  .profile-cover__img-change {
+    @extend .btn;
+    position: absolute;
+    top: 10%;
+    left: 3%;
+
+    background: $black;
+    border: 2px solid $white;
+    font-size: 0.8em;
+    color: $white;
+    padding: 0.5rem;
+  }
+  .profile-cover__view-profile {
+    position: absolute;
+    bottom: 10%;
+    right: 3%;
+    text-decoration: none;
+    color: $white;
+    text-shadow: 1px 1px 0 rgba(1, 1, 1, 0.33);
+  }
+}
+
+.profile-nav {
+  @include responsive-prop(margin, $profile-nav-margins);
+  padding: 0;
+
+  .profile-nav__item {
+    display: inline-block;
+
+    + .profile-nav__item {  // &+& not working !!!
+      margin-left: 1em;
+    }
+
+    .profile-nav__link {
+      text-decoration: none;
+      color: $global-txt-color;
+    }
+
+    &.profile-nav__item--active {
+      .profile-nav__link {
+        color: $color-green;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.prefs {
+  margin-left: 315px;
+  padding-left: 2rem;
+  border-left: 1px solid $color-grey-light;
+  font-size: 1rem;
+
+  .prefs__hdr-wrapper {
+    @include responsive-prop(margin, $prefs-hdr-wrapper-margins);
+
+    .prefs__hdr {
+      display: inline-block;
+      border-bottom: 2px solid $color-green;
+      padding: 0.3rem;
+      font-size: 2rem;
+    }
+  }
+
+  .prefs__subhdr {
+    color: $black;
+    font-weight: bold;
+  }
+
+  .prefs__list {
+    list-style: none;
+    padding: 0;
+
+    .prefs__list-item {
+      display: inline;
+    }
+    .prefs__list-item+.prefs__list-item:before {
+      content: '| ';
+    }
+  }
+}
+
+.tidings {
+  @include responsive-prop(margin, $tidings-margins);
+  margin-bottom: 0 !important;
+
+  .tidings__hdr {
+
+  }
+
+  .tidings__status {
+    @include responsive-prop(margin, $tidings-status-margins);
+    padding: 1rem;
+    padding-left: 4rem;
+    background: $color-green url("../img/icons/status-speech-baloon.png")
+                no-repeat 1rem center;
+    border-radius: $global-border-radius;
+
+    .tidings__status-input-wrapper {
+      position: relative;
+
+      .tidings__status-input {
+        border: none;
+        border-radius: $global-border-radius;
+        padding: 0.2em 0.5em;
+        width: 100%;
+
+      }
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(-100%, -50%);;
+        @include triangle(left, 8px, $white);
+      }
+    }
+  }
+
+  .tidings__tiding {
+    border: 1px solid $color-grey-light;
+
+    .tidings__tiding-content {
+      display: flex;
+      align-items: flex-start;
+      padding: 1rem;
+      position: relative;
+
+      .tidings__tiding-img {
+        flex: 0 0 0;
+        margin: 0 1rem 0 0;
+        @extend .hidden-xs-down;
+      }
+      .tidings__tiding-txt {
+        align-self: center;
+      }
+      .tidings__tiding-time {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        font-size: 0.8em;
+        color: $color-grey-light;
+        padding: 0.5em;
+      }
+    }
+    .tidings__tiding-actions {
+      border-top: 1px solid $color-grey-light;
+      @include responsive-prop(padding, $tiding-actions-paddings);
+
+      .tidings__tiding-btn {
+        display: inline-block;
+        background: transparent no-repeat 0.5rem center;
+        border: none;
+        padding: 0.5rem;
+        padding-left: 3rem;
+        color: $color-grey-light;
+        font-size: 0.8em;
+        margin: 0 0.5rem;
+      }
+      .tidings__tiding-btn--like {
+        background-image: url("../img/icons/tiding-heart.png")
+      }
+      .tidings__tiding-btn--comment {
+        background-image: url("../img/icons/tiding-speech.png")
+      }
+    }
+  }
+
+  .tidings__more-btn {
+    @extend .btn;
+    background-color: $white;
+    border: 1px solid $color-grey-light;
+    box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.33);
+    width: 100%;
+    padding: 1em;
+    font-family: $global-txt-font;
+    font-size: 1em;
+    color: $global-txt-color;
+    @include responsive-prop(margin, $tidings-more-btn-margins);
+    margin-bottom: 0 !important;
+  }
+}
+
+.profile {
+  width: 250px;
+  margin: 0 30px;
+  position: absolute;
+  top: -170px;
+  flex: 0 0 auto;
+
+  &>* {
+    margin: 1rem 0 0 0;
+  }
+
+  .profile__hr {
+    border: 1px solid $color-grey-light;
+    margin-top: 1.5rem;
+  }
+
+  .picture__img {
+    border: 1px solid $white;
+  }
+  .picture__caption {
+    font-size: 1em;
+  }
+
+  .profile__link {
+    @include responsive-prop(font-size, $profile-smaller-font-sizes);
+    text-decoration: none;
+    color: $color-green;
+
+    & + .profile__link {
+      margin-top: 0.5rem;
+    }
+  }
+
+  .profile__btn {
+    @extend .btn;
+    font-size: 1em;
+    width: 100%;
+  }
+
+  .profile__subscr {
+    display: flex;
+    border: 1px solid $color-grey-light;
+    text-align: center;
+    @include responsive-prop(font-size, $profile-smaller-font-sizes);
+
+    .profile__subscribers {
+      border-right: 1px solid $color-grey-light;
+    }
+    .profile__subscribers, .profile__subscribings {
+      width: 50%;
+      padding: 0.5rem;
+      color: $color-grey-light;
+    }
+  }
+
+  .profile__hdr {
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+
+    & + .profile__txt {
+      margin: 0.5rem 0 1.5rem 0;
+    }
+  }
+
+  .profile__txt {
+    @include responsive-prop(font-size, $profile-smaller-font-sizes);
+    & + .profile__progress {
+      margin-top: 0.5rem;
+    }
+  }
+
+  .profile__progress {
+    @extend .progress;
+    margin-top: 0;
+    height: $profile-progress-height;
+    border: 1px solid $color-grey-light;
+    border-radius: $profile-progress-border-radius;
+
+    .profile__progress-bar {
+      @extend .progress-bar;
+      position: relative;
+      height: 100%;
+      background-color: $color-green;
+      border-radius: $profile-progress-border-radius;
+
+      .profile__progress-handle {
+        position: absolute;
+        top: 50%;
+        right: calc(#{$profile-progress-border-radius} - 2px);
+        transform: translate(0, -50%);
+        width: $profile-progress-height * 0.5;
+        height: $profile-progress-height * 0.5;
+        border-radius: 50%;
+        border: 2px solid $white;
+        background-color: $color-grey-light;
+      }
+    }
+  }
+}
+
+.profile-wrapper {
+  display: flex;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid $color-grey-light;
+  position: relative;
 }
