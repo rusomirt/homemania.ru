@@ -63,6 +63,11 @@ button {
       .page-header__title {
         text-align: center;
         color: $header-title-txt-color;
+
+        .page-header__title-link {
+          text-decoration: none;
+          color: $header-title-txt-color !important;
+        }
       }
     }
     .page-header__left-box {
