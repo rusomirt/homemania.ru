@@ -330,6 +330,10 @@ $picture-caption-font-sizes: (
         sm: 0.75em,
 );
 $picture-caption-paddings: $global-elem-spacers-vertical;
+$picture-capt-ovrl-font-size: (
+        xs: 1rem,
+        xl: 1.2rem,
+);
 
 // ----------------------------------------------------------------------------
 // Gallery
@@ -379,7 +383,7 @@ $shop-btn-paddings: (
 // ----------------------------------------------------------------------------
 $brdcrmb-margins: (
         xs: $global-block-spacer 0 (-$global-block-spacer) 0,
-        sm: $global-block-spacer-sm 0 ($global-elem-spacer-sm - $global-block-spacer-sm) 0,
+        sm: $global-block-spacer-sm*0.75 0 ($global-elem-spacer-sm - $global-block-spacer-sm) 0,
 );
 $brdcrmb-font-sizes: (
         xs: 0.8rem,
@@ -440,6 +444,44 @@ $profile-cover-margins: (
 // ----------------------------------------------------------------------------
 // Profile
 // ----------------------------------------------------------------------------
+$profile-margins: (
+        xs: 0 auto,
+        sm: 0,
+        md: 0 30px,
+);
+$profile-positions: (
+        xs: static,
+        md: absolute,
+);
+$profile-tops: (
+        xs: 0,
+        md: -120px,
+        lg: -170px,
+);
+$profile-flex-directions: (
+        xs: column,
+        sm: row,
+        md: column,
+);
+$profile-align-items: (
+        xs: center,
+        sm: flex-start,
+);
+$profile-left-margin: (
+        xs: 0,
+        sm: 0 1rem 0 0,
+        md: 0,
+);
+$profile-left-padding: (
+        xs: 0 0 $global-elem-big-spacer 0,
+        sm: 0,
+        md: 0 0 $global-elem-big-spacer 0,
+);
+$profile-left-border-bottom: (
+        xs: 1px solid $color-grey-light,
+        sm: none,
+        md: 1px solid $color-grey-light,
+);
 $profile-smaller-font-sizes: (
         xs: 0.8rem,
         sm: 1rem,
@@ -450,12 +492,35 @@ $profile-progress-border-radius: $profile-progress-height * 0.4;
 // ----------------------------------------------------------------------------
 // Profile-nav
 // ----------------------------------------------------------------------------
-$profile-nav-margins: $global-elem-spacers-vertical;
+$profile-nav-margins: (
+        xs: 0.5rem 0 0 0,
+        md: 0.5rem 0 0 315px,
+);
+$profile-nav-paddings: (
+        xs: 0.5rem 0,
+        md: 0 0 0 2rem,
+);
 
 // ----------------------------------------------------------------------------
 // Prefs
 // ----------------------------------------------------------------------------
+$prefs-margins: (
+        xs: 2rem 0 0 0,
+        md: 0 0 0 315px,
+);
+$prefs-paddings: (
+        xs: 0,
+        md: 0 0 0 2rem,
+);
+$prefs-border-lefts: (
+        xs: none,
+        md: 1px solid $color-grey-light,
+);
 $prefs-hdr-wrapper-margins: $global-elem-big-spacers-vertical;
+$prefs-hdr-font-size: (
+        xs: 1.5rem,
+        sm: 2rem,
+);
 
 // ----------------------------------------------------------------------------
 // Tidings

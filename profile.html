@@ -111,61 +111,66 @@
     </div>
 
     <div class="profile-wrapper">
+        <ul class="profile-nav">
+            <li class="profile-nav__item profile-nav__item--active">
+                <a href="#" class="profile-nav__link">Мой профиль</a></li>
+            <li class="profile-nav__item">
+                <a href="#" class="profile-nav__link">Альбом идей</a></li>
+            <li class="profile-nav__item">
+                <a href="#" class="profile-nav__link">Мои фото</a></li>
+            <li class="profile-nav__item">
+                <a href="#" class="profile-nav__link">Закладки</a></li>
+            <li class="profile-nav__item">
+                <a href="#" class="profile-nav__link">Обновления</a></li>
+            <li class="profile-nav__item">
+                <a href="#" class="profile-nav__link">Сообщения</a></li>
+        </ul>
+
         <div class="profile">
-            <div class="picture">
-                <img src="img/profile-photo.png" class="picture__img" />
-                <div class="picture__caption">Ксения Никитина</div>
-            </div>
 
-            <a href="#" class="profile__link">Редактирование моего профиля</a>
-            <button class="profile__btn">
-                <img src="img/icons/profile-invite-friends.png">
-                &nbsp;Пригласить друзей
-            </button>
-            <div class="profile__subscr">
-                <div class="profile__subscribers">0<br>Подписчики</div>
-                <div class="profile__subscribings">0<br>Подписки</div>
-            </div>
-            <button class="profile__btn">
-                <img src="img/icons/profile-load-photo.png">
-                &nbsp;Загрузить фото
-            </button>
-
-            <hr class="profile__hr">
-            <p class="profile__hdr">ЗАПОЛНЕНИЕ ПРОФИЛЯ</p>
-            <p class="profile__txt">Советы для заполнения профиля</p>
-
-            <p class="profile__txt">Уровень 1</p>
-            <div class="profile__progress">
-                <div class="profile__progress-bar" style="width: 15%">
-                    <div class="profile__progress-handle"></div>
+            <div class="profile__left">
+                <div class="picture">
+                    <img src="img/profile-photo.png" class="picture__img" />
+                    <div class="picture__caption">Ксения Никитина</div>
                 </div>
+
+                <a href="#" class="profile__link">Редактирование моего профиля</a>
+                <button class="profile__btn">
+                    <img src="img/icons/profile-invite-friends.png">
+                    &nbsp;Пригласить друзей
+                </button>
+                <div class="profile__subscr">
+                    <div class="profile__subscribers">0<br>Подписчики</div>
+                    <div class="profile__subscribings">0<br>Подписки</div>
+                </div>
+                <button class="profile__btn">
+                    <img src="img/icons/profile-load-photo.png">
+                    &nbsp;Загрузить фото
+                </button>
             </div>
 
-            <a href="#" class="profile__link">Загрузить фото для профиля</a>
-            <a href="#" class="profile__link">Создать альбом идей</a>
-            <a href="#" class="profile__link">Добавить 10 фото в альбом идей</a>
-            <a href="#" class="profile__link">Редактирование моего профиля</a>
-            <a href="#" class="profile__link">Пароль</a>
-            <a href="#" class="profile__link">Добавить учётную запись Facebook</a>
+            <div class="profile__right">
+                <p class="profile__hdr">ЗАПОЛНЕНИЕ ПРОФИЛЯ</p>
+                <p class="profile__txt">Советы для заполнения профиля</p>
+
+                <p class="profile__txt">Уровень 1</p>
+                <div class="profile__progress">
+                    <div class="profile__progress-bar" style="width: 15%">
+                        <div class="profile__progress-handle"></div>
+                    </div>
+                </div>
+
+                <a href="#" class="profile__link">Загрузить фото для профиля</a>
+                <a href="#" class="profile__link">Создать альбом идей</a>
+                <a href="#" class="profile__link">Добавить 10 фото в альбом идей</a>
+                <a href="#" class="profile__link">Редактирование моего профиля</a>
+                <a href="#" class="profile__link">Пароль</a>
+                <a href="#" class="profile__link">Добавить учётную запись Facebook</a>
+            </div>
 
         </div>
 
         <div class="prefs">
-            <ul class="profile-nav">
-                <li class="profile-nav__item profile-nav__item--active">
-                    <a href="#" class="profile-nav__link">Мой профиль</a></li>
-                <li class="profile-nav__item">
-                    <a href="#" class="profile-nav__link">Альбом идей</a></li>
-                <li class="profile-nav__item">
-                    <a href="#" class="profile-nav__link">Мои фото</a></li>
-                <li class="profile-nav__item">
-                    <a href="#" class="profile-nav__link">Закладки</a></li>
-                <li class="profile-nav__item">
-                    <a href="#" class="profile-nav__link">Обновления</a></li>
-                <li class="profile-nav__item">
-                    <a href="#" class="profile-nav__link">Сообщения</a></li>
-            </ul>
             <div class="prefs__hdr-wrapper">
                 <h2 class="prefs__hdr">Мои предпочтения</h2>
             </div>
@@ -218,6 +223,8 @@
             <div class="gallery__item">
                 <a href="#" class="picture">
                     <img class="picture__img" alt="" src="img/ideas-album-1.png">
+                    <div class="picture__add-photo"></div>
+                    <div class="picture__caption-overlay">Спальня в серых тонах</div>
                 </a>
             </div>
             <div class="gallery__item">

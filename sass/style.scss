@@ -625,6 +625,8 @@ h3 {
 }
 
 .picture {
+  display: inline-block;
+  position: relative;
 
   &:hover, &:focus {      // If this class is assigned to link
     text-decoration: none;
@@ -640,6 +642,30 @@ h3 {
     text-decoration: none;
     color: $global-txt-color;
     @include responsive-prop(padding, $picture-caption-paddings);
+  }
+
+  .picture__caption-overlay {
+    background: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    right: 5%;
+    padding: 0.5em;
+    @include responsive-prop(font-size, $picture-capt-ovrl-font-size);
+    color: $global-txt-color;
+  }
+
+  .picture__add-photo {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 50px;
+    height: 50px;
+    border-radius: 3px;
+    background: url("../img/icons/photo-camera-plus.png")
+                no-repeat rgba(255, 255, 255, 0.6) ;
+    background-position: 75% 40%;
+    background-size: 80%;
   }
 }
 
@@ -923,7 +949,8 @@ h3 {
 
 .profile-nav {
   @include responsive-prop(margin, $profile-nav-margins);
-  padding: 0;
+  @include responsive-prop(padding, $profile-nav-paddings);
+  font-size: 1rem;
 
   .profile-nav__item {
     display: inline-block;
@@ -947,9 +974,9 @@ h3 {
 }
 
 .prefs {
-  margin-left: 315px;
-  padding-left: 2rem;
-  border-left: 1px solid $color-grey-light;
+  @include responsive-prop(margin, $prefs-margins);
+  @include responsive-prop(padding, $prefs-paddings);
+  @include responsive-prop(border-left, $prefs-border-lefts);
   font-size: 1rem;
 
   .prefs__hdr-wrapper {
@@ -959,7 +986,7 @@ h3 {
       display: inline-block;
       border-bottom: 2px solid $color-green;
       padding: 0.3rem;
-      font-size: 2rem;
+      @include responsive-prop(font-size, $prefs-hdr-font-size);
     }
   }
 
@@ -974,6 +1001,7 @@ h3 {
 
     .prefs__list-item {
       display: inline;
+      white-space: nowrap;
     }
     .prefs__list-item+.prefs__list-item:before {
       content: '| ';
@@ -1031,7 +1059,7 @@ h3 {
       .tidings__tiding-img {
         flex: 0 0 0;
         margin: 0 1rem 0 0;
-        @extend .hidden-xs-down;
+        @extend .hidden-md-down;
       }
       .tidings__tiding-txt {
         align-self: center;
@@ -1084,19 +1112,26 @@ h3 {
 }
 
 .profile {
-  width: 250px;
-  margin: 0 30px;
-  position: absolute;
-  top: -170px;
+  @include responsive-prop(margin, $profile-margins);
+  @include responsive-prop(position, $profile-positions);
+  @include responsive-prop(top, $profile-tops);
   flex: 0 0 auto;
+  display: flex;
+  @include responsive-prop(flex-direction, $profile-flex-directions);
+  @include responsive-prop(align-items, $profile-align-items);
 
-  &>* {
-    margin: 1rem 0 0 0;
+  .profile__left, .profile__right {
+    width: 250px;
   }
 
-  .profile__hr {
-    border: 1px solid $color-grey-light;
-    margin-top: 1.5rem;
+  .profile__left {
+    @include responsive-prop(border-bottom, $profile-left-border-bottom);
+    @include responsive-prop(margin, $profile-left-margin);
+    @include responsive-prop(padding, $profile-left-padding);
+  }
+
+  &>*>* {
+    margin: 1rem 0 0 0;
   }
 
   .picture__img {
@@ -1141,7 +1176,6 @@ h3 {
   .profile__hdr {
     font-weight: bold;
     font-size: 1.3rem;
-    margin-top: 1.5rem;
 
     & + .profile__txt {
       margin: 0.5rem 0 1.5rem 0;
@@ -1149,6 +1183,7 @@ h3 {
   }
 
   .profile__txt {
+    color: $color-grey-dark;
     @include responsive-prop(font-size, $profile-smaller-font-sizes);
     & + .profile__progress {
       margin-top: 0.5rem;
@@ -1161,6 +1196,8 @@ h3 {
     height: $profile-progress-height;
     border: 1px solid $color-grey-light;
     border-radius: $profile-progress-border-radius;
+    background: $white;
+    box-shadow: inset 0 0 8px 1px $color-grey-light;
 
     .profile__progress-bar {
       @extend .progress-bar;
@@ -1185,8 +1222,7 @@ h3 {
 }
 
 .profile-wrapper {
-  display: flex;
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
   border-bottom: 1px solid $color-grey-light;
   position: relative;
 }
