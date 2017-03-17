@@ -312,6 +312,7 @@ h3 {
       // 1st invisible block - for 'justify-content' aligning
       &:first-of-type {
         visibility: hidden;
+        margin-bottom: auto; // fix IE fail with 'space-between'
       }
       @include responsive-prop(padding, $crsl-ovrl-txt-paddings);
       @include responsive-prop(font-size, $crsl-ovrl-txt-font-sizes);
@@ -320,7 +321,10 @@ h3 {
       width: $crsl-ovrl-txt-width;
       @include responsive-prop(min-width, $crsl-ovrl-txt-min-widths);
       max-width: $crsl-ovrl-txt-max-width;
-      margin: 0 auto;
+      margin: 0;
+      &:last-of-type {
+        margin-top: auto; // fix IE fail with 'space-between'
+      }
       text-align: center;
       background-color: $crsl-ovrl-txt-bg-color;
     }
@@ -340,6 +344,12 @@ h3 {
 #carousel-inspiration {
   @include responsive-prop(margin, $carousel-inspiration-margins);
   max-width: $carousel-inspiration-img-width;
+
+  .carousel-item {
+    img {
+      flex: 0 0 auto; // For IE to fit img in item
+    }
+  }
 }
 
 #carousel-makeovers {
@@ -455,6 +465,10 @@ h3 {
 
       .crsl-img-wrapper {
         position: relative;
+        background-color: red;
+        flex: 0 0 auto; // In IE default is "0 1 auto" and
+                        // contained image always has
+                        // it's initial height (729px)
 
         img {
           width: 100%;
@@ -576,6 +590,7 @@ h3 {
 
       .idea-img {
         width: 50%;
+        flex: 0 0 auto;
         @include responsive-prop(margin, $idea-img-margins);
       }
       .idea-body {
@@ -856,6 +871,10 @@ h3 {
 
       .upload__fileloader {
         position: absolute;
+        top:0;
+        right: 0;
+        bottom: 0;
+        left: 0;
         margin: 0;
         padding: 0;
         width: 100%;
@@ -888,6 +907,7 @@ h3 {
       .upload__fileloader-caption{
         text-align: center;
         color: $color-grey-light;
+        max-width: 100%;  // For text wrapping in IE.
       }
     }
 
@@ -910,6 +930,7 @@ h3 {
         margin: 0;
         @include responsive-prop(padding, $upload-btn-paddings);
         box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.6);
+        max-width: 100%;
       }
     }
   }
@@ -1057,7 +1078,7 @@ h3 {
       position: relative;
 
       .tidings__tiding-img {
-        flex: 0 0 0;
+        flex: 0 0 auto;
         margin: 0 1rem 0 0;
         @extend .hidden-md-down;
       }
@@ -1145,6 +1166,7 @@ h3 {
     @include responsive-prop(font-size, $profile-smaller-font-sizes);
     text-decoration: none;
     color: $color-green;
+    display: block; // FF displayed links in line
 
     & + .profile__link {
       margin-top: 0.5rem;
@@ -1160,6 +1182,7 @@ h3 {
   .profile__subscr {
     display: flex;
     border: 1px solid $color-grey-light;
+    border-radius: 3px;
     text-align: center;
     @include responsive-prop(font-size, $profile-smaller-font-sizes);
 

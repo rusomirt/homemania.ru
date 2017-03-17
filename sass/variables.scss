@@ -258,7 +258,7 @@ $crsl-capt-desc-margins: (
 );
 $crsl-capt-desc-paddings: (
         xs: 0,
-        sm: 2em 0 0 0,
+        lg: 2em 0 0 0,
 );
 $crsl-img-btns-transforms: (
         xs: translate(0, 75%),
@@ -338,7 +338,7 @@ $picture-capt-ovrl-font-size: (
 // ----------------------------------------------------------------------------
 // Gallery
 // ----------------------------------------------------------------------------
-$gallery-margins: $global-block-spacers-vertical;
+$gallery-margins: $global-elem-big-spacers-vertical;
 $gallery-viewall-font-sizes: (
         xs: 0.8em,
         sm: 0.6em,
@@ -349,13 +349,18 @@ $gallery-viewall-tops: (
         sm: 2rem,
         md: 0,
 );
-$gallery-header-margins: $global-elem-spacers-vertical;
+//$gallery-header-margins: $global-elem-big-spacers-vertical;
+$gallery-header-margins: (
+        xs: 1rem 0,
+);
 $gallery-header-big-margins: (
         xs: 2rem 0,
         md: 1.5rem 0,
 );
-$gallery-header-paddings: $global-elem-spacers-vertical;
-$gallery-item-padding: 1%;
+$gallery-header-paddings: (
+        xs: 1rem 0,
+);
+$gallery-item-padding: 0.3rem;// 1%; - fails in FireFox
 $gallery-add-item-wrapper-padding: 0.5rem;
 $gallery-add-btn-padding: 1em 0.8em 0.8em 3em;
 $gallery-add-btn-font-sizes: (
@@ -483,7 +488,7 @@ $profile-left-border-bottom: (
         md: 1px solid $color-grey-light,
 );
 $profile-smaller-font-sizes: (
-        xs: 0.8rem,
+        xs: 1rem,//0.8rem,
         sm: 1rem,
 );
 $profile-progress-height: 1.5em;
