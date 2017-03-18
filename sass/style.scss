@@ -49,7 +49,7 @@ h3 {
   justify-content: space-around;
   align-items: center;
   font-family: $global-txt-font;
-  //font-size: 1em;
+  font-size: inherit;
   color: white;
   white-space: normal;
   box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.6);
@@ -166,6 +166,7 @@ h3 {
 
       .btn {
         box-shadow: none;
+        font-size: 1rem;
       }
     }
   }
@@ -718,6 +719,7 @@ h3 {
 
   .gallery__body {
     @extend .row;
+    margin: 0;
     justify-content: center;
 
     .gallery__item {
@@ -748,6 +750,27 @@ h3 {
     }
   }
 
+  .gallery__wide-btn-wrapper {
+    padding: 1rem 15%;
+
+    .gallery__wide-btn {
+      @extend .btn;
+      width: 100%;
+    }
+  }
+
+  &.gallery--44322 {
+    .gallery__item {
+      @include make-col(1, 2);
+
+      @include media-breakpoint-up(md) {
+        @include make-col(1, 3);
+      }
+      @include media-breakpoint-up(lg) {
+        @include make-col(1, 4);
+      }
+    }
+  }
   &.gallery--4col {
     .gallery__item {
       @include make-col(1, 2);
@@ -1248,4 +1271,203 @@ h3 {
   padding-bottom: 2rem;
   border-bottom: 1px solid $color-grey-light;
   position: relative;
+}
+
+
+.articles-upper {
+  @include responsive-prop(margin, $articles-upper-margin);
+  display: flex;
+  @include responsive-prop(flex-direction, $articles-upper-flexdir);
+  align-content: flex-start;
+}
+
+.linklist-v {
+  flex: 0 0 auto;
+  font-size: $linklist-v-font-size;
+  @include responsive-prop(margin, $linklist-v-margin);
+
+  .linklist-v__hdr {
+    font-size: $linklist-v-hdr-font-size;
+    margin: $linklist-v-hdr-margin;
+  }
+  .linklist-v__link {
+    display: block;
+    color: $global-txt-color;
+    @include responsive-prop(margin, $linklist-v-link-margin);
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+
+    &.linklist-v__link--active {
+      color: $color-green;
+      text-decoration: underline;
+    }
+  }
+}
+
+.upper-article {
+  position: relative;
+  height: 100%;   // fit to height of nested img.upper-article__img
+  flex: 0 1 auto;
+
+  .upper-article__img {
+    width: 100%;
+  }
+
+  .upper-article__caption {
+    // Non-flex in narrow screens - because of IE11 fail with "flex-direction: column".
+    // flexbox with 'column' is replaced with "display: block".
+    @include responsive-prop(position, $upper-art-capt-position);
+    right: 0;
+    left: 0;
+    top: auto;
+    bottom: 0;
+
+    @include responsive-prop(display, $upper-art-capt-display);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: $upper-art-capt-padding;
+    width: 100%;
+
+    .upper-article__name,
+    .upper-article__btn-wrapper {
+      margin: $upper-art-capt-items-margin;
+    }
+
+    .upper-article__name {
+      flex: 0 1 auto;
+      font-size: $upper-art-name-font-size;
+      color: $white;
+    }
+
+    .upper-article__btn-wrapper {
+      flex: 0 0 auto;
+      @include responsive-prop(padding, $upper-art-btn-wrapper-padding);
+
+      .upper-article__btn {
+        @extend .btn;
+        box-shadow: none; // remove default shadow (from .btn)
+        @include responsive-prop(padding, $upper-art-btn-padding);
+        width: 100%;
+      }
+    }
+  }
+}
+
+.art-thmb {
+  padding: $art-thmb-padding;
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .art-thmb__inner {
+    //flex: 1 (1 1 0%) - not working in IE11
+    flex: 1 1 auto;        // resizable
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    background-color: $art-thmb-inner-bg;
+    border-radius: $art-thmb-inner-border-radius;
+
+    .art-thmb__rubric {
+      position: absolute;
+      top: $art-thmb-rubric-top;
+      right: $art-thmb-rubric-right;
+      bottom: auto;
+      left: auto;
+
+      font-size: $art-thmb-rubric-font-size;
+      padding: $art-thmb-rubric-padding;
+      background: $art-thmb-rubric-bg;
+    }
+    .art-thmb__img {
+      flex: 0 0 auto;        // not resizable
+      width: 100%;
+    }
+    .art-thmb__txt {
+      flex: 1 1 auto;//flex: 1;        // resizable
+      padding: $art-thmb-txt-padding;
+      display: flex;
+      flex-direction: column;
+
+      .art-thmb__hdr-wrapper {
+        flex: 1 1 auto;//flex: 1;        // resizable
+        margin: $art-thmb-hdr-wrapper-margin;
+        display: flex;
+
+        .art-thmb__hdr {
+          align-self: center;
+          margin: 0;
+          font-size: $art-thmb-hdr-font-size;
+          text-align: center;
+          width: 100%;
+        }
+      }
+      .art-thmb__teaser {
+        flex: 0 0 auto;        // not resizable
+        font-size: $art-thmb-teaser-font-size;
+        text-align: left;
+        margin: $art-thmb-teaser-margin;
+        hyphens: auto;        // NOT SUPPORTED BY CHROME
+      }
+      .art-thmb__date {
+        flex: 0 0 auto;        // not resizable
+        font-size: $art-thmb-date-font-size;
+        text-align: right;
+        margin: 0;
+      }
+    }
+  }
+
+  .art-thmb__btns {
+    flex: 0 0 auto;        // not resizable
+
+    display: flex;
+    justify-content: space-around;
+
+    .art-thmb__read {
+      @extend .btn;
+      padding: $art-thmb-read-padding;
+      position: relative;
+      top: $art-thmb-read-top;
+      height: 100%;
+    }
+    .art-thmb__read--red {
+      background-color: $color-red;
+    }
+
+    .art-thmb__likes,
+    .art-thmb__comments {
+      @extend .btn;
+      background: none;
+      border: none;
+      box-shadow: none;
+      font-size: $art-thmb-lowbtns-font-size;
+      color: $color-grey-light;
+      padding: $art-thmb-lowbtns-padding;
+
+      &:before {
+        content: "";
+        width: $art-thmb-lowbtns-icon-width;
+        height: 1em;
+        background: no-repeat 0 center;
+        background-size: contain;
+      }
+    }
+    .art-thmb__likes:before {
+      background-image: url("../img/icons/tiding-heart.png");
+    }
+    .art-thmb__comments:before {
+      background-image: url("../img/icons/tiding-speech.png");
+    }
+    .art-thmb__likes {
+      order: -1;
+    }
+  }
 }

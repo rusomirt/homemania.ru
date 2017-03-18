@@ -7,6 +7,8 @@ $color-green: rgb(31, 185, 185);
 $color-grey-dark: rgb(153, 153, 153);
 $color-grey-light: rgb(204, 204, 204);
 $color-almost-black: rgb(51,51,51);
+$color-red: rgb(224, 69, 48);
+$color-white-faded: rgba(255,255,255, 0.6);
 
 // Global block spacers
 $global-block-spacer: $spacer*2;
@@ -535,3 +537,82 @@ $tidings-status-margins: $global-elem-spacers-vertical;
 $tiding-actions-paddings: $global-elem-spacers-all;
 $tiding-btn-paddings: $global-elem-spacers-all;
 $tidings-more-btn-margins: $global-elem-big-spacers-vertical;
+
+// ----------------------------------------------------------------------------
+// .articles-upper
+// ----------------------------------------------------------------------------
+$articles-upper-margin: (
+        xs: 2rem 0 2rem 0,
+        sm: 4rem 0 2rem 0,
+);
+$articles-upper-flexdir: (
+        xs: column,
+        sm: row,
+);
+
+// ----------------------------------------------------------------------------
+// .linklist-v
+// ----------------------------------------------------------------------------
+$linklist-v-font-size: 1.25rem;
+$linklist-v-margin: (
+        xs: 0 0 2rem,
+        sm: 0 1rem 0 0,
+        md: 0 2rem 0 0,
+);
+$linklist-v-hdr-font-size: 2rem;
+$linklist-v-hdr-margin: 0 0 1rem;
+$linklist-v-link-margin: (
+        xs: 0.5em 0 0 0.5em,
+        md: 0.5em 0 0 2em,
+);
+
+// ----------------------------------------------------------------------------
+// .upper-article
+// ----------------------------------------------------------------------------
+$upper-art-capt-position: (
+        xs: static,
+        lg: absolute,
+);
+$upper-art-capt-display: (
+        xs: block,
+        lg: flex,
+);
+$upper-art-capt-padding: 0.5rem;
+$upper-art-capt-items-margin: 0 1rem;
+$upper-art-name-font-size: 1.5rem;
+$upper-art-btn-wrapper-padding: (
+        xs: 0.5rem 20% 0,
+        lg: 0.5rem 0 0,
+);
+$upper-art-btn-padding: (
+        xs: 0.25em,
+        md: 0.25em 4em,
+);
+
+// ----------------------------------------------------------------------------
+// .art-thmb
+// ----------------------------------------------------------------------------
+$art-thmb-padding: 0 0 1em;
+$art-thmb-inner-bg: rgb(241, 241, 241);
+$art-thmb-inner-border-radius: 2px;
+
+$art-thmb-rubric-top: 0.5em;
+$art-thmb-rubric-right: 0;
+$art-thmb-rubric-font-size: 0.7em;
+$art-thmb-rubric-padding: 0.5em 1em;
+$art-thmb-rubric-bg: $color-white-faded;
+
+$art-thmb-txt-padding: 1em 0.5em;
+$art-thmb-hdr-wrapper-margin: 0 0 1em;
+$art-thmb-hdr-font-size: 0.8em;
+$art-thmb-teaser-font-size: 0.7em;
+$art-thmb-teaser-margin: 0 0 0.5em;
+$art-thmb-date-font-size: 0.6em;
+
+$art-thmb-read-padding: 0.1em 0.5em;
+$art-thmb-read-top: -0.8em;
+$art-thmb-lowbtns-font-size: 0.7em;
+$art-thmb-lowbtns-padding: 0.5em 0;
+$art-thmb-lowbtns-icon-width: 1.3em;
+
+
