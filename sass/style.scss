@@ -1471,3 +1471,69 @@ h3 {
     }
   }
 }
+
+
+.heading-meshed {
+  margin: $hdng-mshd-margin;
+  padding: $hdng-mshd-padding;
+  background: url("../img/style-bg.png");
+  text-align: center;
+
+  .heading-meshed__hdr {
+    display: inline-block;
+    padding: $hdng-mshd-hdr-padding;
+    background-color: $white;
+    margin: 0;
+  }
+}
+
+.filter {
+  @include responsive-prop(margin, $filter-margin);
+  border: 1px solid $color-grey-dark;
+  padding: $filter-padding;
+  font-size: $filter-font-size;
+  line-height: $filter-line-height;
+
+  &>* {
+    display: inline;
+    white-space: nowrap;  // prevent badge wrapping to newline
+  }
+
+  .filter__heading {
+    color: $color-green;
+    &:after {
+      content:"";
+      display: inline-block;
+      @include triangle(right, $filter-triangle-size, $color-green);
+      margin-left: $filter-triangle-margin-left;
+    }
+  }
+
+  .filter__cat {
+    margin-left: $filter-cat-margin-left;
+    color: $color-green;
+    &:after {
+      content:":";
+    }
+  }
+
+  .filter__val {
+    margin-left: $filter-val-margin-left;
+    color: $color-grey-light;
+    &:after {   // "close" badge
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      height: $filter-close-size;
+      width: $filter-close-size;
+      border-radius: $filter-close-border-radius;
+      background: $color-green url("../img/icons/close-white.png") no-repeat center;
+      background-size: $filter-close-cross-size;
+      margin-left: $filter-close-margin-left;
+    }
+  }
+}
+
+
+
+
