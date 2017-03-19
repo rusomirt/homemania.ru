@@ -1487,53 +1487,147 @@ h3 {
   }
 }
 
-.filter {
-  @include responsive-prop(margin, $filter-margin);
+.filter-show {
+  @include responsive-prop(margin, $filter-show-margin);
   border: 1px solid $color-grey-dark;
-  padding: $filter-padding;
-  font-size: $filter-font-size;
-  line-height: $filter-line-height;
+  padding: $filter-show-padding;
+  font-size: $filter-show-font-size;
+  line-height: $filter-show-line-height;
 
   &>* {
     display: inline;
     white-space: nowrap;  // prevent badge wrapping to newline
   }
 
-  .filter__heading {
+  .filter-show__heading {
     color: $color-green;
     &:after {
       content:"";
       display: inline-block;
-      @include triangle(right, $filter-triangle-size, $color-green);
-      margin-left: $filter-triangle-margin-left;
+      @include triangle(right, $filter-show-triangle-size, $color-green);
+      margin-left: $filter-show-triangle-margin-left;
     }
   }
 
-  .filter__cat {
-    margin-left: $filter-cat-margin-left;
+  .filter-show__cat {
+    margin-left: $filter-show-cat-margin-left;
     color: $color-green;
     &:after {
       content:":";
     }
   }
 
-  .filter__val {
-    margin-left: $filter-val-margin-left;
+  .filter-show__val {
+    margin-left: $filter-show-val-margin-left;
     color: $color-grey-light;
     &:after {   // "close" badge
       content: "";
       display: inline-block;
       vertical-align: middle;
-      height: $filter-close-size;
-      width: $filter-close-size;
-      border-radius: $filter-close-border-radius;
+      height: $filter-show-close-size;
+      width: $filter-show-close-size;
+      border-radius: $filter-show-close-border-radius;
       background: $color-green url("../img/icons/close-white.png") no-repeat center;
-      background-size: $filter-close-cross-size;
-      margin-left: $filter-close-margin-left;
+      background-size: $filter-show-close-cross-size;
+      margin-left: $filter-show-close-margin-left;
     }
   }
 }
 
+.photo-sel {
+  font-size: $photo-sel-font-size;
 
+  .photo-sel__sel-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
+    .photo-sel__select {
+      //font-size: 0.7em;
+      padding: $photo-sel-select-padding;
+    }
+    .photo-sel__range {
+      //font-size: 0.7em;
+
+      .photo-sel__prev,
+      .photo-sel__next {
+        font-size: $photo-sel-arrow-size;
+        width: $photo-sel-arrow-size;
+        height: $photo-sel-arrow-size;
+        color: $color-green;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        line-height: 0.85em;
+        vertical-align: sub;
+        border-radius: 50%;
+        border: 2px solid $color-grey-light;
+      }
+      .photo-sel__prev {
+        text-indent: -4px;
+      }
+      .photo-sel__next {
+        text-indent: 4px;
+      }
+    }
+  }
+}
+
+.filter {
+  font-size: $filter-font-size;
+  list-style: none;
+
+  .filter__cat-name {
+    @include responsive-prop(margin, $filter-cat-name-margin);
+  }
+
+  .filter__link,
+  .filter__chb-label {
+    margin: $filter-choose-margin;
+    display: block;
+  }
+
+  .filter__link {
+    margin-left: $filter-link-margin-left;
+    color: $global-txt-color;
+    text-decoration: none;
+
+    &.filter__link--active {
+      color: $color-green;
+    }
+  }
+
+  .filter__chb {          // hide default checkbox
+    display: none;
+  }
+  .filter__chb-label {    // label contains custom checkbox
+    margin-left: $filter-chb-label-ml;
+    cursor: pointer;
+    position: relative;
+    padding-left: $filter-chb-label-pl;
+
+    &:before {            // custom checkbox - unchecked
+      display: block;
+      content: '';
+      position: absolute;
+      left: 0; top: 0;
+      width: $filter-chb-size;
+      height: $filter-chb-size;
+      border: $filter-chb-border-width solid $color-grey-dark;
+      background: $white;
+      border-radius: $filter-chb-border-radius;
+    }
+  }
+  // custom checkbox - check sign
+  .filter__chb:checked + .filter__chb-label:after {
+    display: block;
+    content: '';
+    position: absolute;
+    left: 0.2em; top: 0.2em;
+    width: 0; height: 0;
+    border: 0.4em solid $color-green;
+    border-radius: $filter-chb-checkmark-border-radius;
+  }
+
+}
 

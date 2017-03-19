@@ -625,22 +625,48 @@ $hdng-mshd-hdr-padding: 0.2em 1.5em 0.5em;
 
 
 // ----------------------------------------------------------------------------
+// .filter-show
+// ----------------------------------------------------------------------------
+$filter-show-margin: $global-elem-spacers-vertical;
+$filter-show-padding: 0.7em;
+$filter-show-font-size: 1.25rem;
+$filter-show-line-height: 1.7;
+
+$filter-show-triangle-margin-left: 0.2em;
+$filter-show-triangle-size: 0.4em;
+
+$filter-show-cat-margin-left: 0.5em;
+$filter-show-val-margin-left: 0.2em;
+$filter-show-close-size: 0.8em;
+$filter-show-close-border-radius: 5px;
+$filter-show-close-cross-size: 60%;
+$filter-show-close-margin-left: 0.3em;
+
+// ----------------------------------------------------------------------------
+// .photo-sel
+// ----------------------------------------------------------------------------
+$photo-sel-font-size: 1.5rem;
+$photo-sel-select-padding: 0.3em;
+$photo-sel-arrow-size: 40px;
+
+// ----------------------------------------------------------------------------
 // .filter
 // ----------------------------------------------------------------------------
-$filter-margin: $global-elem-spacers-vertical;
-$filter-padding: 0.7em;
 $filter-font-size: 1.25rem;
-$filter-line-height: 1.7;
+$filter-cat-name-margin: (
+        xs: 1.5em 0,
+);
+$filter-choose-margin: 0 0 0.5em;
+$filter-link-margin-left: 2.5em;
 
-$filter-triangle-margin-left: 0.2em;
-$filter-triangle-size: 0.4em;
+$filter-chb-label-ml: 0.8em;
+$filter-chb-label-pl: 1.7em;
+$filter-chb-size: 1.25em;
+$filter-chb-border-width: 0.1em;
+$filter-chb-border-radius: 6px;
+$filter-chb-checkmark-border-radius: 35%;
 
-$filter-cat-margin-left: 0.5em;
-$filter-val-margin-left: 0.2em;
-$filter-close-size: 0.8em;
-$filter-close-border-radius: 5px;
-$filter-close-cross-size: 60%;
-$filter-close-margin-left: 0.3em;
+
 
 
 
