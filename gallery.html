@@ -106,117 +106,331 @@
         <h2 class="heading-meshed__hdr">Вдохновляйтесь!</h2>
     </div>
 
-    <div class="filter">
-        <p class="filter__cat-name">Комната</p>
+    <div class="filter-wrapper">
+        <div class="filter">
+            <p class="filter__cat-name">Комната</p>
 
-        <a class="filter__link filter__link--active" href="#">Все комнаты</a>
-        <a class="filter__link" href="#">Кухня</a>
-        <a class="filter__link" href="#">Ванная</a>
-        <a class="filter__link" href="#">Спальня</a>
-        <a class="filter__link" href="#">Гостиная</a>
-        <a class="filter__link" href="#">Столовая</a>
-        <a class="filter__link" href="#">Экстерьер</a>
-        <a class="filter__link" href="#">Детская комната</a>
-        <a class="filter__link" href="#">Кабинет</a>
-        <a class="filter__link" href="#">Гардеробная</a>
-        <a class="filter__link" href="#">Фасад</a>
-        <a class="filter__link" href="#">Прихожая</a>
-        <a class="filter__link" href="#">Коридор</a>
-        <a class="filter__link" href="#">Лестницы</a>
-        <a class="filter__link" href="#">Подвал</a>
-        <a class="filter__link" href="#">Гараж и сарай</a>
-        <a class="filter__link" href="#">Прачечная</a>
-        <a class="filter__link" href="#">Винный погреб</a>
-        <a class="filter__link" href="#">Домашний бар</a>
+            <a class="filter__link filter__link--active" href="#">Все комнаты</a>
+            <a class="filter__link" href="#">Кухня</a>
+            <a class="filter__link" href="#">Ванная</a>
+            <a class="filter__link" href="#">Спальня</a>
+            <a class="filter__link" href="#">Гостиная</a>
+            <a class="filter__link" href="#">Столовая</a>
+            <a class="filter__link" href="#">Экстерьер</a>
+            <a class="filter__link" href="#">Детская комната</a>
+            <a class="filter__link" href="#">Кабинет</a>
+            <a class="filter__link" href="#">Гардеробная</a>
+            <a class="filter__link" href="#">Фасад</a>
+            <a class="filter__link" href="#">Прихожая</a>
+            <a class="filter__link" href="#">Коридор</a>
+            <a class="filter__link" href="#">Лестницы</a>
+            <a class="filter__link" href="#">Подвал</a>
+            <a class="filter__link" href="#">Гараж и сарай</a>
+            <a class="filter__link" href="#">Прачечная</a>
+            <a class="filter__link" href="#">Винный погреб</a>
+            <a class="filter__link" href="#">Домашний бар</a>
 
-        <p class="filter__cat-name">Стиль</p>
+            <p class="filter__cat-name">Стиль</p>
 
-        <input type="checkbox" class="filter__chb" id="chb-style-scand" />
-        <label class="filter__chb-label" for="chb-style-scand">Скандинавский</label>
-        <input type="checkbox" class="filter__chb" id="chb-style-modern" />
-        <label class="filter__chb-label" for="chb-style-modern">Современный</label>
-        <input type="checkbox" class="filter__chb" id="chb-style-classic" />
-        <label class="filter__chb-label" for="chb-style-classic">Классический</label>
-        <input type="checkbox" class="filter__chb" id="chb-style-loft" />
-        <label class="filter__chb-label" for="chb-style-loft">Лофт</label>
-        <input type="checkbox" class="filter__chb" id="chb-style-fusion" />
-        <label class="filter__chb-label" for="chb-style-fusion">Фьюжн</label>
-        <input type="checkbox" class="filter__chb" id="chb-style-modernism" />
-        <label class="filter__chb-label" for="chb-style-modernism">Модернизм</label>
-        <input type="checkbox" class="filter__chb" id="chb-style-east" />
-        <label class="filter__chb-label" for="chb-style-east">Восточный</label>
-        <input type="checkbox" class="filter__chb" id="chb-style-sea" />
-        <label class="filter__chb-label" for="chb-style-sea">Морской</label>
-        <input type="checkbox" class="filter__chb" id="chb-style-country" />
-        <label class="filter__chb-label" for="chb-style-country">Кантри</label>
-        <input type="checkbox" class="filter__chb" id="chb-style-shebby" />
-        <label class="filter__chb-label" for="chb-style-shebby">Стиль шебби-шик</label>
-        <input type="checkbox" class="filter__chb" id="chb-style-mediterr" />
-        <label class="filter__chb-label" for="chb-style-mediterr">Средиземноморский</label>
-        <input type="checkbox" class="filter__chb" id="chb-style-retro" />
-        <label class="filter__chb-label" for="chb-style-retro">Ретро</label>
-        <input type="checkbox" class="filter__chb" id="chb-style-rustica" />
-        <label class="filter__chb-label" for="chb-style-rustica">Рустика</label>
-        <input type="checkbox" class="filter__chb" id="chb-style-mod-classics" />
-        <label class="filter__chb-label" for="chb-style-mod-classics">Современная классика</label>
-        <input type="checkbox" class="filter__chb" id="chb-style-viktorian" />
-        <label class="filter__chb-label" for="chb-style-viktorian">Викторианский</label>
+            <input type="checkbox" class="filter__chb" id="chb-style-scand" />
+            <label class="filter__chb-label" for="chb-style-scand">
+                <span class="filter__chb-new"><span class="filter__chb-new-bg"></span></span>
+                Скандинавский</label>
+            <input type="checkbox" class="filter__chb" id="chb-style-modern" />
+            <label class="filter__chb-label" for="chb-style-modern">
+                <span class="filter__chb-new"><span class="filter__chb-new-bg"></span></span>
+                Современный</label>
+            <input type="checkbox" class="filter__chb" id="chb-style-classic" />
+            <label class="filter__chb-label" for="chb-style-classic">
+                <span class="filter__chb-new"><span class="filter__chb-new-bg"></span></span>
+                Классический</label>
+            <input type="checkbox" class="filter__chb" id="chb-style-loft" />
+            <label class="filter__chb-label" for="chb-style-loft">
+                <span class="filter__chb-new"><span class="filter__chb-new-bg"></span></span>
+                Лофт</label>
+            <input type="checkbox" class="filter__chb" id="chb-style-fusion" />
+            <label class="filter__chb-label" for="chb-style-fusion">
+                <span class="filter__chb-new"><span class="filter__chb-new-bg"></span></span>
+                Фьюжн</label>
+            <input type="checkbox" class="filter__chb" id="chb-style-modernism" />
+            <label class="filter__chb-label" for="chb-style-modernism">
+                <span class="filter__chb-new"><span class="filter__chb-new-bg"></span></span>
+                Модернизм</label>
+            <input type="checkbox" class="filter__chb" id="chb-style-east" />
+            <label class="filter__chb-label" for="chb-style-east">
+                <span class="filter__chb-new"><span class="filter__chb-new-bg"></span></span>
+                Восточный</label>
+            <input type="checkbox" class="filter__chb" id="chb-style-sea" />
+            <label class="filter__chb-label" for="chb-style-sea">
+                <span class="filter__chb-new"><span class="filter__chb-new-bg"></span></span>
+                Морской</label>
+            <input type="checkbox" class="filter__chb" id="chb-style-country" />
+            <label class="filter__chb-label" for="chb-style-country">
+                <span class="filter__chb-new"><span class="filter__chb-new-bg"></span></span>
+                Кантри</label>
+            <input type="checkbox" class="filter__chb" id="chb-style-shebby" />
+            <label class="filter__chb-label" for="chb-style-shebby">
+                <span class="filter__chb-new"><span class="filter__chb-new-bg"></span></span>
+                Стиль шебби-шик</label>
+            <input type="checkbox" class="filter__chb" id="chb-style-mediterr" />
+            <label class="filter__chb-label" for="chb-style-mediterr">
+                <span class="filter__chb-new"><span class="filter__chb-new-bg"></span></span>
+                Средиземноморский</label>
+            <input type="checkbox" class="filter__chb" id="chb-style-retro" />
+            <label class="filter__chb-label" for="chb-style-retro">
+                <span class="filter__chb-new"><span class="filter__chb-new-bg"></span></span>
+                Ретро</label>
+            <input type="checkbox" class="filter__chb" id="chb-style-rustica" />
+            <label class="filter__chb-label" for="chb-style-rustica">
+                <span class="filter__chb-new"><span class="filter__chb-new-bg"></span></span>
+                Рустика</label>
+            <input type="checkbox" class="filter__chb" id="chb-style-mod-classics" />
+            <label class="filter__chb-label" for="chb-style-mod-classics">
+                <span class="filter__chb-new"><span class="filter__chb-new-bg"></span></span>
+                Современная классика</label>
+            <input type="checkbox" class="filter__chb" id="chb-style-viktorian" />
+            <label class="filter__chb-label" for="chb-style-viktorian">
+                <span class="filter__chb-new"><span class="filter__chb-new-bg"></span></span>
+                Викторианский</label>
 
-        <p class="filter__cat-name">Бюджет</p>
+            <p class="filter__cat-name">Бюджет</p>
 
-        <input type="checkbox" class="filter__chb" id="chb-budget-low" />
-        <label class="filter__chb-label" for="chb-budget-low">Низкий <small>(250 203)</small></label>
-        <input type="checkbox" class="filter__chb" id="chb-budget-med" />
-        <label class="filter__chb-label" for="chb-budget-med">Средний <small>(118 211)</small></label>
-        <input type="checkbox" class="filter__chb" id="chb-budget-high" />
-        <label class="filter__chb-label" for="chb-budget-high">Высокий <small>(70 568)</small></label>
-        <input type="checkbox" class="filter__chb" id="chb-budget-lux" />
-        <label class="filter__chb-label" for="chb-budget-lux">Люкс <small>(50 568)</small></label>
+            <input type="checkbox" class="filter__chb" id="chb-budget-low" />
+            <label class="filter__chb-label" for="chb-budget-low">
+                <span class="filter__chb-new"><span class="filter__chb-new-bg"></span></span>
+                Низкий <span class="filter__small">(250 203)</span></label>
+            <input type="checkbox" class="filter__chb" id="chb-budget-med" />
+            <label class="filter__chb-label" for="chb-budget-med">
+                <span class="filter__chb-new"><span class="filter__chb-new-bg"></span></span>
+                Средний <span class="filter__small">(118 211)</span></label>
+            <input type="checkbox" class="filter__chb" id="chb-budget-high" />
+            <label class="filter__chb-label" for="chb-budget-high">
+                <span class="filter__chb-new"><span class="filter__chb-new-bg"></span></span>
+                Высокий <span class="filter__small">(70 568)</span></label>
+            <input type="checkbox" class="filter__chb" id="chb-budget-lux" />
+            <label class="filter__chb-label" for="chb-budget-lux">
+                <span class="filter__chb-new"><span class="filter__chb-new-bg"></span></span>
+                Люкс <span class="filter__small">(50 568)</span></label>
 
-        <p class="filter__cat-name">Размер</p>
+            <p class="filter__cat-name">Размер</p>
 
-        <input type="checkbox" class="filter__chb" id="chb-size-low" />
-        <label class="filter__chb-label" for="chb-size-low">Компактный <small>(450 203)</small></label>
-        <input type="checkbox" class="filter__chb" id="chb-size-med" />
-        <label class="filter__chb-label" for="chb-size-med">Средний <small>(356 211)</small></label>
-        <input type="checkbox" class="filter__chb" id="chb-size-high" />
-        <label class="filter__chb-label" for="chb-size-high">Большой <small>(40 568)</small></label>
-        <input type="checkbox" class="filter__chb" id="chb-size-huge" />
-        <label class="filter__chb-label" for="chb-size-huge">Огромный <small>(30 568)</small></label>
+            <input type="checkbox" class="filter__chb" id="chb-size-low" />
+            <label class="filter__chb-label" for="chb-size-low">
+                <span class="filter__chb-new"><span class="filter__chb-new-bg"></span></span>
+                Компактный <span class="filter__small">(450 203)</span></label>
+            <input type="checkbox" class="filter__chb" id="chb-size-med" />
+            <label class="filter__chb-label" for="chb-size-med">
+                <span class="filter__chb-new"><span class="filter__chb-new-bg"></span></span>
+                Средний <span class="filter__small">(356 211)</span></label>
+            <input type="checkbox" class="filter__chb" id="chb-size-high" />
+            <label class="filter__chb-label" for="chb-size-high">
+                <span class="filter__chb-new"><span class="filter__chb-new-bg"></span></span>
+                Большой <span class="filter__small">(40 568)</span></label>
+            <input type="checkbox" class="filter__chb" id="chb-size-huge" />
+            <label class="filter__chb-label" for="chb-size-huge">
+                <span class="filter__chb-new"><span class="filter__chb-new-bg"></span></span>
+                Огромный <span class="filter__small">(30 568)</span></label>
 
-        <p class="filter__cat-name">Цветовая гамма</p>
-    </div>
+            <p class="filter__cat-name">Цветовая гамма</p>
 
-    <div class="filter-rslt">
-        <ul class="filter-show">
-            <li class="filter-show__heading">ФИЛЬТР</li>
-            <li class="filter-show__cat">Комната</li>
-            <li class="filter-show__val">Все комнаты</li>
-            <li class="filter-show__cat">Стиль</li>
-            <li class="filter-show__val">Скандинавский</li>
-            <li class="filter-show__val">Фьюжн</li>
-            <li class="filter-show__val">Средиземноморский</li>
-            <li class="filter-show__val">Ретро</li>
-            <li class="filter-show__cat">Бюджет</li>
-            <li class="filter-show__val">Средний</li>
-            <li class="filter-show__cat">Размер</li>
-            <li class="filter-show__val">Компактный</li>
-            <li class="filter-show__cat">Цвет</li>
-            <li class="filter-show__val">Беж</li>
-            <li class="filter-show__val">Синий</li>
-        </ul>
-
-        <div class="photo-sel">
-            <p class="photo-sel__amount">93 426 Фото</p>
-            <div class="photo-sel__sel-wrapper">
-                <select class="photo-sel__select">
-                    <option class="photo-sel__option" selected value="">Популярное за сегодня</option>
-                    <option class="photo-sel__option" value="">Ещё опция</option>
-                    <option class="photo-sel__option" value="">И ещё одна</option>
-                </select>
-                <div class="photo-sel__range">1 - 20 из 93 426 фото
-                    <i class="photo-sel__next fa fa-angle-right fa-border"></i>
+            <div class="gallery gallery--44444">
+                <div class="gallery__body">
+                    <div class="gallery__item"><div class="color-square"></div></div>
+                    <div class="gallery__item"><div class="color-square"></div></div>
+                    <div class="gallery__item"><div class="color-square"></div></div>
+                    <div class="gallery__item"><div class="color-square"></div></div>
+                    <div class="gallery__item"><div class="color-square"></div></div>
+                    <div class="gallery__item"><div class="color-square"></div></div>
+                    <div class="gallery__item"><div class="color-square"></div></div>
+                    <div class="gallery__item"><div class="color-square"></div></div>
+                    <div class="gallery__item"><div class="color-square"></div></div>
+                    <div class="gallery__item"><div class="color-square"></div></div>
+                    <div class="gallery__item"><div class="color-square"></div></div>
+                    <div class="gallery__item"><div class="color-square"></div></div>
+                    <div class="gallery__item"><div class="color-square"></div></div>
+                    <div class="gallery__item"><div class="color-square"></div></div>
+                    <div class="gallery__item"><div class="color-square"></div></div>
+                    <div class="gallery__item"><div class="color-square"></div></div>
+                    <div class="gallery__item"><div class="color-square"></div></div>
+                    <div class="gallery__item"><div class="color-square"></div></div>
+                    <div class="gallery__item"><div class="color-square"></div></div>
+                    <div class="gallery__item"><div class="color-square"></div></div>
                 </div>
+            </div>
+        </div>
+
+        <div class="filter-rslt">
+            <ul class="filter-show">
+                <li class="filter-show__heading">ФИЛЬТР</li>
+                <li class="filter-show__cat">Комната</li>
+                <li class="filter-show__val">Все комнаты</li>
+                <li class="filter-show__cat">Стиль</li>
+                <li class="filter-show__val">Скандинавский</li>
+                <li class="filter-show__val">Фьюжн</li>
+                <li class="filter-show__val">Средиземноморский</li>
+                <li class="filter-show__val">Ретро</li>
+                <li class="filter-show__cat">Бюджет</li>
+                <li class="filter-show__val">Средний</li>
+                <li class="filter-show__cat">Размер</li>
+                <li class="filter-show__val">Компактный</li>
+                <li class="filter-show__cat">Цвет</li>
+                <li class="filter-show__val">Беж</li>
+                <li class="filter-show__val">Синий</li>
+            </ul>
+
+            <div class="photo-sel">
+                <p class="photo-sel__amount">93 426 Фото</p>
+                <div class="photo-sel__sel-wrapper">
+                    <select class="photo-sel__select">
+                        <option class="photo-sel__option" selected value="">Популярное за сегодня</option>
+                        <option class="photo-sel__option" value="">Ещё опция</option>
+                        <option class="photo-sel__option" value="">И ещё одна</option>
+                    </select>
+                    <div class="photo-sel__range">1 - 20 из 93 426 фото
+                        <i class="photo-sel__next fa fa-angle-right fa-border"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery gallery--22233">
+                <div class="gallery__body">
+                    <div class="gallery__item">
+                        <div class="picture">
+                            <img class="picture__img" src="img/gallery-filter-1.png" alt="">
+                            <div class="picture__caption picture__caption--align-left">
+                                Дизайн квартиры в скандинавском стиле
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery__item">
+                        <div class="picture">
+                            <img class="picture__img" src="img/gallery-filter-2.png" alt="">
+                            <div class="picture__caption picture__caption--align-left">
+                                Квартира №70
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery__item">
+                        <div class="picture">
+                            <img class="picture__img" src="img/gallery-filter-3.png" alt="">
+                            <div class="picture__caption picture__caption--align-left">
+                                Весеннее утро
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery__item">
+                        <div class="picture">
+                            <img class="picture__img" src="img/gallery-filter-4.png" alt="">
+                            <div class="picture__caption picture__caption--align-left">
+                                ЖК "Дубровская Слобода"
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery__item">
+                        <div class="picture">
+                            <img class="picture__img" src="img/gallery-filter-5.png" alt="">
+                            <div class="picture__caption picture__caption--align-left">
+                                Apartment in Vnukovo
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery__item">
+                        <div class="picture">
+                            <img class="picture__img" src="img/gallery-filter-6.png" alt="">
+                            <div class="picture__caption picture__caption--align-left">
+                                Квартира в Дрожжино
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery__item">
+                        <div class="picture">
+                            <img class="picture__img" src="img/gallery-filter-7.png" alt="">
+                            <div class="picture__caption picture__caption--align-left">
+                                Мебель в интерьере
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery__item">
+                        <div class="picture">
+                            <img class="picture__img" src="img/gallery-filter-8.png" alt="">
+                            <div class="picture__caption picture__caption--align-left">
+                                Детская комната
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery__item">
+                        <div class="picture">
+                            <img class="picture__img" src="img/gallery-filter-9.png" alt="">
+                            <div class="picture__caption picture__caption--align-left">
+                                Лофт 40Х40
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery__item">
+                        <div class="picture">
+                            <img class="picture__img" src="img/gallery-filter-10.png" alt="">
+                            <div class="picture__caption picture__caption--align-left">
+                                Дизайн квартиры в скандинавском стиле
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery__item">
+                        <div class="picture">
+                            <img class="picture__img" src="img/gallery-filter-11.png" alt="">
+                            <div class="picture__caption picture__caption--align-left">
+                                Квартира №70
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery__item">
+                        <div class="picture">
+                            <img class="picture__img" src="img/gallery-filter-12.png" alt="">
+                            <div class="picture__caption picture__caption--align-left">
+                                Весеннее утро
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery__item">
+                        <div class="picture">
+                            <img class="picture__img" src="img/gallery-filter-13.png" alt="">
+                            <div class="picture__caption picture__caption--align-left">
+                                ЖК "Дубровская Слобода"
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery__item">
+                        <div class="picture">
+                            <img class="picture__img" src="img/gallery-filter-14.png" alt="">
+                            <div class="picture__caption picture__caption--align-left">
+                                Apartment in Vnukovo
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery__item">
+                        <div class="picture">
+                            <img class="picture__img" src="img/gallery-filter-15.png" alt="">
+                            <div class="picture__caption picture__caption--align-left">
+                                Квартира в Дрожжино
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pgntn">
+                <ul class="pgntn__inner">
+                    <li class="pgntn__item pgntn__item--active"><a class="pgntn__link" href="#">1</a></li>
+                    <li class="pgntn__item"><a class="pgntn__link" href="#">2</a></li>
+                    <li class="pgntn__item"><a class="pgntn__link" href="#">3</a></li>
+                    <li class="pgntn__item"><a class="pgntn__link" href="#">4</a></li>
+                    <li class="pgntn__item"><a class="pgntn__link" href="#">5</a></li>
+                    <li class="pgntn__item hidden-md-down"><a class="pgntn__link" href="#">6</a></li>
+                    <li class="pgntn__item hidden-md-down"><a class="pgntn__link" href="#">7</a></li>
+                    <li class="pgntn__item hidden-md-down"><a class="pgntn__link" href="#">8</a></li>
+                    <li class="pgntn__item hidden-md-down"><a class="pgntn__link" href="#">9</a></li>
+                    <li class="pgntn__item hidden-md-down"><a class="pgntn__link" href="#">10</a></li>
+                    <li class="pgntn__item pgntn__item--ctrl"><a class="pgntn__link" href="#">Далее ></a></li>
+                </ul>
             </div>
         </div>
     </div>
