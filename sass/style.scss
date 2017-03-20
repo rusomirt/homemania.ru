@@ -109,7 +109,7 @@ h3 {
     list-style: none outside none;
     display: inline-block;
 
-    i {
+    .social-links__icon {
       //@extend .fa;
       //@extend .fa-border;
       width: $social-icon-size;
