@@ -4,10 +4,7 @@
 
 // Bootstrap
 @import "bootstrap/bootstrap";
-// Bootstrap default variables are overrided in bootstrap/_custom.scss
-
-// Dropzone
-//@import url('//cdnjs.cloudflare.com/ajax/libs/dropzone/3.8.4/css/dropzone.css');
+// Bootstrap default variables are overridden in bootstrap/_custom.scss
 
 // Variables
 @import "variables";
@@ -40,7 +37,7 @@ h3 {
 }
 
 // ----------------------------------------------------------------------------
-// Components
+// Bootstrap classes override
 // ----------------------------------------------------------------------------
 
 // Default button
@@ -57,8 +54,17 @@ h3 {
   cursor: pointer;
 }
 
+// ----------------------------------------------------------------------------
+// Custom components
+// ----------------------------------------------------------------------------
+// BEM naming convention:
+// block-name
+// block-name--block-modifier
+// block-name__element-name
+// block-name__element-name--element-modifier
+
 .page-header {
-  @extend .bg-primary;
+  background-color: $color-green;
   @include responsive-prop(padding, $header-paddings);
 
   .page-header__content {
@@ -71,7 +77,6 @@ h3 {
 
       .page-header__title {
         text-align: center;
-        color: $header-title-txt-color;
 
         .page-header__title-link {
           text-decoration: none;
