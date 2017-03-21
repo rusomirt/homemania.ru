@@ -1,16 +1,13 @@
 jQuery(function ($) {
 
-  // Calculation of bootstrap carousel height: #carousel-makeovers.
-  // All slides consist of square images (horizontally stacked).
-  function carouselMakeoversOnResize() {
-    const carouselImgRatio = 2; // 2 square images
-
-    const $carouselItems = $("#carousel-makeovers").find(".carousel-item");
-    let currentScreenWidth = $carouselItems.first().width();
-
-    $carouselItems.each( function() {
-      $(this).height( currentScreenWidth/carouselImgRatio );
-    });
+  // Adjust the height of carousel controls to height of images in this carousel
+  function carouselMakeoversControlsHeight() {
+    // Get the height of first visible image
+    const $carousel = $("#carousel-makeovers");
+    const carouselImgHeight = $carousel.find(".carousel-item.active")
+      .filter(":visible").first().height();
+    $carousel.find(".carousel-control-prev, .carousel-control-next")
+      .height(carouselImgHeight);
   }
 
   // Adjust the height of carousel controls to height of images in this carousel
@@ -23,11 +20,11 @@ jQuery(function ($) {
       .height(carouselImgHeight);
   }
 
-  carouselMakeoversOnResize();
+  carouselMakeoversControlsHeight();
   carouselStylesControlsHeight();
 
   $(window).resize( function() {
-    carouselMakeoversOnResize();
+    carouselMakeoversControlsHeight();
     carouselStylesControlsHeight();
   });
 

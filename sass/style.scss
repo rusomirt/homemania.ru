@@ -244,12 +244,165 @@ h3 {
   text-align: center;
 }
 
-// Carousel can't be named with BEM methodology because it's
-// processing in JavaScript by Bootstrap.
+// Carousel classes can't be named with BEM methodology because their
+// behavior is controlled by JavaScript in Bootstrap.
 .carousel {
   &.carousel-inspiration {
+    // Margin for absolute-positioned button
     @include responsive-prop(margin, $carousel-inspiration-margins);
     max-width: $carousel-inspiration-img-width;
+  }
+
+  &.carousel-makeovers {
+    .carousel-inner {
+      // Padding for low-placed caption in xs screens
+      @include responsive-prop(padding, $crsl-inner-paddings);
+    }
+  }
+
+  &.carousel-styles {
+    background: url("../img/meshed-bg.png");
+    background-size: 100%;
+
+    .inner-wrapper {
+      position: relative;
+    }
+
+    .carousel-inner .active.left {
+      left: -33%;
+    }
+    .carousel-inner .next {
+      left: 33%;
+    }
+    .carousel-inner .prev {
+      left: -33%;
+    }
+
+    .carousel-item .picture {
+      @extend .col-12;
+      @extend .col-sm-4;
+
+      h3 {
+        @include responsive-prop(font-size, $crsl-styles-h3-font-sizes);
+      }
+    }
+
+    .carousel-item:not(.prev) {
+      visibility: visible;
+    }
+    .carousel-item.right:not(.prev) {
+      visibility: hidden;
+    }
+    .rightest {
+      visibility: visible;
+    }
+  }
+
+  &.carousel-photo {
+    @include responsive-prop(font-size, $crsl-photo-font-sizes);
+
+    .carousel-item {
+        flex-direction: column;
+
+        .crsl-img-wrapper {
+          position: relative;
+          // In IE default is "0 1 auto" and because of this
+          // contained image always has it's initial height (729px).
+          // Override it:
+          flex: 0 0 auto;
+
+          img {
+            width: 100%;
+            display: block;
+          }
+
+          .carousel-img-photo-btns {
+            position: absolute;
+            bottom: 0;
+            @include responsive-prop(transform, $crsl-img-btns-transforms);
+
+            display: flex;
+            @include responsive-prop(flex-direction, $crsl-img-btns-flex-dirs);
+            width: 100%;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            .photo-crsl-img-left,
+            button {
+              @include responsive-prop(margin, $crsl-img-btns-margins);
+              height: 38px;
+            }
+            button {
+              padding: 0.2rem 0.5rem;
+              font-size: 0.8rem;
+            }
+            .photo-crsl-img-left {
+              button {
+                background: $color-green no-repeat 0.5rem center;
+                padding-left: 2.5rem;
+                padding-top: 0.4rem;
+              }
+              .like {
+                background-image: url("../img/icons/heart.png");
+              }
+              .dislike {
+                background-image: url("../img/icons/smile-unhappy.png");
+              }
+            }
+            .photo-crsl-img-right {
+              button {
+                background-color: $white;
+                border: 1px solid $color-grey-light;
+              }
+            }
+          }
+        }
+
+        .carousel-caption-photo {
+          display: flex;
+          @include responsive-prop(flex-direction, $crsl-photo-capt-flex-dir);
+          @include responsive-prop(padding, $crsl-photo-capt-paddings);
+
+          .crsl-capt-desc {
+            text-align: left;
+            @include responsive-prop(margin, $crsl-capt-desc-margins);
+            @include responsive-prop(padding, $crsl-capt-desc-paddings);
+
+            h3 {
+              @include responsive-prop(font-size, $crsl-photo-header-font-sizes);
+            }
+            p {
+
+            }
+            a {
+              float: right;
+              font-size: 0.8em;
+            }
+          }
+          .crsl-capt-links {
+            margin: 0 auto;
+            p {
+              text-align: left;
+            }
+            .similar {
+              display: flex;
+              .similar__link + .similar__link {
+                margin-left: 0.5rem;
+              }
+            }
+            .social-links {
+              margin: 0.5rem 0 0 0;
+              padding: 0.5rem 0 0 0;
+              border-top: 1px solid $color-grey-light;
+
+              i {
+                color: $color-grey-light;
+              }
+            }
+          }
+        }
+
+      }
   }
 
   @include responsive-prop(margin, $crsl-margins);
@@ -257,6 +410,9 @@ h3 {
 
   .carousel-header {
     @include responsive-prop(margin, $crsl-heading-margins);
+    display: inline-block;
+    @include responsive-prop(padding, $crsl-styles-header-paddings);
+    background-color: $white;
 
     h2 {
       @include responsive-prop(margin, $crsl-header-margins);
@@ -284,6 +440,7 @@ h3 {
       text-align: center;
       color: $crsl-indicators-inactive-color;
       background-color: transparent;
+
       &.active {
         color: $crsl-indicators-active-color;
         border-bottom: 3px solid $crsl-indicators-active-color;
@@ -292,68 +449,55 @@ h3 {
   }
 
   .carousel-inner {
+    .crsl-row-img-wrapper {
+      flex: 1 1 auto;
 
-    .carousel-item-img {
-      @extend .d-block;   // from bootstrap code sample
-      @extend .img-fluid;
-      width: 100%;
-      height: 100%;       // prevent image stretching to it's initial height (500px)
-    }
-
-    .carousel-caption {
-
-      h3 {
-        color: $global-txt-color;
+      .carousel-item & {    // parent item
+        justify-content: space-between;
       }
 
-      p {
-        color: $global-txt-color;
+      &:not(:first-of-type) {
+        margin-left: 0.5rem;
+      }
+
+      .crsl-row-img {
+        width: 100%;        // fit image to max size allowed by wrapper
       }
     }
 
-    .carousel-item-row {
-      font-size: 0;
-      -ms-flex-wrap: wrap;
-      -ms-flex-direction: column;
-      -webkit-flex-flow: row wrap;
-      flex-flow: row wrap;
-
-      .carousel-img-wrapper {
-        flex: auto;
-        width: 1px; // Any px value for proper sizing
-        &:not(:first-of-type) {
-          margin-left: 1rem;
-        }
-
-        .carousel-img {
-          width: 100%;
-          height: auto;
-        }
-      }
-    }
-    .carousel-item-row.active {
-      display: flex;
+    .carousel-caption-center {
+      @extend .carousel-caption;
+      color: $global-txt-color;
+      display: block;
+      @include responsive-prop(width, $crsl-caption-widths);
+      @include responsive-prop(bottom, $crsl-caption-bottoms);
+      left: 50%;
+      @include responsive-prop(transform, $crsl-caption-transforms);
+      @include responsive-prop(padding, $crsl-caption-paddings);
+      background-color: $crsl-caption-bg-color;
     }
   }
 
+  // Height of controls is adjusted in JavaScript
   .carousel-control-next,
   .carousel-control-prev{
     @include responsive-prop(width, $crsl-controls-widths);
+
     i {
       font-size: $crsl-controls-size;
-      width: $crsl-controls-size;
-      height: $crsl-controls-size;
+      width: 1em;
+      height: 1em;
       color: $crsl-controls-arrow-color;
       text-align: center;
       margin: 0;
       padding: 0;
-      line-height: 0.9em;
+      line-height: 0.8em;
       border-radius: 50%;
       border: 3px solid $crsl-controls-border-color;
     }
   }
-  .carousel-control-prev i { text-indent: -2px; }
-  .carousel-control-next i { text-indent: 2px; }
+  .carousel-control-prev i { text-indent: -0.1em; }
+  .carousel-control-next i { text-indent: 0.1em; }
 
   .carousel-overlay {
     position: absolute;
@@ -395,220 +539,6 @@ h3 {
       left: 50%;
       @include responsive-prop(transform, $cral-ovrl-btn-transforms);
       @include responsive-prop(padding, $crsl-ovrl-btn-paddings);
-    }
-  }
-}
-
-#carousel-makeovers {
-  overflow: visible;
-  @include responsive-prop(padding, $crsl-inner-paddings);
-
-  .carousel-inner {
-    overflow: visible;
-  }
-  .carousel-item {
-    justify-content: space-between;
-
-    .makeovers-img-holder {
-      width: 49%;
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-
-    #img-bedroom-left { background-image: url("../img/slider2-slide1-img1.png"); }
-    #img-bedroom-right { background-image: url("../img/slider2-slide1-img2.png"); }
-    #img-guestroom-left { background-image: url("../img/slider2-slide1-img1.png"); }
-    #img-guestroom-right { background-image: url("../img/slider2-slide1-img2.png"); }
-    #img-bathroom-left { background-image: url("../img/slider2-slide1-img1.png"); }
-    #img-bathroom-right { background-image: url("../img/slider2-slide1-img2.png"); }
-    #img-kitchen-left { background-image: url("../img/slider2-slide1-img1.png"); }
-    #img-kitchen-right { background-image: url("../img/slider2-slide1-img2.png"); }
-
-    .carousel-caption {
-      display: block;
-      @include responsive-prop(width, $crsl-caption-widths);
-      @include responsive-prop(bottom, $crsl-caption-bottoms);
-      left: 50%;
-      @include responsive-prop(transform, $crsl-caption-transforms);
-      @include responsive-prop(padding, $crsl-caption-paddings);
-      background-color: $crsl-caption-bg-color;
-    }
-  }
-}
-
-#carousel-styles {
-  background: url("../img/style-bg.png");
-  background-size: 100%;
-
-  .carousel-header {
-    display: inline-block;
-    @include responsive-prop(margin, $crsl-styles-header-margins);
-    @include responsive-prop(padding, $crsl-styles-header-paddings);
-    background-color: rgb(255, 255, 255);
-  }
-
-  h3 {
-    @include responsive-prop(font-size, $crsl-styles-h3-font-sizes);
-  }
-
-  .carousel-control-prev,
-  .carousel-control-next {
-    bottom: auto;   // Height of controls is adjusted in JavaScript
-  }
-
-  .inner-wrapper {
-    position: relative;
-  }
-
-  .carousel-inner {
-    //overflow: visible;
-    width: auto;
-    margin: 0;
-  }
-
-  .carousel-inner .active.left {
-    left: -33%;
-  }
-  .carousel-inner .next {
-    left: 33%;
-  }
-  .carousel-inner .prev {
-    left: -33%;
-  }
-
-  .carousel-item .picture {
-    @extend .col-12;
-    @extend .col-sm-4;
-  }
-
-  .carousel-item:not(.prev) {
-    visibility: visible;
-  }
-  .carousel-item.right:not(.prev) {
-    visibility: hidden;
-  }
-  .rightest {
-    visibility: visible;
-  }
-
-  //@include media-breakpoint-only(xs) {
-  //  .carousel-inner .active.left {
-  //    left: -100%;
-  //  }
-  //  .carousel-inner .next {
-  //    left: 100%;
-  //  }
-  //  .carousel-inner .prev {
-  //    left: -100%;
-  //  }
-  //}
-
-}
-
-#carousel-photo {
-  @include responsive-prop(font-size, $crsl-photo-font-sizes);
-  .carousel-inner {
-    .carousel-item {
-      flex-direction: column;
-
-      .crsl-img-wrapper {
-        position: relative;
-        flex: 0 0 auto; // In IE default is "0 1 auto" and
-                        // contained image always has
-                        // it's initial height (729px)
-
-        img {
-          width: 100%;
-          //height: 100%;
-          display: block;
-        }
-
-        .carousel-img-photo-btns {
-          position: absolute;
-          bottom: 0;
-          @include responsive-prop(transform, $crsl-img-btns-transforms);
-
-          display: flex;
-          @include responsive-prop(flex-direction, $crsl-img-btns-flex-dirs);
-          width: 100%;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          .photo-crsl-img-left,
-          button {
-            @include responsive-prop(margin, $crsl-img-btns-margins);
-            height: 38px;
-          }
-          button {
-            padding: 0.2rem 0.5rem;
-            font-size: 0.8rem;
-          }
-          .photo-crsl-img-left {
-            button {
-              background: $color-green no-repeat 0.5rem center;
-              padding-left: 2.5rem;
-              padding-top: 0.4rem;
-            }
-            .like {
-              background-image: url("../img/icons/heart.png");
-            }
-            .dislike {
-              background-image: url("../img/icons/smile-unhappy.png");
-            }
-          }
-          .photo-crsl-img-right {
-            button {
-              background-color: $white;
-              border: 1px solid $color-grey-light;
-            }
-          }
-        }
-      }
-
-      .carousel-caption-photo {
-        display: flex;
-        @include responsive-prop(flex-direction, $crsl-photo-capt-flex-dir);
-        @include responsive-prop(padding, $crsl-photo-capt-paddings);
-
-        .crsl-capt-desc {
-          text-align: left;
-          @include responsive-prop(margin, $crsl-capt-desc-margins);
-          @include responsive-prop(padding, $crsl-capt-desc-paddings);
-
-          h3 {
-            @include responsive-prop(font-size, $crsl-photo-header-font-sizes);
-          }
-          p {
-
-          }
-          a {
-            float: right;
-            font-size: 0.8em;
-          }
-        }
-        .crsl-capt-links {
-          margin: 0 auto;
-          p {
-            text-align: left;
-          }
-          .similar {
-            display: flex;
-            .similar__link + .similar__link {
-              margin-left: 0.5rem;
-            }
-          }
-          .social-links {
-            margin: 0.5rem 0 0 0;
-            padding: 0.5rem 0 0 0;
-            border-top: 1px solid $color-grey-light;
-
-            i {
-              color: $color-grey-light;
-            }
-          }
-        }
-      }
-
     }
   }
 }
@@ -915,7 +845,7 @@ h3 {
     text-align: center;
     @include responsive-prop(margin, $upload-hdr-cntnr-margins);
     @include responsive-prop(padding, $upload-hdr-cntnr-paddings);
-    background: url("../img/style-bg.png");
+    background: url("../img/meshed-bg.png");
     background-size: 100%;
 
     .upload__hdr {
@@ -1548,7 +1478,7 @@ h3 {
 .heading-meshed {
   @include responsive-prop(margin, $hdng-mshd-margin);
   padding: $hdng-mshd-padding;
-  background: url("../img/style-bg.png");
+  background: url("../img/meshed-bg.png");
   background-size: 100%;
   text-align: center;
 

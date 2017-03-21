@@ -127,7 +127,7 @@ $txt-container-font-sizes: (
 );
 
 // ----------------------------------------------------------------------------
-// Carousel
+// .carousel
 // ----------------------------------------------------------------------------
 $crsl-margins: $global-block-spacers-vertical;
 
@@ -164,12 +164,11 @@ $crsl-caption-transforms: (
         xs: translate(-50%, 100%),
         sm: translate(-50%, 50%),
 );
-$crsl-caption-bg-color: rgba(255, 255, 255, 0.651);
+$crsl-caption-bg-color: $color-white-faded;
 
 $crsl-controls-widths: (
-        xs: 25%,
-        sm: 15%,
-        md: 10%,
+        xs: 20%,
+        sm: 10%,
 );
 $crsl-controls-size: 40px;
 $crsl-controls-arrow-color: $brand-primary;
@@ -196,7 +195,7 @@ $crsl-ovrl-txt-min-widths: (
         sm: 480px,
 );
 $crsl-ovrl-txt-max-width: 830px;
-$crsl-ovrl-txt-bg-color: rgba(255, 255, 255, 0.8);
+$crsl-ovrl-txt-bg-color: $color-white-faded;
 $crsl-ovrl-txt-paddings: (
         xs: $spacer*0.5 $spacer*0.25 $spacer*0.5 $spacer*0.25,
         sm: $spacer*0.5 $spacer*0.2 $spacer*2 $spacer*0.2,
@@ -215,7 +214,7 @@ $cral-ovrl-btn-transforms: (
 );
 
 // ----------------------------------------------------------------------------
-// #carousel-inspiration
+// .carousel-inspiration
 // ----------------------------------------------------------------------------
 $carousel-inspiration-margins: (
         xs: $global-block-spacer auto $global-block-spacer*2.5 auto,
@@ -224,7 +223,7 @@ $carousel-inspiration-margins: (
 $carousel-inspiration-img-width: 1600px;
 
 // ----------------------------------------------------------------------------
-// #carousel-styles
+// .carousel-styles
 // ----------------------------------------------------------------------------
 $crsl-styles-header-margins: (
         xs: $global-elem-big-spacer auto $global-elem-big-spacer auto,
@@ -241,7 +240,7 @@ $crsl-styles-h3-font-sizes: (
 );
 
 // ----------------------------------------------------------------------------
-// #carousel-photo
+// .carousel-photo
 // ----------------------------------------------------------------------------
 $crsl-photo-font-sizes: (
         xs: 0.8rem,
