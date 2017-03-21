@@ -546,72 +546,75 @@ h3 {
 .ideas {
   @include responsive-prop(margin, $ideas-margins);
 
-  .header-left-wrapper {
+  .ideas__hdr-wrapper {
     @include responsive-prop(margin, $ideas-header-margins);
     @include responsive-prop(padding, $ideas-header-paddings);
 
-    .ideas-header {
+    .ideas__hdr {
       display: inline;
-      border-bottom: 2px solid $brand-primary;
+      border-bottom: 2px solid $color-green;
     }
   }
 
-  .ideas-list {
+  .ideas__list {
     @extend .list-unstyled;
 
-    .idea {
+    .ideas__idea {
       display: flex;
       @include responsive-prop(flex-direction, $idea-flex-directions);
       @include responsive-prop(align-items, $idea-align-items);
       @include responsive-prop(margin, $idea-margins);
 
-      .idea-img {
+      .ideas__idea-img {
         width: 50%;
         flex: 0 0 auto;
         @include responsive-prop(margin, $idea-img-margins);
       }
-      .idea-body {
+      .ideas__idea-body {
         @include responsive-prop(padding, $idea-body-paddings);
 
-        .idea-floats-wrapper {
+        .ideas__idea-floats-wrapper {
           @include responsive-prop(padding, $idea-floats-wrapper-padding);
           @include responsive-prop(font-size, $idea-floats-font-sizes);
           @extend .clearfix;
 
-          .idea-tags { float: left;}
-          .idea-date { float: right;}
+          .ideas__idea-tags { float: left;}
+          .ideas__idea-date { float: right;}
         }
 
-        .idea-header {
+        .ideas__idea-hdr {
           @include responsive-prop(margin, $idea-header-margins);
         }
-        .idea-teaser{
+        .ideas__idea-teaser{
           @include responsive-prop(font-size, $idea-teaser-font-sizes);
           line-height: $idea-teaser-line-height;
         }
-        .idea-btn-wrapper {
+        .ideas__idea-btn-wrapper {
           display: flex;
           justify-content: center;
           @include responsive-prop(padding, $idea-btn-wrapper-paddings);
 
-          .btn {
+          .ideas__idea-btn {
+            @extend .btn;
             @include responsive-prop(padding, $idea-btn-paddings);
           }
         }
       }
     }
   }
-  .ideas-btn-wrapper {
+
+  // TODO: replace with .btn-wide
+  .ideas__btn-wrapper {
     display: flex;
     justify-content: center;
     @include responsive-prop(padding, $ideas-btn-wrapper-paddings);
 
-    .btn {
+    .ideas__btn {
+      @extend .btn;
       width: 50%;
       @include responsive-prop(min-width, $ideas-btn-min-widths);
       @include responsive-prop(padding, $ideas-btn-paddings);
       font-size: $ideas-btn-font-size;
-      box-shadow: 2px 2px 3px 0 rgba(1, 1, 1, 0.5);
     }
   }
 }
