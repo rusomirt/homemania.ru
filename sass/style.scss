@@ -147,44 +147,90 @@ h3 {
   }
 }
 
-.navbar{
-  @include responsive-prop(margin, $navbar-margins);
-  font-size: $navbar-font-size;
-  min-height: $navbar-collapsed-height;
-  padding: 0.5rem 0;
+.site-nav{
+  @extend .navbar;                    
+  @extend .navbar-toggleable-md;      
+  @extend .navbar-light;              
 
-  .container {
-    padding: 0 15px;
-  }
+  @include responsive-prop(margin, $site-nav-margins);
+  min-height: $site-nav-collapsed-height;
+  padding: $site-nav-padding;
+  font-size: $site-nav-font-size;
 
-  .navbar-collapse {
-    @extend .d-lg-flex;
+  .site-nav__inner {
+    @extend .container;
+    margin: 0 auto;   // container doesn't auto-center for some reason
 
-    .navbar-nav {
-      @extend .d-lg-flex;
-      @extend .justify-content-lg-around;
-      width: 100%;
-    }
-    .form-inline {
-      flex-basis: $searchbox-width;
-      flex-shrink: 0;
-
-      .btn {
-        box-shadow: none;
-        font-size: 1rem;
+    .site-nav__toggler {
+      @extend .navbar-toggler;          
+        @extend .navbar-toggler-right;
+      
+      .site-nav__toggler-icon {
+        @extend .navbar-toggler-icon;   
       }
     }
-  }
 
-  .input-group-btn {
-    border: $searchbox-btn-border;
+    .site-nav__content {
+      @extend .collapse;              
+      @extend .navbar-collapse;       
+      @extend .d-lg-flex;
+      padding: $site-nav-content-padding;
 
-    .btn {
-      border:none;
-      background-color: $input-group-addon-bg;
+      .site-nav__links {
+        @extend .navbar-nav;
+        @extend .d-lg-flex;
+        @extend .justify-content-lg-around;
+        width: 100%;
 
-      .icon-search {
-        color: $input-group-addon-border-color;
+        .site-nav__link-wrapper {
+          @extend .nav-item;
+
+          &.site-nav__link-wrapper--active {
+            @extend .active;
+          }
+
+          .site-nav__link {
+            @extend .nav-link;
+            display: inline-block;  // shrink clickable area of link
+          }
+        }
+      }
+
+      .site-nav__form {
+        @extend .form-inline;
+        @extend .ml-lg-4;   // margins from bootstrap code sample
+        @extend .my-2;
+        @extend .my-lg-0;
+        flex: 0 0 auto;
+        width: $site-nav-search-width;
+
+        .site-nav__search {
+          @extend .input-group;
+
+          .site-nav__search-input {
+            @extend .form-control;
+          }
+
+          .site-nav__search-btn-wrapper {
+            @extend .input-group-btn;
+            // Override default "margin-left: -1px" to
+            // prevent overwrapping of <input> right border:
+            margin: 0;
+            border: $site-nav-search-btn-border;
+
+            .site-nav__search-btn {
+              @extend .btn;
+              box-shadow: none;
+              font-size: $site-nav-search-btn-font-size;
+              border: none;
+              background-color: $color-grey-light;
+
+              .site-nav__search-icon {
+                color: $color-grey-dark;
+              }
+            }
+          }
+        }
       }
     }
   }

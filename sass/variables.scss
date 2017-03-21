@@ -71,7 +71,7 @@ $global-txt-color: $color-almost-black;
 $global-border-radius: 3px;
 
 // ----------------------------------------------------------------------------
-// Page header
+// .page-header
 // ----------------------------------------------------------------------------
 $header-paddings: (
         xs: 20px 0 15px 0,
@@ -80,7 +80,7 @@ $header-paddings: (
 $header-title-txt-color: $white;
 
 // ----------------------------------------------------------------------------
-// Social icons block
+// .social-links
 // ----------------------------------------------------------------------------
 $social-padding: 0;
 $social-icon-margin: $spacer * 0.1;
@@ -88,7 +88,7 @@ $social-icon-size: 35px;
 $social-icon-color: $white;
 
 // ----------------------------------------------------------------------------
-// Login/signup block
+// .login-signup
 // ----------------------------------------------------------------------------
 $logsign-margins: (
         xs: 0.25rem 0 0 0,
@@ -98,20 +98,23 @@ $logsign-font-size: 1rem;
 $logsign-txt-color: $white;
 
 // ----------------------------------------------------------------------------
-// Navbar
+// .site-nav (navbar)
 // ----------------------------------------------------------------------------
 // Any element with margin-top: $global-block-spacer
 // will follow the navbar without too big spacer
-$navbar-margins: (
+$site-nav-margins: (
         xs: 0 0 (-$global-block-spacer) 0,
         //sm: 0.25*$global-block-spacer-sm 0 (-0.75*$global-block-spacer-sm) 0,
         sm: $global-elem-spacer-sm 0 ($global-elem-spacer-sm - $global-block-spacer-sm) 0,
 );
-$navbar-font-size: 1.2rem;
-$navbar-collapsed-height: 60px;
+$site-nav-padding: 0.5rem 0;
+$site-nav-font-size: 1.2rem;
+$site-nav-collapsed-height: 60px;
+$site-nav-content-padding: 0 15px;
 
-$searchbox-width: 275px;
-$searchbox-btn-border: 1px solid $input-group-addon-border-color;
+$site-nav-search-width: 275px;
+$site-nav-search-btn-border: 1px solid $color-grey-dark;
+$site-nav-search-btn-font-size: 1rem;
 
 // ----------------------------------------------------------------------------
 // Text container
