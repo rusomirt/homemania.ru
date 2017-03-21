@@ -739,6 +739,7 @@ h3 {
     }
   }
 
+  // TODO: replace with .btn--wide
   .gallery__wide-btn-wrapper {
     padding: 1rem 15%;
 
@@ -1461,8 +1462,11 @@ h3 {
       border: none;
       box-shadow: none;
       font-size: $art-thmb-lowbtns-font-size;
-      color: $color-grey-light;
       padding: $art-thmb-lowbtns-padding;
+
+      &, &:hover, &:focus {
+        color: $color-grey-light;
+      }
 
       &:before {
         content: "";
