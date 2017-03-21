@@ -280,7 +280,7 @@ $crsl-img-btns-margins: (
 );
 
 // ----------------------------------------------------------------------------
-// Ideas
+// .ideas
 // ----------------------------------------------------------------------------
 $ideas-margins: $global-block-spacers-vertical;
 $ideas-header-margins: $global-elem-big-spacers-vertical;
@@ -329,7 +329,7 @@ $idea-btn-paddings: (
 );
 
 // ----------------------------------------------------------------------------
-// Picture
+// .picture
 // ----------------------------------------------------------------------------
 $picture-caption-font-sizes: (
         xs: 0.9em,
@@ -342,7 +342,7 @@ $picture-capt-ovrl-font-size: (
 );
 
 // ----------------------------------------------------------------------------
-// Gallery
+// .gallery
 // ----------------------------------------------------------------------------
 $gallery-margins: $global-elem-big-spacers-vertical;
 $gallery-viewall-font-sizes: (
@@ -375,7 +375,7 @@ $gallery-add-btn-font-sizes: (
 );
 
 // ----------------------------------------------------------------------------
-// Shop
+// .shop
 // ----------------------------------------------------------------------------
 $shop-margins: $global-block-spacers-vertical;
 $shop-header-margins: $global-elem-big-spacers-vertical;
@@ -390,7 +390,7 @@ $shop-btn-paddings: (
 
 
 // ----------------------------------------------------------------------------
-// Breadcrumb
+// .breadcrumb
 // ----------------------------------------------------------------------------
 $brdcrmb-margins: (
         xs: $global-block-spacer 0 (-$global-block-spacer) 0,
@@ -403,7 +403,7 @@ $brdcrmb-font-sizes: (
 
 
 // ----------------------------------------------------------------------------
-// Upload form
+// .upload
 // ----------------------------------------------------------------------------
 $upload-margins: $global-block-spacers-vertical;
 $upload-hdr-cntnr-margins: $global-elem-big-spacers-vertical;
@@ -445,7 +445,7 @@ $upload-btn-paddings: (
 
 
 // ----------------------------------------------------------------------------
-// Profile-cover
+// .profile-cover
 // ----------------------------------------------------------------------------
 $profile-cover-margins: (
         xs: 2rem 0 0 0,
@@ -453,7 +453,7 @@ $profile-cover-margins: (
 );
 
 // ----------------------------------------------------------------------------
-// Profile
+// .profile
 // ----------------------------------------------------------------------------
 $profile-margins: (
         xs: 0 auto,
@@ -501,7 +501,7 @@ $profile-progress-height: 1.5em;
 $profile-progress-border-radius: $profile-progress-height * 0.4;
 
 // ----------------------------------------------------------------------------
-// Profile-nav
+// .profile-nav
 // ----------------------------------------------------------------------------
 $profile-nav-margins: (
         xs: 0.5rem 0 0 0,
@@ -513,7 +513,7 @@ $profile-nav-paddings: (
 );
 
 // ----------------------------------------------------------------------------
-// Prefs
+// .prefs
 // ----------------------------------------------------------------------------
 $prefs-margins: (
         xs: 2rem 0 0 0,
@@ -534,7 +534,7 @@ $prefs-hdr-font-size: (
 );
 
 // ----------------------------------------------------------------------------
-// Tidings
+// .tidings
 // ----------------------------------------------------------------------------
 $tidings-margins: $global-elem-big-spacers-vertical;
 $tidings-status-margins: $global-elem-spacers-vertical;
