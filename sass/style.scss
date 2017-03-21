@@ -733,7 +733,9 @@ h3 {
           border-color: $color-grey-light;
           @include responsive-prop(font-size, $gallery-add-btn-font-sizes);
           font-family: $global-txt-font;
-          color: $color-grey-light;
+          &, &:hover, &:focus {
+            color: $color-grey-light;
+          }
           white-space: normal;
           background: transparent url("../img/icons/photo-camera.png")
                       no-repeat 0.5em center;
@@ -1140,12 +1142,16 @@ h3 {
       @include responsive-prop(padding, $tiding-actions-paddings);
 
       .tidings__tiding-btn {
+        @extend .btn;
+        box-shadow: none;
         display: inline-block;
         background: transparent no-repeat 0.5rem center;
         border: none;
         padding: 0.5rem;
         padding-left: 3rem;
-        color: $color-grey-light;
+        &, &:hover, &:focus {
+          color: $color-grey-light;
+        }
         font-size: 0.8em;
         margin: 0 0.5rem;
       }
@@ -1167,7 +1173,9 @@ h3 {
     padding: 1em;
     font-family: $global-txt-font;
     font-size: 1em;
-    color: $global-txt-color;
+    &, &:hover, &:focus {
+      color: $global-txt-color;
+    }
     @include responsive-prop(margin, $tidings-more-btn-margins);
     margin-bottom: 0 !important;
   }
