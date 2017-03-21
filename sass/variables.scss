@@ -46,7 +46,7 @@ $global-elem-spacers-all: (
         sm: $global-elem-spacer-sm,
 );
 
-// Global fonts
+// Global text
 $global-headers-font: "Playfair Display";
 $global-h1-font-sizes: (
         xs: 2.5rem,
@@ -66,6 +66,8 @@ $global-txt-font-sizes: (
         sm: 1.5rem,
 );
 $global-txt-color: $color-almost-black;
+
+$global-txt-shadow: 1px 1px 0 rgba(1, 1, 1, 0.33);
 
 // Global border radius
 $global-border-radius: 3px;
@@ -117,11 +119,11 @@ $site-nav-search-btn-border: 1px solid $color-grey-dark;
 $site-nav-search-btn-font-size: 1rem;
 
 // ----------------------------------------------------------------------------
-// Text container
+// .txt-container
 // ----------------------------------------------------------------------------
 $txt-container-font-sizes: (
-        xs: 1rem,
-        sm: 1.7rem,
+        xs: 1em,
+        //sm: 1.7rem,
 );
 
 // ----------------------------------------------------------------------------
@@ -181,7 +183,7 @@ $crsl-ovrl-header-font-sizes: (
 $crsl-ovrl-header-color: $white;
 $crsl-ovrl-header-margins: (
         xs: 4px 0 0 0,
-        sm: -70px 0 0 0,
+        //sm: -70px 0 0 0,
 );
 $crsl-ovrl-txt-font-sizes: (
         xs: 0.8rem,

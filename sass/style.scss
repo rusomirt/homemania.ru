@@ -47,11 +47,13 @@ h3 {
   align-items: center;
   font-family: $global-txt-font;
   font-size: inherit;
-  color: white;
   white-space: normal;
   box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.6);
   background-color: $color-green;
   cursor: pointer;
+  &, &:hover, &:focus {
+    color: $white;
+  }
 }
 
 // ----------------------------------------------------------------------------
@@ -237,12 +239,19 @@ h3 {
 }
 
 .txt-container {
-  text-align: center;
-  @include responsive-prop(font-size, $txt-container-font-sizes);
   margin: $global-block-spacer 0;
+  @include responsive-prop(font-size, $txt-container-font-sizes);
+  text-align: center;
 }
 
+// Carousel can't be named with BEM methodology because it's
+// processing in JavaScript by Bootstrap.
 .carousel {
+  &.carousel-inspiration {
+    @include responsive-prop(margin, $carousel-inspiration-margins);
+    max-width: $carousel-inspiration-img-width;
+  }
+
   @include responsive-prop(margin, $crsl-margins);
   text-align: center;
 
@@ -284,6 +293,13 @@ h3 {
 
   .carousel-inner {
 
+    .carousel-item-img {
+      @extend .d-block;   // from bootstrap code sample
+      @extend .img-fluid;
+      width: 100%;
+      height: 100%;       // prevent image stretching to it's initial height (500px)
+    }
+
     .carousel-caption {
 
       h3 {
@@ -294,7 +310,6 @@ h3 {
         color: $global-txt-color;
       }
     }
-
 
     .carousel-item-row {
       font-size: 0;
@@ -319,8 +334,6 @@ h3 {
     .carousel-item-row.active {
       display: flex;
     }
-
-
   }
 
   .carousel-control-next,
@@ -347,59 +360,41 @@ h3 {
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: column;
     z-index: $crsl-ovrl-z-index;
 
     .overlay-header {
+      @include responsive-prop(margin, $crsl-ovrl-header-margins);
+      margin-top: auto; // Indent from top
+      margin-bottom: auto; // fix IE fail with 'space-between'
       @include responsive-prop(font-size, $crsl-ovrl-header-font-sizes);
       color: $crsl-ovrl-header-color;
       width: 100%;
       text-align: center;
-      @include responsive-prop(margin, $crsl-ovrl-header-margins);
-      text-shadow: 1px 1px 0 rgba(1, 1, 1, 0.33);
+      text-shadow: $global-txt-shadow;
     }
 
     .overlay-txt {
-      // 1st invisible block - for 'justify-content' aligning
-      &:first-of-type {
-        visibility: hidden;
-        margin-bottom: auto; // fix IE fail with 'space-between'
-      }
-      @include responsive-prop(padding, $crsl-ovrl-txt-paddings);
-      @include responsive-prop(font-size, $crsl-ovrl-txt-font-sizes);
-      color: $crsl-ovrl-txt-color;
+      margin: 0;
       align-self: center;
       width: $crsl-ovrl-txt-width;
       @include responsive-prop(min-width, $crsl-ovrl-txt-min-widths);
       max-width: $crsl-ovrl-txt-max-width;
-      margin: 0;
-      &:last-of-type {
-        margin-top: auto; // fix IE fail with 'space-between'
-      }
+      @include responsive-prop(padding, $crsl-ovrl-txt-paddings);
+      @include responsive-prop(font-size, $crsl-ovrl-txt-font-sizes);
+      color: $crsl-ovrl-txt-color;
       text-align: center;
       background-color: $crsl-ovrl-txt-bg-color;
     }
 
-    button {
+    .overlay-btn {
+      @extend .btn;
       position: absolute;
       @include responsive-prop(bottom, $crsl-ovrl-btn-bottoms);
       left: 50%;
       @include responsive-prop(transform, $cral-ovrl-btn-transforms);
       @include responsive-prop(padding, $crsl-ovrl-btn-paddings);
-    }
-  }
-
-
-}
-
-#carousel-inspiration {
-  @include responsive-prop(margin, $carousel-inspiration-margins);
-  max-width: $carousel-inspiration-img-width;
-
-  .carousel-item {
-    img {
-      flex: 0 0 auto; // For IE to fit img in item
     }
   }
 }
