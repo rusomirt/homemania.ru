@@ -51,6 +51,7 @@ h3 {
   box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.6);
   background-color: $color-green;
   cursor: pointer;
+
   &, &:hover, &:focus {
     color: $white;
   }
@@ -546,6 +547,7 @@ h3 {
 .ideas {
   @include responsive-prop(margin, $ideas-margins);
 
+  // TODO: replace with .header--underlined
   .ideas__hdr-wrapper {
     @include responsive-prop(margin, $ideas-header-margins);
     @include responsive-prop(padding, $ideas-header-paddings);
@@ -589,6 +591,8 @@ h3 {
           @include responsive-prop(font-size, $idea-teaser-font-sizes);
           line-height: $idea-teaser-line-height;
         }
+
+        // ? TODO: replace with .btn--narrow ?
         .ideas__idea-btn-wrapper {
           display: flex;
           justify-content: center;
@@ -797,6 +801,7 @@ h3 {
 .shop {
   @include responsive-prop(margin, $shop-margins);
 
+  // TODO: replace with .header--underlined
   .shop__header-wrapper {
     @include responsive-prop(margin, $shop-header-margins);
     @include responsive-prop(padding, $shop-header-paddings);
@@ -807,6 +812,7 @@ h3 {
     }
   }
 
+  // TODO: replace with .btn--wide (narrow)
   .shop__btn-wrapper {
     display: flex;
     justify-content: center;
@@ -814,7 +820,6 @@ h3 {
 
     .shop__btn {
       @extend .btn;
-      @extend .btn-primary;
       font-size: $shop-btn-font-size;
       @include responsive-prop(padding, $shop-btn-paddings);
       box-shadow: 2px 2px 5px 0 rgba(1, 1, 1, 0.5);
