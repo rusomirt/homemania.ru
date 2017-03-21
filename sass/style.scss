@@ -303,107 +303,108 @@ h3 {
     @include responsive-prop(font-size, $crsl-photo-font-sizes);
 
     .carousel-item {
-        flex-direction: column;
+      flex-direction: column;
 
-        .crsl-img-wrapper {
-          position: relative;
-          // In IE default is "0 1 auto" and because of this
-          // contained image always has it's initial height (729px).
-          // Override it:
-          flex: 0 0 auto;
+      .crsl-img-wrapper {
+        position: relative;
+        // In IE default is "0 1 auto" and because of this
+        // contained image always has it's initial height (729px).
+        // Override it:
+        flex: 0 0 auto;
 
-          img {
-            width: 100%;
-            display: block;
-          }
-
-          .carousel-img-photo-btns {
-            position: absolute;
-            bottom: 0;
-            @include responsive-prop(transform, $crsl-img-btns-transforms);
-
-            display: flex;
-            @include responsive-prop(flex-direction, $crsl-img-btns-flex-dirs);
-            width: 100%;
-            justify-content: center;
-            flex-wrap: wrap;
-
-            .photo-crsl-img-left,
-            button {
-              @include responsive-prop(margin, $crsl-img-btns-margins);
-              height: 38px;
-            }
-            button {
-              padding: 0.2rem 0.5rem;
-              font-size: 0.8rem;
-            }
-            .photo-crsl-img-left {
-              button {
-                background: $color-green no-repeat 0.5rem center;
-                padding-left: 2.5rem;
-                padding-top: 0.4rem;
-              }
-              .like {
-                background-image: url("../img/icons/heart.png");
-              }
-              .dislike {
-                background-image: url("../img/icons/smile-unhappy.png");
-              }
-            }
-            .photo-crsl-img-right {
-              button {
-                background-color: $white;
-                border: 1px solid $color-grey-light;
-              }
-            }
-          }
+        img {
+          width: 100%;
+          display: block;
         }
 
-        .carousel-caption-photo {
+        .carousel-img-photo-btns {
+          position: absolute;
+          bottom: 0;
+          @include responsive-prop(transform, $crsl-img-btns-transforms);
+
           display: flex;
-          @include responsive-prop(flex-direction, $crsl-photo-capt-flex-dir);
-          @include responsive-prop(padding, $crsl-photo-capt-paddings);
+          @include responsive-prop(flex-direction, $crsl-img-btns-flex-dirs);
+          width: 100%;
+          justify-content: center;
+          flex-wrap: wrap;
 
-          .crsl-capt-desc {
-            text-align: left;
-            @include responsive-prop(margin, $crsl-capt-desc-margins);
-            @include responsive-prop(padding, $crsl-capt-desc-paddings);
-
-            h3 {
-              @include responsive-prop(font-size, $crsl-photo-header-font-sizes);
+          .photo-crsl-img-left,
+          button,
+          a {
+            @include responsive-prop(margin, $crsl-img-btns-margins);
+            height: 38px;
+          }
+          button,
+          a {
+            padding: 0.2rem 0.5rem;
+            font-size: 0.8rem;
+          }
+          .photo-crsl-img-left {
+            button {
+              background: $color-green no-repeat 0.5rem center;
+              padding-left: 2.5rem;
+              padding-top: 0.4rem;
             }
-            p {
-
+            .like {
+              background-image: url("../img/icons/heart.png");
             }
-            a {
-              float: right;
-              font-size: 0.8em;
+            .dislike {
+              background-image: url("../img/icons/smile-unhappy.png");
             }
           }
-          .crsl-capt-links {
-            margin: 0 auto;
-            p {
-              text-align: left;
-            }
-            .similar {
-              display: flex;
-              .similar__link + .similar__link {
-                margin-left: 0.5rem;
-              }
-            }
-            .social-links {
-              margin: 0.5rem 0 0 0;
-              padding: 0.5rem 0 0 0;
-              border-top: 1px solid $color-grey-light;
-
-              i {
-                color: $color-grey-light;
-              }
+          .photo-crsl-img-right {
+            a {
+              background-color: $white;
+              border: 1px solid $color-grey-light;
             }
           }
         }
-
       }
+
+      .carousel-caption-photo {
+        display: flex;
+        @include responsive-prop(flex-direction, $crsl-photo-capt-flex-dir);
+        @include responsive-prop(padding, $crsl-photo-capt-paddings);
+
+        .crsl-capt-desc {
+          text-align: left;
+          @include responsive-prop(margin, $crsl-capt-desc-margins);
+          @include responsive-prop(padding, $crsl-capt-desc-paddings);
+
+          h3 {
+            @include responsive-prop(font-size, $crsl-photo-header-font-sizes);
+          }
+          p {
+
+          }
+          a {
+            float: right;
+            font-size: 0.8em;
+          }
+        }
+        .crsl-capt-links {
+          margin: 0 auto;
+          p {
+            text-align: left;
+          }
+          .similar {
+            display: flex;
+            .similar__link + .similar__link {
+              margin-left: 0.5rem;
+            }
+          }
+          .social-links {
+            margin: 0.5rem 0 0 0;
+            padding: 0.5rem 0 0 0;
+            border-top: 1px solid $color-grey-light;
+
+            i {
+              color: $color-grey-light;
+            }
+          }
+        }
+      }
+    }
   }
 
   @include responsive-prop(margin, $crsl-margins);
