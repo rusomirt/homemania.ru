@@ -44,6 +44,9 @@ module.exports = function(grunt) {
         files:{
           'css/style.css':'css/style.css'
         }
+      },
+      options: {
+        map: true
       }
     },
 
