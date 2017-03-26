@@ -1790,6 +1790,10 @@ h3 {
 }
 
 .aside {
+  padding: 0 0.5em 0 0;
+  display: flex;
+  @include responsive-prop(flex-direction, $aside-flexdir);
+
   .aside__left, .aside__right {
     width: 315px;
   }
@@ -1869,6 +1873,11 @@ h3 {
     font-size: 0.9em;
     text-decoration: underline;
   }
+}
+
+.content {
+  @include responsive-prop(padding, $content-padding);
+  @include responsive-prop(border-left, $content-b-left);
 }
 
 .work-obj {

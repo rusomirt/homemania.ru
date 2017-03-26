@@ -719,5 +719,23 @@ $pgntn-margin: $global-elem-big-spacers-vertical;
 
 $dsc-wrapper-flexdir: (
         xs: column,
-        md: row,
+        lg: row,
 );
+
+$aside-flexdir: (
+        xs: column,
+        md: row,
+        lg: column,
+);
+
+$content-b-left:(
+        xs: none,
+        lg: 1px solid $color-grey-light,
+);
+$content-padding:(
+        xs: 0,
+        lg: 0 0 0 0.5em,
+);
+
+
+
