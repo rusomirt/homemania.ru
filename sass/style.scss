@@ -1762,3 +1762,84 @@ h3 {
   }
 }
 
+
+.dsc-wrapper {
+  margin: 4em 0 2em 0;
+  display: flex;
+  @include responsive-prop(flex-direction, $dsc-wrapper-flexdir);
+}
+
+.aside {
+  .aside__left, .aside__right {
+    width: 300px;
+  }
+  .aside__left {
+    @include responsive-prop(margin, $profile-left-margin);
+    @include responsive-prop(padding, $profile-left-padding);
+  }
+}
+
+.aside-nav {
+
+  .aside-nav__hdr {
+    margin: 1em 0;
+    font-size: 1em;
+  }
+
+  .aside-nav__link {
+    display: block;
+    margin: 0.5em 0;
+    font-size: 0.8em;
+
+    &, &:hover, &:focus {
+      text-decoration: none;
+      color: $global-txt-color;
+    }
+
+    &.aside-nav__link--active {
+      color: $color-green;
+      text-decoration: underline;
+    }
+  }
+}
+
+
+.getadvice {
+  @extend .btn;
+  &, &:hover, &:focus {
+    color: $global-txt-color;
+  }
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.fvrts-hdr {
+  margin: 1em 0;
+  font-size: 1em;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.fvrt {
+  position: relative;   // for absolute-positioned .fvrt__badge
+  font-size: 0.8em;
+
+  .fvrt__badge {
+    display: inline-block;
+    position: absolute;
+    top: 0.5em;
+    right: 0;
+    padding: 0.2em 1em;
+    background: $color-white-faded;
+  }
+
+  .fvrt__img {
+    width: 100%;
+  }
+
+  .fvrt__stat {
+    text-decoration: underline;
+  }
+}
+
+
