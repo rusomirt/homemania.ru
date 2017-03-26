@@ -22,12 +22,12 @@ jQuery(function ($) {
 
   carouselMakeoversControlsHeight();
   carouselStylesControlsHeight();
+  customSelectsAdjust();
 
   $(window).resize( function() {
     carouselMakeoversControlsHeight();
     carouselStylesControlsHeight();
   });
-
 
   //
   $("#carousel-styles").find(".carousel-item").each(function(){
@@ -48,9 +48,31 @@ jQuery(function ($) {
     }
   });
 
-
+  //
   $('.upload__fileloader').change(function () {
     $('.upload__fileloader-caption').text("Выбрано файлов: " + this.files.length);
   });
 
+  // Custom select expand and collapse
+  $('.sel').click(function () {
+    event.stopPropagation();
+    $(this).find('.sel__opts').toggle();
+  });
+  // Custom select options select
+  $('.sel__opt').click(function () {
+    let value = $(this).find('.sel__opt-val').text();
+    $(this).parents('.sel').find('.sel__rslt').text(value);
+  });
+  // Custom select initial selected option & width control
+  function customSelectsAdjust() {
+    $('.sel').each(function () {
+      $(this).find('.sel__rslt').text($(this).find('.sel__opt-val').first().text());
+      $(this).width($(this).find('.sel__opts').width());
+    })
+  }
+  // Custom select collapse when click outside
+  $(window).click(function() {
+    $('.sel__opts').hide();
+  });
 });
+

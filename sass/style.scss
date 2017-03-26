@@ -1,4 +1,24 @@
 // ----------------------------------------------------------------------------
+// Fonts
+// ----------------------------------------------------------------------------
+@font-face {
+  font-family: "Playfair Display";
+  src: url(../fonts/PlayfairDisplay-Regular.otf);
+}
+@font-face {
+  font-family: "Fira Sans Light";
+  src: url(../fonts/FiraSans-Light.otf);
+}
+@font-face {
+  font-family: "Fira Sans Book";
+  src: url(../fonts/FiraSans-Book.otf);
+}
+@font-face {
+  font-family: "Fira Sans Compressed Light";
+  src: url(../fonts/firasanscompressed-light.otf);
+}
+
+// ----------------------------------------------------------------------------
 // File includes
 // ----------------------------------------------------------------------------
 
@@ -1771,7 +1791,7 @@ h3 {
 
 .aside {
   .aside__left, .aside__right {
-    width: 300px;
+    width: 315px;
   }
   .aside__left {
     @include responsive-prop(margin, $profile-left-margin);
@@ -1811,6 +1831,7 @@ h3 {
   }
   background-color: transparent;
   box-shadow: none;
+  font-family: "Fira Sans Compressed Light", sans-serif;
 }
 
 .fvrts-hdr {
@@ -1822,6 +1843,7 @@ h3 {
 
 .fvrt {
   position: relative;   // for absolute-positioned .fvrt__badge
+  margin: 2em 0;
   font-size: 0.8em;
 
   .fvrt__badge {
@@ -1837,9 +1859,150 @@ h3 {
     width: 100%;
   }
 
+  .fvrt__hdr {
+    margin: 0.5em 0;
+    font-family: "Fira Sans Book", sans-serif;
+  }
+
   .fvrt__stat {
+    font-family: "Fira Sans Light", sans-serif;
+    font-size: 0.9em;
     text-decoration: underline;
   }
 }
 
+.work-obj {
+
+
+  .work-obj__hdr-wrapper {
+    padding: 0.5rem 0;
+
+    .work-obj__hdr {
+      display: inline-block;
+      font-size: 1.5em;
+      border-bottom: 2px solid $color-green;
+    }
+  }
+
+  .work-obj__input-box-wrapper {
+    @include clearfix;    // for cleaning .work-obj__sym-left
+
+    .work-obj__input-box {
+      @include responsive-prop(margin, $tidings-status-margins);
+      padding: 1rem;
+      padding-left: 4rem;
+      background: $color-green url("../img/icons/status-human.png") no-repeat 1rem center;
+      border-radius: $global-border-radius;
+
+      .work-obj__input-wrapper {
+        position: relative;
+
+        .work-obj__input {
+          border: none;
+          border-radius: $global-border-radius;
+          padding: 0.2em 0.5em;
+          width: 100%;
+
+        }
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translate(-100%, -50%);;
+          @include triangle(left, 8px, $white);
+        }
+      }
+    }
+
+    .work-obj__sym-left {
+      float: right;
+    }
+  }
+}
+
+.editor-footer {
+
+}
+
+.editor-sel {
+  padding: 0.5em;
+  .editor-sel__opt {
+    .editor-sel__opt-val {
+      display: block;
+    }
+    .editor-sel__opt-desc {
+
+    }
+    .editor-sel__opt-diff {
+
+    }
+  }
+}
+
+.sel {
+  position: relative;   // for abs-positioned .sel__opts
+  cursor: default;
+
+  .sel__rslt {
+    position: relative; // for abs-positioned :after
+    border: 1px solid $color-grey-light;
+    padding: 0.5em;
+    padding-right: 1.5em;
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0.5em;
+      top: 50%;
+      transform: translate(0, -25%);  // triangle is the half of whole :after
+      @include triangle(bottom, 0.5em, $global-txt-color);
+    }
+  }
+
+  .sel__opts {
+    display: none;
+    position: absolute;
+    top: calc(100% + 1em);    // small indent from lower edge of .sel
+    z-index: 1000;
+    border: 1px solid $color-grey-light;
+    background: $white;
+    padding: 0 0 1.5em;
+
+    .sel__opt:hover {
+      .sel__opt-val:before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0.5em;
+        top: 50%;
+        transform: translateY(-25%);
+        //Circle
+        width: 0; height: 0;
+        border: 0.3em solid $color-green;
+        border-radius: 50%;
+      }
+    }
+    .sel__opt {
+
+      &:not(:last-of-type) {
+        border-bottom: 1px solid $color-grey-light;
+      }
+
+      .sel__opt-val {
+        position: relative;     // for :before
+        margin: 0;
+        padding: 0.5em 0.5em 0 1.5em;
+        font-family: "Fira Sans", sans-serif;
+      }
+      .sel__opt-desc {
+        margin: 0;
+        padding: 0 0.5em 0.5em 1.5em;
+        font-family: "Fira Sans Light", sans-serif;
+        font-style: italic;
+      }
+    }
+  }
+}
 
