@@ -722,6 +722,10 @@ $dsc-wrapper-flexdir: (
         lg: row,
 );
 
+$aside-order: (
+        xs: 1,
+        lg: 0,
+);
 $aside-padding: (
         xs: 0,
         lg: 0 0.5em 0 0,
@@ -734,6 +738,16 @@ $aside-flexdir: (
 $aside-width: (
         xs: 250px,
         sm: 315px,
+);
+$aside-left-margin: (
+        xs: 0,
+        md: 0 1rem 0 0,
+        lg: 0,
+);
+$aside-left-padding: (
+        xs: 0 0 $global-elem-big-spacer 0,
+        md: 0,
+        lg: 0 0 $global-elem-big-spacer 0,
 );
 
 

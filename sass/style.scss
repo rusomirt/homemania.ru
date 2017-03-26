@@ -1790,6 +1790,7 @@ h3 {
 }
 
 .aside {
+  @include responsive-prop(order, $aside-order);
   @include responsive-prop(padding, $aside-padding);
   display: flex;
   @include responsive-prop(flex-direction, $aside-flexdir);
@@ -1798,8 +1799,8 @@ h3 {
     @include responsive-prop(width, $aside-width);
   }
   .aside__left {
-    @include responsive-prop(margin, $profile-left-margin);
-    @include responsive-prop(padding, $profile-left-padding);
+    @include responsive-prop(margin, $aside-left-margin);
+    @include responsive-prop(padding, $aside-left-padding);
   }
 }
 
@@ -1836,13 +1837,6 @@ h3 {
   background-color: transparent;
   box-shadow: none;
   font-family: "Fira Sans Compressed Light", sans-serif;
-}
-
-.fvrts-hdr {
-  margin: 1em 0;
-  font-size: 1em;
-  text-align: center;
-  text-decoration: underline;
 }
 
 .fvrt {
@@ -2096,5 +2090,189 @@ h3 {
       font-weight: bold;
       color: $color-green;
     }
+  }
+}
+
+
+.hdr--underlined {
+  font-size: 1em;
+  text-align: center;
+  text-decoration: underline;
+}
+.hdr--centered {
+  font-size: 1em;
+  text-align: center;
+}
+
+.dscssn-smlr {
+  margin: 1em 0;
+  font-size: 0.8em;
+  display: flex;
+  &, &:hover, &:focus {
+    text-decoration: none;
+    color: $global-txt-color;
+  }
+
+  .dscssn-smlr__img {
+    width: 100px;
+    height: 100%;
+    flex: 0 0 auto;
+    margin: 0 0.5em 0 0;
+    vertical-align: top;
+  }
+  .dscssn-smlr__body {
+    flex: 1 1 auto;
+
+    .dscssn-smlr__hdr {
+      color: $global-txt-color;
+      &:hover, &:focus {
+        text-decoration: underline;
+        color: $color-green;
+      }
+    }
+    .dscssn-smlr__cmnts {
+      padding: 0 0 0 1.5em;
+      background: url("../img/icons/comments.png") no-repeat 0 center;
+      background-size: 1em;
+    }
+  }
+}
+
+.border-bottom {
+  height: 10px;
+  border-bottom: 1px solid $color-grey-light;
+  margin-bottom: 2em;
+}
+
+.topic {
+  font-size: 0.75em;
+
+  .topic__avatar {
+    float: left;
+    width: 2.5em
+  }
+  .topic__body {
+    padding: 0 0 0 3.2em;
+  }
+
+  .topic__hdr {
+    display: inline-block;
+    font-size: 1.5em;
+    padding: 0 0 0.3em 0;
+    border-bottom: 2px solid $color-green;
+  }
+  .topic__info {
+    margin: 0.5em 0 2em;
+
+    .topic__author {
+      font-weight: bold;
+    }
+  }
+  .topic__img {
+    max-width: 100%;
+
+  }
+  .topic__actions {
+    margin: 1em 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .social-links {
+      margin: 0;
+    }
+
+    .social-links__icon  {
+      color: $color-grey-light !important;
+    }
+  }
+}
+
+.btn-mail {
+  margin: 0.3em 0;
+  @extend .btn;
+  box-shadow: none;
+  border: 1px solid $color-grey-light;
+  border-radius: $global-border-radius;
+  background: $white url("../img/icons/mail.png") no-repeat center;
+  background-size: 1em;
+}
+
+.btn-comment,
+.btn-bookmark,
+.btn-like {
+  margin: 0.3em 0;
+  @extend .btn;
+  font-size: 0.8em;
+  &, &:hover, &:focus {
+    color: $color-grey-light;
+  }
+  box-shadow: none;
+  border: 1px solid $color-grey-light;
+  border-radius: $global-border-radius;
+  padding-left: 2.2em;
+  background: url("../img/icons/comments.png") no-repeat 0.5em center;
+  background-size: 1.5em;
+}
+.btn-comment {
+  background-image: url("../img/icons/comments.png");
+}
+.btn-bookmark {
+  background-image: url("../img/icons/bookmark.png");
+}
+.btn-like {
+  background-image: url("../img/icons/heart-filled.png");
+}
+
+
+.comment {
+  padding: 2em 0;
+  border-top: 1px solid $color-grey-light;
+
+  .comment__avatar {
+    float: left;
+    width: 2.5em;
+  }
+  .comment__body {
+    padding: 0 0 0 3.2em;
+  }
+  .comment__name {
+    text-decoration: underline;
+    font-style: italic;
+  }
+  .comment__img {
+    max-width: 100%;
+    margin-bottom: 1em;
+  }
+  .comment__actions {
+    @include clearfix;
+
+    .comment__time {
+      float: right;
+      font-size: 0.8em;
+      color: $color-grey-light;
+    }
+  }
+}
+
+.text-editor {
+  font-size: 0.8em;
+
+  .text-editor__avatar {
+    float: left;
+    width: 2.5em;
+  }
+  .text-editor__body {
+    padding: 0 0 0 3.2em;
+  }
+}
+
+.topic-btn-wrapper {
+  margin: 1em 0;
+  @include clearfix;
+  
+  .topic-btn {
+    @extend .btn;
+    float: right;
   }
 }
