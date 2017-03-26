@@ -60,7 +60,7 @@ $global-h3-font-sizes: (
         xs: 1.2rem,
         sm: 30px,
 );
-$global-txt-font: "Fira Sans";
+$global-txt-font: "Fira Sans Light";
 $global-txt-font-sizes: (
         xs: 1rem,
         sm: 1.5rem,
@@ -722,20 +722,33 @@ $dsc-wrapper-flexdir: (
         lg: row,
 );
 
+$aside-padding: (
+        xs: 0,
+        lg: 0 0.5em 0 0,
+);
 $aside-flexdir: (
         xs: column,
         md: row,
         lg: column,
 );
-
-$content-b-left:(
-        xs: none,
-        lg: 1px solid $color-grey-light,
+$aside-width: (
+        xs: 250px,
+        sm: 315px,
 );
+
+
 $content-padding:(
         xs: 0,
         lg: 0 0 0 0.5em,
 );
+$content-b-left:(
+        xs: none,
+        lg: 1px solid $color-grey-light,
+);
 
+$editor-footer-flexdir: (
+        xs: column,
+        lg: row,
+);
 
 

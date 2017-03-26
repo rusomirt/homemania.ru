@@ -1790,12 +1790,12 @@ h3 {
 }
 
 .aside {
-  padding: 0 0.5em 0 0;
+  @include responsive-prop(padding, $aside-padding);
   display: flex;
   @include responsive-prop(flex-direction, $aside-flexdir);
 
   .aside__left, .aside__right {
-    width: 315px;
+    @include responsive-prop(width, $aside-width);
   }
   .aside__left {
     @include responsive-prop(margin, $profile-left-margin);
@@ -1869,28 +1869,33 @@ h3 {
   }
 
   .fvrt__stat {
-    font-family: "Fira Sans Light", sans-serif;
     font-size: 0.9em;
     text-decoration: underline;
   }
 }
 
 .content {
-  @include responsive-prop(padding, $content-padding);
-  @include responsive-prop(border-left, $content-b-left);
+  .content__border-wrapper {
+    @include responsive-prop(padding, $content-padding);
+    @include responsive-prop(border-left, $content-b-left);
+  }
 }
 
 .work-obj {
-
+  margin: 1em 0;
+  font-size: 0.75em;
 
   .work-obj__hdr-wrapper {
     padding: 0.5rem 0;
 
     .work-obj__hdr {
       display: inline-block;
-      font-size: 1.5em;
+      font-size: 2em;
       border-bottom: 2px solid $color-green;
     }
+  }
+
+  .work-obj__subhdr {
   }
 
   .work-obj__input-box-wrapper {
@@ -1927,12 +1932,23 @@ h3 {
 
     .work-obj__sym-left {
       float: right;
+      font-size: 0.8em;
     }
   }
 }
 
 .editor-footer {
+  margin: 1em 0;
+  font-size: 0.8em;
+  display: flex;
+  @include responsive-prop(flex-direction, $editor-footer-flexdir);
+  justify-content: space-between;
+  align-items: center;
+}
 
+.editor-btn {
+  margin: 1em 0;
+  @extend .btn;
 }
 
 .editor-sel {
@@ -1952,7 +1968,42 @@ h3 {
 
 .sel {
   position: relative;   // for abs-positioned .sel__opts
+  white-space: nowrap;
   cursor: default;
+
+  &.sel--hover-dotted {
+    .sel__opt {
+      &:not(:last-of-type) {
+        border-bottom: 1px solid $color-grey-light;
+      }
+
+      &:hover {
+        .sel__opt-val:before {
+          content: '';
+          display: block;
+          position: absolute;
+          left: 0.5em;
+          top: 50%;
+          transform: translateY(-25%);
+          //Circle
+          width: 0;
+          height: 0;
+          border: 0.3em solid $color-green;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+  &.sel--hover-colored {
+    .sel__opt {
+      padding: 0.3em 1.5em;
+      white-space: nowrap;
+      &:hover {
+        background: $color-green;
+        color: $white;
+      }
+    }
+  }
 
   .sel__rslt {
     position: relative; // for abs-positioned :after
@@ -1973,31 +2024,12 @@ h3 {
   .sel__opts {
     display: none;
     position: absolute;
-    top: calc(100% + 1em);    // small indent from lower edge of .sel
+    top: calc(100% + 0.3em);    // small indent from lower edge of .sel
     z-index: 1000;
     border: 1px solid $color-grey-light;
     background: $white;
-    padding: 0 0 1.5em;
 
-    .sel__opt:hover {
-      .sel__opt-val:before {
-        content: '';
-        display: block;
-        position: absolute;
-        left: 0.5em;
-        top: 50%;
-        transform: translateY(-25%);
-        //Circle
-        width: 0; height: 0;
-        border: 0.3em solid $color-green;
-        border-radius: 50%;
-      }
-    }
     .sel__opt {
-
-      &:not(:last-of-type) {
-        border-bottom: 1px solid $color-grey-light;
-      }
 
       .sel__opt-val {
         position: relative;     // for :before
@@ -2008,10 +2040,61 @@ h3 {
       .sel__opt-desc {
         margin: 0;
         padding: 0 0.5em 0.5em 1.5em;
-        font-family: "Fira Sans Light", sans-serif;
         font-style: italic;
       }
     }
   }
 }
 
+.forum-filter {
+  margin: 1em 0;
+  font-size: 0.8em;
+  @include clearfix;
+
+  .sel {
+    float: right;
+  }
+}
+
+.topic-teaser {
+  margin: 1em 0;
+  border-top: 1px solid $color-grey-light;
+  @include clearfix;    // clear float .&__refresh
+
+  &.topic-teaser--bg-speeches {
+    .topic-teaser__hdr {
+      background-image: url('../img/icons/speeches.png');
+    }
+  }
+  &.topic-teaser--bg-picture {
+    .topic-teaser__hdr {
+      background-image: url('../img/icons/picture-filled.png');
+    }
+  }
+
+  .topic-teaser__refresh {
+    float: right;
+    padding: 0.5em 0 0;
+    font-size: 0.6em;
+  }
+  .topic-teaser__hdr {
+    font-size: 1em;
+    margin: 1.5em 0 0.5em 0;
+    padding: 0 0 0 2em;
+    color: $color-green;
+    background: no-repeat 0.5em 0.15em;
+    background-size: 1em;
+  }
+  .topic-teaser__info {
+    padding: 0 0 1.5em 3em;
+    font-size: 0.7em;
+
+    .topic-teaser__author {
+      font-weight: bold;
+    }
+    .topic-teaser__tag {
+      font-weight: bold;
+      color: $color-green;
+    }
+  }
+}

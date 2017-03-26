@@ -55,18 +55,24 @@ jQuery(function ($) {
 
   // Custom select expand and collapse
   $('.sel').click(function () {
-    event.stopPropagation();
+    event.stopPropagation();  // prevent $('.sel__opts').hide() in $(window).click()
     $(this).find('.sel__opts').toggle();
   });
   // Custom select options select
   $('.sel__opt').click(function () {
-    let value = $(this).find('.sel__opt-val').text();
+    let value = ($(this).find('.sel__opt-val').length > 0)  // if .sel__opt-val exists
+              ? $(this).find('.sel__opt-val').text()
+              : $(this).text();
     $(this).parents('.sel').find('.sel__rslt').text(value);
   });
   // Custom select initial selected option & width control
   function customSelectsAdjust() {
     $('.sel').each(function () {
-      $(this).find('.sel__rslt').text($(this).find('.sel__opt-val').first().text());
+      let value = ($(this).find('.sel__opt-val').length > 0)  // if .sel__opt-val exists
+        ? $(this).find('.sel__opt-val').first().text()
+        : $(this).find('.sel__opt').first().text();
+      $(this).find('.sel__rslt').text(value);
+      
       $(this).width($(this).find('.sel__opts').width());
     })
   }
