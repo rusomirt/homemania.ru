@@ -172,7 +172,8 @@ h3 {
 
     .site-nav__toggler {
       @extend .navbar-toggler;          
-        @extend .navbar-toggler-right;
+      @extend .navbar-toggler-right;
+      cursor: pointer;
       
       .site-nav__toggler-icon {
         @extend .navbar-toggler-icon;   
@@ -2233,6 +2234,11 @@ h3 {
     padding: 0 0 0 3.2em;
   }
   .comment__name {
+    display: block;           // for <a>
+    &, &:hover, &:focus {     // for <a>
+      color: $global-txt-color;
+    }
+    margin-bottom: 1em;
     text-decoration: underline;
     font-style: italic;
   }
