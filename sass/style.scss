@@ -80,6 +80,7 @@ h3 {
 // ----------------------------------------------------------------------------
 // Custom components
 // ----------------------------------------------------------------------------
+
 // BEM naming convention:
 // block-name
 // block-name--block-modifier
@@ -133,8 +134,6 @@ h3 {
     display: inline-block;
 
     .social-links__icon {
-      //@extend .fa;
-      //@extend .fa-border;
       width: $social-icon-size;
       height: $social-icon-size;
       color: $social-icon-color;
@@ -142,19 +141,6 @@ h3 {
       text-align: center;
       padding-top: $social-icon-size*0.17;
       border-radius: 50%;
-
-      //&.social-links__icon--facebook {
-      //  @extend .fa-facebook;
-      //}
-      //&.social-links__icon--pinterest {
-      //  @extend .fa-pinterest-p;
-      //}
-      //&.social-links__icon--twitter {
-      //  @extend .fa-twitter;
-      //}
-      //&.social-links__icon--instagram {
-      //  @extend .fa-instagram;
-      //}
     }
   }
 }
@@ -265,8 +251,10 @@ h3 {
   text-align: center;
 }
 
+// NOTE:
 // Carousel classes can't be named with BEM methodology because their
 // behavior is controlled by JavaScript in Bootstrap.
+
 .carousel {
   &.carousel-inspiration {
     // Margin for absolute-positioned button
@@ -393,9 +381,6 @@ h3 {
 
           h3 {
             @include responsive-prop(font-size, $crsl-photo-header-font-sizes);
-          }
-          p {
-
           }
           a {
             float: right;
@@ -532,8 +517,8 @@ h3 {
 
     .overlay-header {
       @include responsive-prop(margin, $crsl-ovrl-header-margins);
-      margin-top: auto; // Indent from top
-      margin-bottom: auto; // fix IE fail with 'space-between'
+      margin-top: auto;     // Indent from top
+      margin-bottom: auto;  // fix IE fail with 'space-between'
       @include responsive-prop(font-size, $crsl-ovrl-header-font-sizes);
       color: $crsl-ovrl-header-color;
       width: 100%;
@@ -1703,13 +1688,11 @@ h3 {
     justify-content: space-between;
 
     .photo-sel__select {
-      //font-size: 0.7em;
       @include responsive-prop(margin, $photo-sel-select-margin);
       padding: $photo-sel-select-padding;
       color: $global-txt-color;
     }
     .photo-sel__range {
-      //font-size: 0.7em;
       text-align: right;
 
       .photo-sel__prev,
@@ -1739,7 +1722,7 @@ h3 {
 
 .pgntn {
   @include responsive-prop(margin, $pgntn-margin);
-  padding: 0 1em;
+  padding: $pgntn-padding;
   text-align: center;
 
   .pgntn__inner {
@@ -1772,7 +1755,7 @@ h3 {
         border: none;
         background-color: transparent;
         color: $global-txt-color;
-        padding: 0.3em 0.7em;
+        padding: $pgntn-link-padding;
         &:hover {
           background-color: transparent;
           color: $global-txt-color;
@@ -1784,7 +1767,7 @@ h3 {
 
 
 .dsc-wrapper {
-  margin: 4em 0 2em 0;
+  margin: $dsc-wrapper-margin;
   display: flex;
   @include responsive-prop(flex-direction, $dsc-wrapper-flexdir);
 }
@@ -1807,14 +1790,14 @@ h3 {
 .aside-nav {
 
   .aside-nav__hdr {
-    margin: 1em 0;
-    font-size: 1em;
+    margin: $aside-nav-hdr-margin;
+    font-size: $aside-nav-hdr-font-size;
   }
 
   .aside-nav__link {
     display: block;
-    margin: 0.5em 0;
-    font-size: 0.8em;
+    margin: $aside-nav-link-margin;
+    font-size: $aside-nav-link-font-size;
 
     &, &:hover, &:focus {
       text-decoration: none;
@@ -1839,17 +1822,29 @@ h3 {
   font-family: "Fira Sans Compressed Light", sans-serif;
 }
 
+
 .fvrt {
+  display: block;
   position: relative;   // for absolute-positioned .fvrt__badge
-  margin: 2em 0;
-  font-size: 0.8em;
+  margin: $fvrt-margin;
+  font-size: $fvrt-font-size;
+
+  &, &:hover, &:focus {   // for <a>
+    text-decoration: none !important;
+    color: $global-txt-color;
+
+    * {
+      text-decoration: none !important;
+      color: $global-txt-color;
+    }
+  }
 
   .fvrt__badge {
     display: inline-block;
     position: absolute;
-    top: 0.5em;
+    top: $fvrt-badge-top;
     right: 0;
-    padding: 0.2em 1em;
+    padding: $fvrt-badge-padding;
     background: $color-white-faded;
   }
 
@@ -1858,12 +1853,12 @@ h3 {
   }
 
   .fvrt__hdr {
-    margin: 0.5em 0;
+    margin: $fvrt-hdr-margin;
     font-family: "Fira Sans Book", sans-serif;
   }
 
   .fvrt__stat {
-    font-size: 0.9em;
+    font-size: $fvrt-stat-font-size;
     text-decoration: underline;
   }
 }
@@ -1876,20 +1871,17 @@ h3 {
 }
 
 .work-obj {
-  margin: 1em 0;
-  font-size: 0.75em;
+  margin: $work-obj-margin;
+  font-size: $work-obj-font-size;
 
   .work-obj__hdr-wrapper {
-    padding: 0.5rem 0;
+    padding: $work-obj-hdr-wrapper-padding;
 
     .work-obj__hdr {
       display: inline-block;
-      font-size: 2em;
+      font-size: $work-obj-hdr-font-size;
       border-bottom: 2px solid $color-green;
     }
-  }
-
-  .work-obj__subhdr {
   }
 
   .work-obj__input-box-wrapper {
@@ -2072,6 +2064,8 @@ h3 {
     font-size: 0.6em;
   }
   .topic-teaser__hdr {
+    display: block;         // for <a>
+    text-decoration: none;  // for <a>
     font-size: 1em;
     margin: 1.5em 0 0.5em 0;
     padding: 0 0 0 2em;
