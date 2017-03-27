@@ -456,6 +456,9 @@ h3 {
   }
 
   .carousel-inner {
+    margin-left: 0;
+    margin-right: 0;
+
     .crsl-row-img-wrapper {
       flex: 1 1 auto;
 
@@ -1821,7 +1824,6 @@ h3 {
   box-shadow: none;
   font-family: "Fira Sans Compressed Light", sans-serif;
 }
-
 
 .fvrt {
   display: block;
