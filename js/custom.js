@@ -27,6 +27,7 @@ jQuery(function ($) {
   $(window).resize( function() {
     carouselMakeoversControlsHeight();
     carouselStylesControlsHeight();
+    customSelectsAdjust();
   });
 
   //
