@@ -1778,6 +1778,7 @@ h3 {
 
 .aside {
   @include responsive-prop(order, $aside-order);
+  @include responsive-prop(align-self, $aside-align-self);
   @include responsive-prop(padding, $aside-padding);
   display: flex;
   @include responsive-prop(flex-direction, $aside-flexdir);
@@ -1788,10 +1789,13 @@ h3 {
   .aside__left {
     @include responsive-prop(margin, $aside-left-margin);
     @include responsive-prop(padding, $aside-left-padding);
+    display: flex;
+    flex-direction: column;
   }
 }
 
 .aside-nav {
+  @include responsive-prop(text-align, $aside-nav-text-align);
 
   .aside-nav__hdr {
     margin: $aside-nav-hdr-margin;
@@ -1817,6 +1821,7 @@ h3 {
 
 
 .getadvice {
+  @include responsive-prop(align-self, $getadvice-align-self);
   @extend .btn;
   &, &:hover, &:focus {
     color: $global-txt-color;
@@ -2167,7 +2172,7 @@ h3 {
   }
   .topic__img {
     max-width: 100%;
-
+    margin-bottom: 1em;
   }
   .topic__actions {
     margin: 1em 0;
