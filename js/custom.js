@@ -55,7 +55,7 @@ jQuery(function ($) {
   });
 
   // Custom select expand and collapse
-  $('.sel').click(function () {
+  $('.sel').click(function (event) {
     event.stopPropagation();  // prevent $('.sel__opts').hide() in $(window).click()
     $(this).find('.sel__opts').toggle();
   });
